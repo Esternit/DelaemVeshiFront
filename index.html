@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+		(function (m, e, t, r, i, k, a) {
+			m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+			m[i].l = 1 * new Date();
+			for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+			k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+		})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		ym(96469250, "init", {
+			clickmap: true,
+			trackLinks: true,
+			accurateTrackBounce: true,
+			webvisor: true
+		});
+	</script>
+	<noscript>
+		<div><img src="https://mc.yandex.ru/watch/96469250" style="position:absolute; left:-9999px;" alt="" /></div>
+	</noscript>
+	<!-- /Yandex.Metrika counter -->
+	<link rel="stylesheet" href="styles/style.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap');
+	</style>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<title>Catalog</title>
+</head>
+
+<body>
+
+	<div class="catalog-container">
+		<div class="pre-search-link-cont">
+			<a class="link-item-not-found" href="#" onclick="openManager()">Не нашёл нужный
+				товар?🤔</a>
+			<a class="link-tg-channel" href="">
+				<img class="tg-icon" src="./assets/telegram.svg">
+				<div class="tg-channel-cont" onclick="openRM()">
+					<div class="tg-channel-id">@hypekickspoizon</div>
+					<div class="tg-channel-text">Наш Telegram канал</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="searchcont" id="searcher">
+		</div>
+
+		<div class="link-container">
+			<div class="teletype-info">
+				<a href="" class="teletype-link"
+					onclick="openTeletype('https://teletype.in/@laughandearn/g2gzBNr8h9z')">
+					<img class="logo-img-bg" src="./assets/about_us.png">
+				</a>
+			</div>
+			<div class="teletype-info">
+				<a href="" class="teletype-link"
+					onclick="openTeletype('https://teletype.in/@laughandearn/yP23uciMs9s')">
+					<img class="logo-img-bg" src="./assets/faq.png">
+				</a>
+			</div>
+			<div class="teletype-info">
+				<a href="" class="teletype-link" onclick="openTeletype('https://rmpoizon.store')">
+					<img class="logo-img-bg" src="./assets/contacts.png">
+				</a>
+			</div>
+			<div class="teletype-info">
+				<a href="" class="teletype-link"
+					onclick="openTeletype('https://teletype.in/@laughandearn/J6ON5PAqCYU')">
+					<img class="logo-img-bg" src="./assets/delivery.png">
+				</a>
+			</div>
+			<div class="teletype-info-text" onclick="openTeletype('https://teletype.in/@laughandearn/g2gzBNr8h9z')">О
+				нас</div>
+			<div class="teletype-info-text" onclick="openTeletype('https://teletype.in/@laughandearn/yP23uciMs9s')">FAQ
+			</div>
+			<div class="teletype-info-text" onclick="openTeletype('https://rmpoizon.store')">Личный кабинет</div>
+			<div class="teletype-info-text" onclick="openTeletype('https://teletype.in/@laughandearn/J6ON5PAqCYU')">О
+				Poizon</div>
+		</div>
+
+		<div class="other-link-container">
+			<a href="#" class="other-link" id="blog-link" onclick="openTGLink('https://t.me/resell_mafia')">
+				<img class="link-img" src="./assets/blog.png">
+				<p class="other-link-text">Блог</p>
+			</a>
+			<a href="search.html?search=Nike&page=2&start=1" class="other-link" id="new-stuff-link">
+				<img class="link-img" src="./assets/new_stuff.png">
+				<p class="other-link-text" id="new-stuff-text">Новинки</p>
+			</a>
+			<a href="search.html?search=Jordan&page=2&start=1" class="other-link" id="season-top-link">
+				<img class="link-img" src="./assets/season_top.png">
+				<p class="other-link-text">Топ сезона</p>
+			</a>
+		</div>
+
+		<p id="brand-title">Бренды</p>
+
+		<div id="brandCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+			<div class="carousel-control-prev" href="#brandCarousel" role="button" data-slide="prev"></div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="brand-container">
+						<a href="search.html?search=Vans&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/vans.png">
+						</a>
+						<a href="search.html?search=Adidas&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/adidas.png">
+						</a>
+						<a href="search.html?search=New+Balance&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/new_balance.png">
+						</a>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="brand-container">
+						<a href="search.html?search=Nike&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/nike.png">
+						</a>
+						<a href="search.html?search=Jordan&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/jordan.png">
+						</a>
+						<a href="search.html?search=Old+Order&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/old_order.png">
+						</a>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="brand-container">
+						<a href="search.html?search=OllieSkate&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/ollieskate.png">
+						</a>
+						<a href="search.html?search=Cat and Sofa&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/catnsofa.png">
+						</a>
+						<a href="search.html?search=Asics&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/asics.png">
+						</a>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="brand-container">
+						<a href="search.html?search=Yzy&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/yzy.png">
+						</a>
+						<a href="search.html?search=Converse&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/converse.png">
+						</a>
+						<a href="search.html?search=Puma&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/puma.png">
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-control-next" href="#brandCarousel" role="button" data-slide="next"></div>
+		</div>
+	</div>
+
+	<div id="listing">
+
+	</div>
+
+	<div class="loader" id="ld">
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+	</div>
+	<script src="scripts/catalog.js"></script>
+	<script src="scripts/postload.js"></script>
+	<script>
+		function func() {
+			console.log('tapped');
+		}
+	</script>
+</body>
+
+</html>

@@ -30,7 +30,7 @@ BackButton.onClick(function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     const Id = new URLSearchParams(window.location.search).get('id');
-    fetch('https://rmstore-api.onrender.com/getById', {
+    fetch('https://rmstoreapi-production.up.railway.app/getById', {
         headers: {
             'Content-type': 'application/json'
         },
@@ -143,7 +143,7 @@ function moveSlideByTouch(event) {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     tg.sendData(item);
-    fetch('https://rmstore-api.onrender.com/sendMessage', {
+    fetch('https://rmstoreapi-production.up.railway.app/sendMessage', {
         headers: {
             'Content-type': 'application/json'
         },

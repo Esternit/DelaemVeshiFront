@@ -50,7 +50,7 @@ function resetsearch() {
     const sh = new URLSearchParams(window.location.search).get('search');
     const trypage = new URLSearchParams(window.location.search).get('page');
     needscroll = 1;
-    fetch('https://rmstore-api.onrender.com/searchDataFromStart/' + sh, {
+    fetch('https://rmstoreapi-production.up.railway.app/searchDataFromStart/' + sh, {
         headers: {
             'Content-type': 'application/json'
         },
@@ -73,7 +73,7 @@ function searchfunc() {
     }
     else {
         console.log(page);
-        fetch('https://rmstore-api.onrender.com/search/' + searchValue, {
+        fetch('https://rmstoreapi-production.up.railway.app/search/' + searchValue, {
             headers: {
                 'Content-type': 'application/json'
             },

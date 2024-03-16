@@ -82,6 +82,7 @@ function loadHTMLTable(data) {
                 user_first: window.Telegram.WebApp.initDataUnsafe.user.first_name,
                 store: "DelaemVeshi"
             });
+            console.log(item);
             tg.MainButton.setText("Перейти в чат с менеджером");
             tg.MainButton.show();
         })
@@ -142,24 +143,40 @@ function moveSlideByTouch(event) {
 }
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
-    tg.sendData(item);
-    fetch('https://rmstoreapi-production.up.railway.app/sendMessage', {
+    console.log(item);
+    fetch('http://localhost:5000/addToCart', {
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
         body: item
     })
-    tg.close();
+
+    const Id = new URLSearchParams(window.location.search).get('id');
+    const paging = new URLSearchParams(window.location.search).get('page');
+    const sh = new URLSearchParams(window.location.search).get('search');
+    if (sh != null) {
+        window.location.href = 'search.html?page=' + paging + "&spuds=" + Id + "&search=" + sh;
+    }
+    else {
+        doning = 1;
+        window.location.href = 'index.html?page=' + paging + "&spuds=" + Id;
+    }
+
+    BackButton.hide();
+    tg.MainButton.hide();
 });
 
 function test() {
-    const Id = new URLSearchParams(window.location.search).get('id');
-    const paging = new URLSearchParams(window.location.search).get('page');
-    doning = 1;
-    window.location.href = 'index.html?page=' + paging + "&spuds=" + Id;
-    BackButton.hide();
-    tg.MainButton.hide();
+    console.log(item);
+    fetch('http://localhost:5000/addToCart', {
+        headers: {
+            'Content-type': 'application/json'
+        },
+        method: 'POST',
+        body: item
+    })
+
 
 }
 

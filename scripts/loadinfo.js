@@ -83,7 +83,7 @@ function loadHTMLTable(data) {
                 store: "DelaemVeshi"
             });
             console.log(item);
-            tg.MainButton.setText("Перейти в чат с менеджером");
+            tg.MainButton.setText("Добавить товар в корзину");
             tg.MainButton.show();
         })
 
@@ -151,22 +151,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
         method: 'POST',
         body: item
     })
-    for (let i = 1; i <= 6; i++) {
-        setTimeout(1000)
-        console.log(`#${i}`)
-      }
-    const Id = new URLSearchParams(window.location.search).get('id');
-    const paging = new URLSearchParams(window.location.search).get('page');
-    const sh = new URLSearchParams(window.location.search).get('search');
-    if (sh != null) {
-        window.location.href = 'search.html?page=' + paging + "&spuds=" + Id + "&search=" + sh;
-    }
-    else {
-        doning = 1;
-        window.location.href = 'index.html?page=' + paging + "&spuds=" + Id;
-    }
-
-    BackButton.hide();
+    showPopUp(300,600, 'Товар добавлен в корзину', 3000);
     tg.MainButton.hide();
 });
 
@@ -179,6 +164,8 @@ function test() {
         method: 'POST',
         body: item
     })
+    showPopUp(300,600, 'Товар добавлен в корзину', 3000);
+    
 
 
 }
@@ -219,3 +206,19 @@ function testfunc() {
     BackButton.hide();
     tg.MainButton.hide();
 }
+
+function showPopUp(x, y, text, duration) {
+    var myPopUp = document.getElementById("myPopUp");
+    myPopUp.style.display = 'block';
+    myPopUp.style.left = x + 'px';
+    myPopUp.style.top = y + 'px';
+    myPopUp.innerHTML = text;
+    if (duration) { // duration in ms *optionnal
+      window.setTimeout(hidePopUp, duration);
+    }
+  }
+  
+  function hidePopUp() {
+    var myPopUp = document.getElementById("myPopUp");
+    myPopUp.style.display = 'none';
+  }

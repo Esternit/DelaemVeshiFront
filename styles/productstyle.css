@@ -220,3 +220,13 @@ button:focus {
     transform: rotate(25deg)
   }
 }
+
+#myPopUp {
+  display: none;
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: #FFF;
+  border: 1px solid #DEDEDE;
+  border-radius: 3px;
+  z-index: 99;
+}

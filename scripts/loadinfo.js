@@ -151,7 +151,10 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
         method: 'POST',
         body: item
     })
-    demo();
+    for (let i = 1; i <= 6; i++) {
+        setTimeout(1000)
+        console.log(`#${i}`)
+      }
     const Id = new URLSearchParams(window.location.search).get('id');
     const paging = new URLSearchParams(window.location.search).get('page');
     const sh = new URLSearchParams(window.location.search).get('search');
@@ -215,16 +218,4 @@ function testfunc() {
 
     BackButton.hide();
     tg.MainButton.hide();
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function demo() {
-    for (let i = 0; i < 5; i++) {
-        console.log(`Waiting ${i} seconds...`);
-        await sleep(i * 1000);
-    }
-    console.log('Done');
 }

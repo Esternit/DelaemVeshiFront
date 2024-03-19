@@ -9,7 +9,7 @@ BackButton.onClick(function () {
     window.location.href = 'index.html';
 
     BackButton.hide();
-});s
+});
 
 function loadCart() {
     fetch('https://crmback-production.up.railway.app/getCart', {

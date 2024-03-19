@@ -29,7 +29,7 @@ function loadHTMLCart(data) {
         <div class="d-flex align-items-center"><i class="fa fa-trash mb-1 text-danger"></i></div>
     </div>`
     });
-
+    TABLE.innerHTML += ` <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="Сколько списывать с бонусного счёта?"><button class="btn btn-outline-warning btn-sm ml-2" type="button">Применить</button></div>`
     TABLE.innerHTML += `<div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button">Proceed to Pay</button></div>`;
 }
 

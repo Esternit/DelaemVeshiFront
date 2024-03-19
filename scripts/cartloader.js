@@ -42,9 +42,15 @@ function loadHTMLCart(data) {
         <div class="d-flex align-items-center" onclick = "deleteitem(${id})"><i class="fa fa-trash mb-1 text-danger"></i></div>
     </div>`
     });
-    TABLE.innerHTML += ` <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="form-control border-0 gift-card" placeholder="Сколько списывать с бонусного счёта?"><button class="btn btn-outline-warning btn-sm ml-2" type="button">Apply</button></div>`
-    TABLE.innerHTML += `<div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button">Proceed to Pay</button></div>`;
+    if(data.length > 0){
+        TABLE.innerHTML += ` <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="form-control border-0 gift-card" placeholder="Сколько списывать с бонусного счёта?"><button class="btn btn-outline-warning btn-sm ml-2" type="button">Apply</button></div>`;
+        TABLE.innerHTML += `<div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button">Proceed to Pay</button></div>`;
+    }
+    else{
+        TABLE.innerHTML += `<h4>Пока здесь ничего нет...</h4>`
+    }
 }
+    
 
 function deleteitem(id){
     console.log(id);

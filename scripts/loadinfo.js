@@ -144,14 +144,13 @@ function moveSlideByTouch(event) {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     console.log(item);
-    fetch('https://crmback-production.up.railway.app/getAllUsers/addToCart', {
+    fetch('https://crmback-production.up.railway.app/addToCart', {
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
         body: item
     })
-
     const Id = new URLSearchParams(window.location.search).get('id');
     const paging = new URLSearchParams(window.location.search).get('page');
     const sh = new URLSearchParams(window.location.search).get('search');
@@ -169,7 +168,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
 
 function test() {
     console.log(item);
-    fetch('https://crmback-production.up.railway.app/getAllUsers/addToCart', {
+    fetch('https://crmback-production.up.railway.app/addToCart', {
         headers: {
             'Content-type': 'application/json'
         },

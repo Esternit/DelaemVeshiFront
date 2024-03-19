@@ -157,15 +157,27 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
 
 function test() {
     console.log(item);
-    fetch('http://localhost:5000/addToCart', {
+    fetch('https://crmback-production.up.railway.app//getAllUsers/addToCart', {
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
         body: item
     })
-    showPopUp(300,600, 'Товар добавлен в корзину', 3000);
-    
+
+    const Id = new URLSearchParams(window.location.search).get('id');
+    const paging = new URLSearchParams(window.location.search).get('page');
+    const sh = new URLSearchParams(window.location.search).get('search');
+    if (sh != null) {
+        window.location.href = 'search.html?page=' + paging + "&spuds=" + Id + "&search=" + sh;
+    }
+    else {
+        doning = 1;
+        window.location.href = 'index.html?page=' + paging + "&spuds=" + Id;
+    }
+
+    BackButton.hide();
+    tg.MainButton.hide();
 
 
 }
@@ -206,19 +218,3 @@ function testfunc() {
     BackButton.hide();
     tg.MainButton.hide();
 }
-
-function showPopUp(x, y, text, duration) {
-    var myPopUp = document.getElementById("myPopUp");
-    myPopUp.style.display = 'block';
-    myPopUp.style.left = x + 'px';
-    myPopUp.style.top = y + 'px';
-    myPopUp.innerHTML = text;
-    if (duration) { // duration in ms *optionnal
-      window.setTimeout(hidePopUp, duration);
-    }
-  }
-  
-  function hidePopUp() {
-    var myPopUp = document.getElementById("myPopUp");
-    myPopUp.style.display = 'none';
-  }

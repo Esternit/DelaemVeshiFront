@@ -1,3 +1,16 @@
+let tg = window.Telegram.WebApp;
+
+tg.expand();
+
+var BackButton = window.Telegram.WebApp.BackButton;
+BackButton.show();
+
+BackButton.onClick(function () {
+    window.location.href = 'index.html';
+
+    BackButton.hide();
+});s
+
 function loadCart() {
     fetch('https://crmback-production.up.railway.app/getCart', {
         headers: {

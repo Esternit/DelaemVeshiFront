@@ -12,7 +12,7 @@ function loadCart() {
 
 function loadHTMLCart(data) {
     const TABLE = document.getElementById("shoppingcart");
-    data.forEach(({ img, total_price, product_name, size_name, product_id, product_article }) => {
+    data.forEach(({ id, img, total_price, product_name, size_name, product_id, product_article }) => {
         TABLE.innerHTML += `<div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
         <div class="mr-1"><img class="rounded" src="${img}" width="70"></div>
         <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">${product_name}</span>
@@ -26,11 +26,21 @@ function loadHTMLCart(data) {
         <div>
             <h5 class="text-grey">${total_price} руб.</h5>
         </div>
-        <div class="d-flex align-items-center"><i class="fa fa-trash mb-1 text-danger"></i></div>
+        <div class="d-flex align-items-center" onclick = "deleteitem(${id})"><i class="fa fa-trash mb-1 text-danger"></i></div>
     </div>`
     });
     TABLE.innerHTML += ` <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="form-control border-0 gift-card" placeholder="Сколько списывать с бонусного счёта?"><button class="btn btn-outline-warning btn-sm ml-2" type="button">Apply</button></div>`
     TABLE.innerHTML += `<div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button">Proceed to Pay</button></div>`;
 }
 
+function deleteitem(id){
+    fetch('https://crmback-production.up.railway.app/deleteItem', {
+        headers: {
+            'Content-type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({ item_id: id, user_id: window.Telegram.WebApp.initDataUnsafe.user.id })
+    })
+    window.location.reload();
+}
 loadCart();

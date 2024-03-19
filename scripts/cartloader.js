@@ -4,7 +4,7 @@ function loadCart() {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ id: 735028324 })
+        body: JSON.stringify({ id: window.Telegram.WebApp.initDataUnsafe.user.id })
     })
         .then(response => response.json())
         .then(data => loadHTMLCart(data['data']));

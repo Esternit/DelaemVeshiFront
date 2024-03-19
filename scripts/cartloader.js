@@ -13,7 +13,7 @@ function loadCart() {
 function loadHTMLCart(data) {
     const TABLE = document.getElementById("shoppingcart");
     data.forEach(({ id, img, total_price, product_name, size_name, product_id, product_article }) => {
-        TABLE.innerHTML += `<div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
+        TABLE.innerHTML += `<div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded" id = "${id}">
         <div class="mr-1"><img class="rounded" src="${img}" width="70"></div>
         <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">${product_name}</span>
             <div class="d-flex flex-row product-desc">
@@ -35,6 +35,10 @@ function loadHTMLCart(data) {
 
 function deleteitem(id){
     console.log(id);
+
+    const parent = document.getElementById("shoppingcart");
+    const child = document.getElementById(id);
+    parent.removeChild(child);
     fetch('https://crmback-production.up.railway.app/deleteItem', {
         headers: {
             'Content-type': 'application/json'

@@ -1,5 +1,5 @@
 function loadCart() {
-    fetch('http://localhost:5000/getCart', {
+    fetch('https://rmstoreapi-production.up.railway.app/getCart', {
         headers: {
             'Content-type': 'application/json'
         },

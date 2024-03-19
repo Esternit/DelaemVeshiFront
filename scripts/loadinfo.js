@@ -144,7 +144,7 @@ function moveSlideByTouch(event) {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     console.log(item);
-    fetch('https://crmback-production.up.railway.app/getAllUsers/addToCart', {
+    fetch('https://crmback-production.up.railway.app/addToCart', {
         headers: {
             'Content-type': 'application/json'
         },

@@ -34,6 +34,7 @@ function loadHTMLCart(data) {
 }
 
 function deleteitem(id){
+    console.log(id);
     fetch('https://crmback-production.up.railway.app/deleteItem', {
         headers: {
             'Content-type': 'application/json'
@@ -41,6 +42,6 @@ function deleteitem(id){
         method: 'POST',
         body: JSON.stringify({ item_id: id, user_id: window.Telegram.WebApp.initDataUnsafe.user.id })
     })
-    window.location.reload();
+    
 }
 loadCart();

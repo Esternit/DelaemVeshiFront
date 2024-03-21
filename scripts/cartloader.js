@@ -1,5 +1,6 @@
 let tg = window.Telegram.WebApp;
-
+let first_price = 0;
+let bonus = 0;
 tg.expand();
 
 var BackButton = window.Telegram.WebApp.BackButton;
@@ -12,18 +13,22 @@ BackButton.onClick(function () {
 });
 
 function loadCart() {
-    fetch('https://crmback-production.up.railway.app/getCart', {
+    fetch('https://crmback-production.up.railway.app/getCart', { //https://crmback-production.up.railway.app
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ id: window.Telegram.WebApp.initDataUnsafe.user.id })
+        body: JSON.stringify({ id: window.Telegram.WebApp.initDataUnsafe.user.id }) //window.Telegram.WebApp.initDataUnsafe.user.id
     })
         .then(response => response.json())
-        .then(data => loadHTMLCart(data['data']));
+        .then(data => loadHTMLCart(data));
 }
 
 function loadHTMLCart(data) {
+    let user = data[data.length-1];
+    data = data.slice(0,data.length-1);
+    console.log(user);
+    let full_price = 0;
     const TABLE = document.getElementById("shoppingcart");
     data.forEach(({ id, img, total_price, product_name, size_name, product_id, product_article }) => {
         TABLE.innerHTML += `<div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded" id = "${id}">
@@ -41,10 +46,12 @@ function loadHTMLCart(data) {
         </div>
         <div class="d-flex align-items-center" onclick = "deleteitem(${id})"><i class="fa fa-trash mb-1 text-danger"></i></div>
     </div>`
+    full_price += total_price;
     });
     if(data.length > 0){
-        TABLE.innerHTML += ` <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="form-control border-0 gift-card" placeholder="Сколько списывать с бонусного счёта?"><button class="btn btn-outline-warning btn-sm ml-2" type="button">Apply</button></div>`;
-        TABLE.innerHTML += `<div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button">Proceed to Pay</button></div>`;
+        first_price = full_price;
+        TABLE.innerHTML += ` <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="number"  onKeyUp="calculatePrice(${user.bonuses})" class="form-control border-0 gift-card" placeholder="(доступно ${user.bonuses} руб.)" id = "bonus"></div>`;
+        TABLE.innerHTML += `<div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button" id = "proceed" onclick = "proceedPayment()">Перейти к оплате (${full_price} руб)</button></div>`;
     }
     else{
         TABLE.innerHTML += `<h4>Пока здесь ничего нет...</h4>`
@@ -66,5 +73,33 @@ function deleteitem(id){
         body: JSON.stringify({ item_id: id, user_id: window.Telegram.WebApp.initDataUnsafe.user.id })
     })
     
+}
+
+function calculatePrice(bon){
+    let val = document.querySelector("#bonus").value;
+    console.log(val);
+    if (val > bon){
+        val = bon;
+        document.querySelector("#bonus").value = bon;
+    }
+    let buttonText = document.getElementById("proceed").firstChild.data;
+    buttonText = buttonText.split(" ");
+    let value = first_price - val;
+    bonus = val;
+    buttonText[3] = "("+value.toString();
+    document.getElementById("proceed").firstChild.data = buttonText.join(" ");
+    console.log(buttonText);
+
+    
+}
+
+function proceedPayment(){
+    fetch('https://crmback-production.up.railway.app/createOrder', { //https://crmback-production.up.railway.app
+    headers: {
+        'Content-type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify({ id: window.Telegram.WebApp.initDataUnsafe.user.id, bonus_used: bonus }) //window.Telegram.WebApp.initDataUnsafe.user.id
+})
 }
 loadCart();

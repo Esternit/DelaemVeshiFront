@@ -191,27 +191,34 @@ function loadHTMLTable(data) {
 
 function enableCarouselSwiping() {
     const itmCar = document.querySelector("#brandCarousel");
-    itmCar.addEventListener('touchstart', moveSlideByTouch);
+    const offerCar = document.querySelector("#offersCarousel");
+
+    itmCar.addEventListener('touchstart', (function (passedInElement) {
+        return function (e) { moveSlideByTouch(e, passedInElement); };
+    })("#brandCarousel"));
+    offerCar.addEventListener('touchstart', (function (passedInElement) {
+        return function (e) { moveSlideByTouch(e, passedInElement); };
+    })("#offersCarousel"));
+
 }
 
-function moveSlideByTouch(event) {
+function moveSlideByTouch(event, carousel_id) {
     const xClick = event.touches[0].pageX;
-    console.log($(".carousel"));
+    console.log("carousel", $(carousel_id));
 
-    $(".carousel").one('touchmove', function (event) {
+    $(carousel_id).one('touchmove', function (event) {
         const xMove = event.originalEvent.touches[0].pageX;
         const sensitivityInPx = 5;
-        console.log("here111");
 
         if (Math.floor(xClick - xMove) > sensitivityInPx) {
-            $(".carousel").find(".carousel-control-next").click();
+            $(carousel_id).find(".carousel-control-next").click();
         } else if (Math.floor(xClick - xMove) < -sensitivityInPx) {
-            $(".carousel").find(".carousel-control-prev").click();
+            $(carousel_id).find(".carousel-control-prev").click();
         }
     });
 
-    $(".carousel").on('touchend', function () {
-        $(".carousel").off('touchmove');
+    $(carousel_id).on('touchend', function () {
+        $(carousel_id).off('touchmove');
     });
 }
 

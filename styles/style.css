@@ -11,7 +11,7 @@ body {
 }
 
 #listing {
-	margin-bottom: 60px;
+	margin: 0px 6px 60px 6px;
 }
 
 .brand-logo {
@@ -32,8 +32,14 @@ body {
 	width: 100%;
 }
 
+.offer-banner-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .offer-banner {
-	width: 100%;
+	width: 95%;
 	margin-top: 12px;
 }
 
@@ -87,7 +93,7 @@ body {
 	border-radius: 7px;
 
 	margin: auto 6px 12px 10px;
-	padding: 0px 3px 0px 3px;
+	padding: 0px 5px 0px 5px;
 
 	text-align: left;
 	font-family: 'Inter', sans-serif;
@@ -172,7 +178,7 @@ body {
 .wideinputbox {
 	background-color: #DAFFFB;
 	height: 31px;
-	width: 70%;
+	width: 90%;
 
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -193,25 +199,26 @@ input[type=search]::-webkit-search-cancel-button {
 }
 
 .inputbox.transition {
-	width: 70%;
+	width: 90%;
 	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 	transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 
 .wideinputbox.transition {
-	width: 70%;
+	width: 90%;
 	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 	transition: 0.2s linear;
 }
 
 .search-btn {
+	aspect-ratio: 1 / 1;
+	height: 40px;
+
 	background: none;
 	border-color: none;
 	border-radius: 20px;
-	width: 10%;
 	position: absolute;
-	height: 40px;
-	margin-right: 60%;
+	margin-right: 75%;
 	margin-top: 2%;
 	padding: 0;
 }
@@ -283,7 +290,7 @@ a:active {
 
 .other-link-container {
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 50% 40%;
 	grid-template-rows: 1fr 1fr;
 
 	margin-bottom: 16px;
@@ -323,9 +330,12 @@ a:active {
 	display: inline;
 }
 
-#blog-link {
+.idk-why-it-works {
 	grid-column: 2 / 2;
 	grid-row: 1 / span 2;
+}
+
+#blog-link {
 	width: 100%;
 }
 

@@ -21,145 +21,114 @@
 	<!-- Yandex.Metrika counter -->
 
 	<link rel="stylesheet" href="styles/style.css">
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap');
-	</style>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap"
+		rel="stylesheet">
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 	<title>Catalog</title>
 </head>
 
 <body>
-
 	<div class="catalog-container">
 		<div class="pre-search-link-cont">
-			<a class="link-item-not-found" href="#" onclick="openManager()">Не нашёл нужный
-				товар?🤔</a>
-			<a href = "cart.html"> Корзина </a>
-			<a class="link-tg-channel" href="">
-				<img class="tg-icon" src="./assets/telegram.svg">
-				<div class="tg-channel-cont" onclick="openRM()">
-					<div class="tg-channel-id">@hypekickspoizon</div>
-					<div class="tg-channel-text">Наш Telegram канал</div>
-				</div>
+			<a href="#" onclick="openManager()">
+				<img class="header-logo-image" src="./assets/chat_pfp.png">
+				<div id="personal-balance-badge">+200₽</div>
+			</a>
+			<a href="cart.html">
+				<img class="header-logo-image" src="./assets/cart_image.png">
+				<div id="cart-item-amount-badge">0</div>
 			</a>
 		</div>
 
 		<div class="searchcont" id="searcher">
 		</div>
 
+		<div id="offersCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+			<div class="carousel-control-prev" href="#offersCarousel" role="button" data-slide="prev"></div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<a href="search.html?search=&page=2&start=1" class="offer-banner-link">
+						<img class="offer-banner" src="./assets/baseball_banner.png">
+					</a>
+				</div>
+				<div class="carousel-item">
+					<a href="search.html?search=&page=2&start=1" class="offer-banner-link">
+						<img class="offer-banner" src="./assets/new_banner.png">
+					</a>
+				</div>
+				<div class="carousel-item">
+					<a href="search.html?search=&page=2&start=1" class="offer-banner-link">
+						<img class="offer-banner" src="./assets/clothing_banner.png">
+					</a>
+				</div>
+			</div>
+			<div class="carousel-control-next" href="#offersCarousel" role="button" data-slide="next"></div>
+		</div>
+
 		<div class="link-container">
-			<div class="teletype-info">
-				<a href="" class="teletype-link"
-					onclick="openTeletype('https://teletype.in/@laughandearn/g2gzBNr8h9z')">
-					<img class="logo-img-bg" src="./assets/about_us.png">
-				</a>
-			</div>
-			<div class="teletype-info">
-				<a href="" class="teletype-link"
-					onclick="openTeletype('https://teletype.in/@laughandearn/yP23uciMs9s')">
-					<img class="logo-img-bg" src="./assets/faq.png">
-				</a>
-			</div>
-			<div class="teletype-info">
-				<a href="" class="teletype-link" onclick="openTeletype('https://rmpoizon.store')">
-					<img class="logo-img-bg" src="./assets/contacts.png">
-				</a>
-			</div>
-			<div class="teletype-info">
-				<a href="" class="teletype-link"
-					onclick="openTeletype('https://teletype.in/@laughandearn/J6ON5PAqCYU')">
-					<img class="logo-img-bg" src="./assets/delivery.png">
-				</a>
-			</div>
-			<div class="teletype-info-text" onclick="openTeletype('https://teletype.in/@laughandearn/g2gzBNr8h9z')">О
-				нас</div>
-			<div class="teletype-info-text" onclick="openTeletype('https://teletype.in/@laughandearn/yP23uciMs9s')">FAQ
-			</div>
-			<div class="teletype-info-text" onclick="openTeletype('https://rmpoizon.store')">Личный кабинет</div>
-			<div class="teletype-info-text" onclick="openTeletype('https://teletype.in/@laughandearn/J6ON5PAqCYU')">О
-				Poizon</div>
 		</div>
 
 		<div class="other-link-container">
-			<a href="#" class="other-link" id="blog-link" onclick="openTGLink('https://t.me/resell_mafia')">
-				<img class="link-img" src="./assets/blog.png">
-				<p class="other-link-text">Блог</p>
+			<a href="search.html?search=Nike&page=2&start=1" class="other-link" id="delivery-link">
+				<img class="link-img" src="./assets/delivery.png">
+				<p class="other-link-text" id="new-stuff-text">Доставка</p>
 			</a>
-			<a href="search.html?search=Nike&page=2&start=1" class="other-link" id="new-stuff-link">
-				<img class="link-img" src="./assets/new_stuff.png">
-				<p class="other-link-text" id="new-stuff-text">Новинки</p>
+			<a href="#" class="other-link" id="blog-link" onclick="openTGLink('https://t.me/resell_mafia')">
+				<img class="link-img" src="./assets/price_calculation.png">
+				<p class="other-link-text">Расчёт стоимости</p>
 			</a>
 			<a href="search.html?search=Jordan&page=2&start=1" class="other-link" id="season-top-link">
-				<img class="link-img" src="./assets/season_top.png">
-				<p class="other-link-text">Топ сезона</p>
+				<img class="link-img" src="./assets/season_hit.png">
+				<p class="other-link-text">Хит сезона</p>
 			</a>
 		</div>
 
-		<p id="brand-title">Бренды</p>
+		<span class="title-text-container">
+			<span class="brand-title">Бренды</span>
+			<span class="all-brands-button"><a href="#">Все></a></span>
+		</span>
 
 		<div id="brandCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
 			<div class="carousel-control-prev" href="#brandCarousel" role="button" data-slide="prev"></div>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
 					<div class="brand-container">
-						<a href="search.html?search=Vans&page=2&start=1" class="brand-logo">
-							<img class="logo-img-bg" src="./assets/vans.png">
+						<a href="search.html?search=Nike&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/nike_logo.png">
 						</a>
 						<a href="search.html?search=Adidas&page=2&start=1" class="brand-logo">
-							<img class="logo-img-bg" src="./assets/adidas.png">
+							<img class="logo-img-bg" src="./assets/adidas_logo.png">
 						</a>
 						<a href="search.html?search=New+Balance&page=2&start=1" class="brand-logo">
-							<img class="logo-img-bg" src="./assets/new_balance.png">
+							<img class="logo-img-bg" src="./assets/new_balance_logo.png">
 						</a>
 					</div>
 				</div>
 				<div class="carousel-item">
 					<div class="brand-container">
-						<a href="search.html?search=Nike&page=2&start=1" class="brand-logo">
-							<img class="logo-img-bg" src="./assets/nike.png">
+						<a href="search.html?search=Vans&page=2&start=1" class="brand-logo">
+							<img class="logo-img-bg" src="./assets/vans_logo.png">
 						</a>
 						<a href="search.html?search=Jordan&page=2&start=1" class="brand-logo">
-							<img class="logo-img-bg" src="./assets/jordan.png">
-						</a>
-						<a href="search.html?search=Old+Order&page=2&start=1" class="brand-logo">
-							<img class="logo-img-bg" src="./assets/old_order.png">
-						</a>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<div class="brand-container">
-						<a href="search.html?search=OllieSkate&page=2&start=1" class="brand-logo">
-							<img class="logo-img-bg" src="./assets/ollieskate.png">
-						</a>
-						<a href="search.html?search=Cat and Sofa&page=2&start=1" class="brand-logo">
-							<img class="logo-img-bg" src="./assets/catnsofa.png">
-						</a>
-						<a href="search.html?search=Asics&page=2&start=1" class="brand-logo">
-							<img class="logo-img-bg" src="./assets/asics.png">
-						</a>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<div class="brand-container">
-						<a href="search.html?search=Yzy&page=2&start=1" class="brand-logo">
-							<img class="logo-img-bg" src="./assets/yzy.png">
-						</a>
-						<a href="search.html?search=Converse&page=2&start=1" class="brand-logo">
-							<img class="logo-img-bg" src="./assets/converse.png">
-						</a>
-						<a href="search.html?search=Puma&page=2&start=1" class="brand-logo">
-							<img class="logo-img-bg" src="./assets/puma.png">
+							<img class="logo-img-bg" src="./assets/jordan_logo.png">
 						</a>
 					</div>
 				</div>
 			</div>
 			<div class="carousel-control-next" href="#brandCarousel" role="button" data-slide="next"></div>
 		</div>
+
+		<span class="title-text-container">
+			<span class="brand-title">Каталог</span>
+			<a href="#"><img class="filter-button" src="./assets/filter_button.png"></a>
+		</span>
 	</div>
 
 	<div id="listing">
-
 	</div>
 
 	<div class="loader" id="ld">

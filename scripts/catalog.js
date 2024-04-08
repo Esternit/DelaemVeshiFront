@@ -51,7 +51,6 @@ function loadSearchHTMLTable(data) {
                 </div>
                 <div class="itemname">${title}</div>
                 <div class="price">${start_price} ₽</div>
-                <div class="btn">Заказать</div>
             </a>
             `;
             /* ₽ */
@@ -155,7 +154,6 @@ function loadHTMLTable(data) {
                 </div>
                 <div class="itemname">${title}</div>
                 <div class="price">${start_price} ₽</div>
-                <div class="btn">Заказать</div>
             </a>
             `;
         });

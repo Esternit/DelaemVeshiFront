@@ -25,8 +25,8 @@ function loadCart() {
 }
 
 function loadHTMLCart(data) {
-    let user = data[data.length-1];
-    data = data.slice(0,data.length-1);
+    let user = data[data.length - 1];
+    data = data.slice(0, data.length - 1);
     console.log(user);
     let full_price = 0;
     const TABLE = document.getElementById("shoppingcart");
@@ -46,20 +46,20 @@ function loadHTMLCart(data) {
         </div>
         <div class="d-flex align-items-center" onclick = "deleteitem(${id})"><i class="fa fa-trash mb-1 text-danger"></i></div>
     </div>`
-    full_price += total_price;
+        full_price += total_price;
     });
-    if(data.length > 0){
+    if (data.length > 0) {
         first_price = full_price;
         TABLE.innerHTML += ` <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="number"  onKeyUp="calculatePrice(${user.bonuses})" class="form-control border-0 gift-card" placeholder="(доступно ${user.bonuses} руб.)" id = "bonus"></div>`;
         TABLE.innerHTML += `<div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button" id = "proceed" onclick = "proceedPayment()">Перейти к оплате (${full_price} руб)</button></div>`;
     }
-    else{
+    else {
         TABLE.innerHTML += `<h4>Пока здесь ничего нет...</h4>`
     }
 }
-    
 
-function deleteitem(id){
+
+function deleteitem(id) {
     console.log(id);
 
     const parent = document.getElementById("shoppingcart");
@@ -72,13 +72,13 @@ function deleteitem(id){
         method: 'POST',
         body: JSON.stringify({ item_id: id, user_id: window.Telegram.WebApp.initDataUnsafe.user.id })
     })
-    
+
 }
 
-function calculatePrice(bon){
+function calculatePrice(bon) {
     let val = document.querySelector("#bonus").value;
     console.log(val);
-    if (val > bon){
+    if (val > bon) {
         val = bon;
         document.querySelector("#bonus").value = bon;
     }
@@ -86,20 +86,20 @@ function calculatePrice(bon){
     buttonText = buttonText.split(" ");
     let value = first_price - val;
     bonus = val;
-    buttonText[3] = "("+value.toString();
+    buttonText[3] = "(" + value.toString();
     document.getElementById("proceed").firstChild.data = buttonText.join(" ");
     console.log(buttonText);
 
-    
+
 }
 
-function proceedPayment(){
+function proceedPayment() {
     fetch('https://crmback-production.up.railway.app/createOrder', { //https://crmback-production.up.railway.app
-    headers: {
-        'Content-type': 'application/json'
-    },
-    method: 'POST',
-    body: JSON.stringify({ id: window.Telegram.WebApp.initDataUnsafe.user.id, bonus_used: bonus }) //window.Telegram.WebApp.initDataUnsafe.user.id
-})
+        headers: {
+            'Content-type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({ id: window.Telegram.WebApp.initDataUnsafe.user.id, bonus_used: bonus }) //window.Telegram.WebApp.initDataUnsafe.user.id
+    })
 }
 loadCart();

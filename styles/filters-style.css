@@ -172,6 +172,7 @@ body {
 	grid-template-areas: "select";
 	width: fit-content;
 	align-items: center;
+	margin-top: 8px;
 }
 
 select {
@@ -193,4 +194,19 @@ select,
 
 	content: "";
 	clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+.apply-button {
+	display: block;
+	background-color: #00E8CD;
+	border-radius: 15px;
+
+	margin: 10px 16px;
+	padding: 15px 0px;
+
+	text-align: center;
+	font-family: 'Inter', sans-serif;
+	font-weight: 700;
+	font-size: 40px;
+	color: #FFFFFF;
 }

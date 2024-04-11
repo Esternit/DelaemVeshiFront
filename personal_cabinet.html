@@ -4,11 +4,47 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link
+		href="https://fonts.googleapis.com/css2?family=Sora:wght@100..900&family=Saira+Semi+Condensed:wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="./styles/pers-cabinet-style.css">
 	<title>Personal cabinet</title>
 </head>
 
 <body>
+	<div class="navbar">
+		<a href="./index.html"><img class="goback-arrow" src="./assets/exit_arrow.png"></a>
+	</div>
+
+	<div class="profile-picture">
+		<img src="./assets/chat_pfp.png">
+	</div>
+	<span class="profile-name">Анна Гальцева</span>
+
+	<div class="bonuses-container">
+		<span class="bonuses-text">Бонусы: <span id="bonuses-amount">400</span></span>
+		<div class="bonuses-currency">₽</div>
+	</div>
+
+	<div class="referral-link-container">
+		<span id="reward-amount">+200₽</span>
+		<span class="reward-description">за приглашённого друга</span>
+		<div class="referral-link-text-container">
+			<span id="referral-link">t.me...</span>
+			<img class="referral-link-img" src="./assets/link_copy_button.png"></div>
+		<div style="text-align: center;">просто скинь ему ссылку</div>
+	</div>
+
+	<div class="page-link-container">
+		<span class="page-link-text" id="link-my-orders">Мои заказы</span>
+	</div>
+	<div class="page-link-container">
+		<span class="page-link-text" id="link-address">Адрес</span>
+	</div>
+	<div class="page-link-container">
+		<span class="page-link-text" id="link-FAQ">FAQ</span>
+	</div>
 </body>
 
 </html>

@@ -1,0 +1,138 @@
+body {
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #FFFFFF;
+}
+
+.navbar {
+    width: fit-content;
+    height: 30px;
+}
+
+a {
+    height: inherit;
+    text-decoration: none;
+    color: #000000;
+}
+
+.goback-arrow {
+    height: inherit;
+    object-fit: contain;
+    margin: 24px 0px 0px 15px;
+}
+
+.profile-picture {
+    width: 25vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-picture>img {
+    aspect-ratio: 1 / 1;
+    width: inherit;
+}
+
+.profile-name {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+
+    font-family: 'Rubik Mono One', sans-serif;
+    text-align: center;
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+}
+
+.bonuses-container {
+    font-family: "Saira Semi Condensed", sans-serif;
+    text-align: center;
+    font-size: 24px;
+    color: #000000;
+}
+
+.bonuses-text {
+    font-weight: 400;
+}
+
+.bonuses-currency {
+    display: inline-block;
+    border-radius: 50%;
+
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.4em;
+    background-color: #00E8CD;
+
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.referral-link-container {
+    padding: 15px 10px;
+    margin: 10px;
+
+    border-radius: 30px;
+    background-color: #14EDD3;
+
+    font-family: "Sora", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+}
+
+#reward-amount {
+    display: inline-block;
+    rotate: -4.91deg;
+    padding: 2px 15px;
+
+    border-radius: 30px;
+    background-color: #FFFFFF;
+}
+
+#referral-link {
+    margin-left: 12px;
+}
+
+.referral-link-text-container {
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+}
+
+.referral-link-img {
+    vertical-align: center;
+    height: 1em;
+    width: 1em;
+
+    margin-top: 3px;
+    margin-right: 12px;
+    float: right;
+}
+
+.page-link-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 6em;
+    margin: 0px 20px;
+
+    border: 0.5px solid #C9C9C9;
+    border-style: none none solid none;
+}
+
+.page-link-container:last-of-type {
+    border-style: none;
+}
+
+.page-link-text {
+    margin-left: 17px;
+
+    text-transform: uppercase;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}

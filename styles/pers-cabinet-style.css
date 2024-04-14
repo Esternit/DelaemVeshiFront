@@ -6,23 +6,6 @@ body {
     background-color: #FFFFFF;
 }
 
-.navbar {
-    width: fit-content;
-    height: 30px;
-}
-
-a {
-    height: inherit;
-    text-decoration: none;
-    color: #000000;
-}
-
-.goback-arrow {
-    height: inherit;
-    object-fit: contain;
-    margin: 24px 0px 0px 15px;
-}
-
 .profile-picture {
     width: 25vw;
     margin-left: auto;

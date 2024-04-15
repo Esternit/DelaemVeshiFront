@@ -138,6 +138,10 @@ textarea:focus {
     color: #000000;
 }
 
+.input-error {
+    outline: 1px solid red;
+}
+
 ::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
     color: #000000;
@@ -241,7 +245,7 @@ li::marker {
 .charge-switch {
     position: relative;
     display: inline-block;
-    
+
     margin-left: 8px;
     width: 80px;
     height: inherit;

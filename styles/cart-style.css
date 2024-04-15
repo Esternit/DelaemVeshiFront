@@ -83,6 +83,7 @@ button {
 
 .cart-item-subcont {
     margin: 1em 12px 0px 12px;
+    max-height: 2em;
 
     display: flex;
     flex-direction: row;
@@ -90,7 +91,6 @@ button {
 
 .cart-item-price {
     align-self: flex-end;
-    margin-right: auto;
 
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -100,15 +100,18 @@ button {
 
 .cart-item-counter {
     white-space: nowrap;
-    margin-right: auto;
+    margin-left: auto;
+    width: 5em;
 
     border-radius: 5px;
     background-color: #D9D9D9;
 }
 
 .cart-item-counter>button {
-    height: 100%;
-    aspect-ratio: 1 / 1;
+    max-height: inherit;
+    width: 100%;
+    max-width: 1.2em;
+
     border-radius: 5px;
     background-color: #D9D9D9;
 

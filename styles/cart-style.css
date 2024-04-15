@@ -168,6 +168,7 @@ textarea:focus {
 }
 
 .order-data-input {
+    width: calc(100vw - 56px);
     margin: 14px 0px 0px 21px;
     padding: 6px 4px;
 
@@ -192,7 +193,7 @@ li>button {
 }
 
 li::marker {
-    content: url("./../assets/list_bullet.svg");
+    content: url("https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.svg");
 }
 
 .other-charges {

@@ -99,7 +99,8 @@ button {
 }
 
 .cart-item-counter {
-    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
     margin-left: auto;
     width: 5em;
 
@@ -107,22 +108,28 @@ button {
     background-color: #D9D9D9;
 }
 
-.cart-item-counter>button {
-    max-height: inherit;
-    width: 100%;
-    max-width: 1.2em;
+.counter-button {
+    flex: 1 1 33%;
 
     border-radius: 5px;
     background-color: #D9D9D9;
 
     font-family: 'Inter', sans-serif;
+    text-align: center;
     font-weight: 400;
     font-size: 24px;
     color: #000000;
 }
 
-.cart-item-counter>span {
+.counter-number {
+    flex: 1 1 33%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     font-family: 'Nokora', sans-serif;
+    text-align: center;
     font-weight: 400;
     font-size: 20px;
     color: #000000;

@@ -1,13 +1,34 @@
-var styleElem = document.head.appendChild(document.createElement("style"));
-var checked = false;
+var styleSameAddress = document.head.appendChild(document.createElement("style"));
+var stylePickupMoscow = document.head.appendChild(document.createElement("style"));
+var styleSameName = document.head.appendChild(document.createElement("style"));
+var styleSameNumber = document.head.appendChild(document.createElement("style"));
 
-function toggleCheckFor(id) {
-    if (!checked) {
-        styleElem.innerHTML = "#pickup-moscow::marker {content: url(\"https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet_checked.svg\");}";
-        checked = true;
+function toggleCheckFor(list_id) {
+    const currentStyle = window.getComputedStyle(document.getElementById(list_id), '::marker').getPropertyValue("content");
+
+    var styleElem;
+    if (currentStyle == "url(\"https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.svg\")") {
+        styleElem = "#" + list_id + "::marker {content: url(\"https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet_checked.svg\");}";
     } else {
-        styleElem.innerHTML = "#pickup-moscow::marker {content: url(\"https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.svg\");}";
-        checked = false;
+        styleElem = "#" + list_id + "::marker {content: url(\"https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.svg\");}";
+    }
+
+    switch (list_id) {
+        case 'same-address':
+            styleSameAddress.innerHTML = styleElem;
+            break;
+
+        case 'pickup-moscow':
+            stylePickupMoscow.innerHTML = styleElem;
+            break;
+
+        case 'same-name':
+            styleSameName.innerHTML = styleElem;
+            break;
+
+        case 'same-number':
+            styleSameNumber.innerHTML = styleElem;
+            break;
     }
 }
 
@@ -19,7 +40,6 @@ function changeStatus(cart_button_id) {
     const list_bullet = document.getElementById(cart_button_id.replace(/-button+$/, ''));
 
     toggleCheckFor(cart_button_id.replace(/-button+$/, ''));
-    console.log(window.getComputedStyle(list_bullet, '::marker').getPropertyValue("content"));
 }
 
 function setInputFilter(textbox, inputFilter) {

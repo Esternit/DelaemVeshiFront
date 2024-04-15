@@ -27,6 +27,7 @@ button {
 
 .page-block {
     margin-top: 30px;
+    overflow-x: hidden;
 }
 
 .block-title {
@@ -131,6 +132,8 @@ button {
 }
 
 .counter-number {
+    margin-top: 3px;
+
     font-family: 'Nokora', sans-serif;
     text-align: center;
     font-weight: 400;

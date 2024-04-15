@@ -262,6 +262,12 @@ li::marker {
     margin-left: 8px;
     width: 80px;
     height: inherit;
+    background-color: white;
+}
+
+.charge-switch:active{
+    -webkit-tap-highlight-color: transparent;
+    
 }
 
 /* Hide default HTML checkbox */

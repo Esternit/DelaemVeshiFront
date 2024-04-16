@@ -213,7 +213,7 @@ li>button {
 }
 
 li::marker {
-    content: url("https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.svg");
+    content: url("https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.png");
 }
 
 .other-charges {

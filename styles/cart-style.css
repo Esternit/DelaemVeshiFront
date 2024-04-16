@@ -203,6 +203,10 @@ textarea:focus {
     opacity: 1;
 }
 
+li::marker {
+    content: '';
+}
+
 .list-bullet {
     position: relative;
     right: 15px;

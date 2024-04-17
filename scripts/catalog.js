@@ -148,7 +148,7 @@ function loadHTMLTable(data) {
         console.log(data);
         data.forEach(({ img, title, start_price, spuId }) => {
             catalog += `
-            <a class="product-card" id="${spuId}" href="detail.html?id=${spuId}&page=${page}" onclick="getPage()">
+            <a class="product-card" id="${spuId}" href="#" onclick="getPage()">
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>
@@ -156,6 +156,8 @@ function loadHTMLTable(data) {
                 <div class="price">${start_price} ₽</div>
             </a>
             `;
+
+            //detail.html?id=${spuId}&page=${page}
         });
         const html = `
         <div class="inner">

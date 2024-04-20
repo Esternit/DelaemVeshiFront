@@ -207,19 +207,29 @@ li::marker {
     content: '';
 }
 
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-end;
+}
+
 ul {
     list-style-type: none;
 }
 
 .list-bullet {
     position: relative;
-    right: 15px;
+    right: 20px;
+    top: 10px;
 }
 
 .list-button {
     position: relative;
     right: 15px;
+    overflow: hidden;
 
+    text-align: left;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 24px;

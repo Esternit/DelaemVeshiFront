@@ -8,10 +8,30 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
-		href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Sora:wght@100..800&family=Montserrat:wght@100..900&family=Inter:wght@100..900&&family=Nokora:wght@100;300;400;700;900&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nokora:wght@100;300;400;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Saira+Semi+Condensed:wght@100..900&family=Sora:wght@100..800&family=Rubik+Mono+One&display=swap"
 		rel="stylesheet">
 	<link rel="stylesheet" href="./styles/cart-style.css">
 	<title>Cart</title>
+
+	<!-- Google API Loader -->
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+	<script type="text/javascript">
+		//load jQuery
+		google.load("jquery", "1.7.1");
+
+		//Google Fonts
+		google.load("webfont", "1");
+
+		google.setOnLoadCallback(function () {
+			WebFont.load({
+				google: {
+					families: ['Lobster+Two:700italic,700,400italic,400', 'Alegreya:400,400italic,700']
+				}
+			});
+		});
+	</script>
+
 </head>
 
 <body>
@@ -69,11 +89,13 @@
 		<input class="order-data-input" type="text" id="delivery-address" placeholder="Введите новый адрес..." />
 		<ul>
 			<li>
-				<img class="list-bullet" id="same-address" width="15px" height="15px" src="https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.png" />
+				<img class="list-bullet" id="same-address" width="15px" height="15px"
+					src="https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.png" />
 				<button class="list-button" id="same-address-button" onclick="changeStatus(this.id)">Адрес тот-же!</button>
 			</li>
 			<li>
-				<img class="list-bullet" id="pickup-moscow" width="15px" height="15px" src="https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.png" />
+				<img class="list-bullet" id="pickup-moscow" width="15px" height="15px"
+					src="https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.png" />
 				<button class="list-button" id="pickup-moscow-button" onclick="changeStatus(this.id)">Заберу сам в Москве!</button>
 			</li>
 		</ul>
@@ -84,7 +106,8 @@
 		<input class="order-data-input" type="text" required id="name-surname" placeholder="Введите имя и фамилию..." />
 		<ul>
 			<li>
-				<img class="list-bullet" id="same-name" width="15px" height="15px" src="https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.png" />
+				<img class="list-bullet" id="same-name" width="15px" height="15px"
+					src="https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.png" />
 				<button class="list-button" id="same-name-button" onclick="changeStatus(this.id)">ФИО то-же!</button>
 			</li>
 		</ul>
@@ -95,7 +118,8 @@
 		<input class="order-data-input" type="tel" id="phone-number" placeholder="Введите номер телефона..." />
 		<ul>
 			<li>
-				<img class="list-bullet" id="same-number" width="15px" height="15px" src="https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.png" />
+				<img class="list-bullet" id="same-number" width="15px" height="15px"
+					src="https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.png" />
 				<button class="list-button" id="same-number-button" onclick="changeStatus(this.id)">Номер тот-же!</button>
 			</li>
 		</ul>

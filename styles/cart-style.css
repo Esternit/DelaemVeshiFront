@@ -207,6 +207,10 @@ li::marker {
     content: '';
 }
 
+ul {
+    list-style-type: none;
+}
+
 .list-bullet {
     position: relative;
     right: 15px;

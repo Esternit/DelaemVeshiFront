@@ -37,8 +37,12 @@ function setInputFilter(textbox, inputFilter) {
     });
 }
 
-
-// Install input filters.
+// input filter for phone number
 setInputFilter(document.getElementById("phone-number"), function (value) {
     return /^\+?\d*(\d[ ]?\d*){0,6}$/.test(value);
+});
+
+// input filter for bonus currency amount
+setInputFilter(document.getElementById("spend-bonus"), function (value) {
+    return /^\d*$/.test(value);
 });

@@ -95,7 +95,7 @@ body {
 
 .order-image {
     flex: 0 1 25%;
-    width: 100%;
+    width: 25%;
     aspect-ratio: 1 / 1;
 }
 

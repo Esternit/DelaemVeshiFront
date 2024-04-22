@@ -40,7 +40,7 @@ body {
     font-weight: 400;
 }
 
-.bonuses-currency {
+/* .bonuses-currency {
     display: inline-block;
     border-radius: 50%;
 
@@ -51,6 +51,22 @@ body {
 
     font-weight: 700;
     color: #FFFFFF;
+} */
+
+.bonuses-currency {
+    display: inline-block;
+
+    height: 1.4em;
+    line-height: 1.4em;
+    aspect-ratio: 1 / 1;
+    background-color: #00E8CD;
+    border-radius: 50%;
+
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
 }
 
 .referral-link-container {
@@ -60,7 +76,7 @@ body {
     border-radius: 30px;
     background-color: #14EDD3;
 
-    font-family: "Sora", sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #000000;

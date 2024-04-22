@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cart</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./styles/calculator-style.css">
+</head>
+
+<body>
+	<div class="page-heading">Калькулятор</div>
+
+	<div class="input-block-container">
+		<span class="input-desc">Укажите стоимость в юанях</span>
+		<input type="text" id="yuan-cost" placeholder="0">
+	</div>
+
+	<div class="input-block-container">
+		<span class="input-desc">Выберите тип товара</span>
+		<input type="text" id="item-type" placeholder="0 US">
+	</div>
+
+	<span class="total-sum">ИТОГО: <span id="total-sum-number">12.678 ₽</span></span>
+	<button id="calculate-button">Рассчитать</button>
+
+	<script src="./scripts/calc-filters.js"></script>
+</body>

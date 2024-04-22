@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/orders-style.css">
+</head>
+
+<body>
+    <div style="width: fit-content; height: 30px;">
+        <a href="./index.html" style="height: inherit; text-decoration: none; color: #000000;">
+            <img src="./assets/exit_arrow.png" style="height: inherit; object-fit: contain; margin: 24px 0px 0px 15px;">
+        </a>
+        <span class="page-title">Заказы</span>
+    </div>
+
+    <div class="order-container" style="margin-top: 48px;">
+        <div class="order-overview-container">
+            <div class="order-overview-text">
+                <span id="order-id">#2001</span>
+                <span id="order-cost">9.567₽</span>
+                <span id="order-time">19 марта 20:31</span>
+            </div>
+
+            <div class="order-overview-images">
+                <img class="order-image" src="./assets/shoe.png">
+                <img class="order-image" src="./assets/shoe2.png">
+            </div>
+
+            <!-- add class 'active' to progress -->
+            <ul id="progressbar" class="text-center">
+                <li class="active step0"></li>
+                <li class="active step1"></li>
+                <li class="step2"></li>
+                <li class="step3"></li>
+            </ul>
+
+            <span class="order-progress-text">Производим покупку товаров на платформе Poizon</span>
+        </div>
+    </div>
+
+    <div class="order-container">
+        <div class="order-overview-container">
+            <div class="order-overview-text">
+                <span id="order-id">#1957</span>
+                <span id="order-cost">9.567₽</span>
+                <span id="order-time">5 марта 18:51</span>
+                <span id="order-delivered">доставлен</span>
+            </div>
+
+            <div class="order-overview-images">
+                <img class="order-image" src="./assets/shoe.png">
+                <img class="order-image" src="./assets/shoe2.png">
+            </div>
+        </div>
+    </div>
+</body>

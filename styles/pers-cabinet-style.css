@@ -40,19 +40,6 @@ body {
     font-weight: 400;
 }
 
-/* .bonuses-currency {
-    display: inline-block;
-    border-radius: 50%;
-
-    width: 1.4em;
-    height: 1.4em;
-    line-height: 1.4em;
-    background-color: #00E8CD;
-
-    font-weight: 700;
-    color: #FFFFFF;
-} */
-
 .bonuses-currency {
     display: inline-block;
 
@@ -135,4 +122,9 @@ body {
     font-family: 'Rubik Mono One', sans-serif;
     font-weight: 700;
     font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
 }

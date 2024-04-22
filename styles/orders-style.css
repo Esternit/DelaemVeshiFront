@@ -191,7 +191,7 @@ body {
     content: url("../assets/order_progress_4.png");
 }
 
-.order-progress-text {
+#order-progress-text {
     display: inline-block;
     margin: 0px 30px 18px 30px;
 

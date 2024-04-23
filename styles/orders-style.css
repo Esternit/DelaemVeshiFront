@@ -6,6 +6,10 @@ body {
     background-color: #FFFFFF;
 }
 
+a {
+    text-decoration: none;
+}
+
 .page-title {
     display: inline-block;
     width: 100vw;

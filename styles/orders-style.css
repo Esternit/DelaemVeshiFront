@@ -102,7 +102,8 @@ body div:first-of-type+.order-container {
 #progressbar {
     padding-left: 0px;
     overflow: hidden;
-    color: #455A64;
+    margin: auto 30px;
+    width: calc(100% - 30px);
 }
 
 #progressbar li {
@@ -112,39 +113,75 @@ body div:first-of-type+.order-container {
     list-style-type: none;
 }
 
-#progressbar .step0:before {
-    content: url("../assets/order_progress_1.png");
+#progressbar .cancel:before {
+    background: url("../assets/order_progress_0.png") no-repeat 0 0;
+    background-size: 100%;
+    background-color: #FF5656;
 }
 
 #progressbar .step1:before {
-    content: url("../assets/order_progress_2.png");
+    background: url("../assets/order_progress_1.png") no-repeat 0 0;
+    background-size: 100%;
+    background-color: #D9D9D9;
 }
 
 #progressbar .step2:before {
-    content: url("../assets/order_progress_3.png");
+    background: url("../assets/order_progress_2.png") no-repeat 0 0;
+    background-size: 100%;
+    background-color: #D9D9D9;
 }
 
 #progressbar .step3:before {
-    content: url("../assets/order_progress_4.png");
+    background: url("../assets/order_progress_3.png") no-repeat 4px 2.5px;
+    background-size: 90%;
+    background-color: #D9D9D9;
+}
+
+#progressbar .step4:before {
+    background: url("../assets/order_progress_4.png") no-repeat 0 0;
+    background-size: 100%;
+    background-color: #D9D9D9;
+}
+
+#progressbar .step1.active:before {
+    background: url("../assets/order_progress_1.png") no-repeat 0 0;
+    background-size: 100%;
+    background-color: #22FAE0;
+}
+
+#progressbar .step2.active:before {
+    background: url("../assets/order_progress_2.png") no-repeat 0 0;
+    background-size: 100%;
+    background-color: #22FAE0;
+}
+
+#progressbar .step3.active:before {
+    background: url("../assets/order_progress_3.png") no-repeat 4px 2.5px;
+    background-size: 90%;
+    background-color: #22FAE0;
+}
+
+#progressbar .step4.active:before {
+    background: url("../assets/order_progress_4.png") no-repeat 0 0;
+    background-size: 100%;
+    background-color: #22FAE0;
 }
 
 #progressbar li:before {
-    display: block;
-
+    display: inline-block;
     width: 50px;
     height: 50px;
-    margin: auto;
-    padding: 0px;
+    padding: 5px;
 
-    background: #D9D9D9;
+    content: '';
     border-radius: 50%;
 }
 
-/*ProgressBar connectors*/
+/*progressbar connectors*/
 #progressbar li:after {
     position: absolute;
     left: 0;
-    top: 19px;
+    top: 24px;
     z-index: -1;
 
     width: 100%;
@@ -156,39 +193,29 @@ body div:first-of-type+.order-container {
 
 #progressbar li:last-child:after {
     position: absolute;
-    left: -50%;
+    left: -90%;
 }
 
 #progressbar li:nth-child(2):after,
 #progressbar li:nth-child(3):after {
-    left: -50%;
+    left: -90%;
 }
 
 #progressbar li:first-child:after {
     position: absolute;
-    left: 50%;
+    left: 10%;
 }
 
 /*Color number of the step and the connector before it*/
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #22FAE0;
+    background-color: #22FAE0;
 }
 
-#progressbar .step0.active:before {
-    content: url("../assets/order_progress_1.png");
-}
-
-#progressbar .step1.active:before {
-    content: url("../assets/order_progress_2.png");
-}
-
-#progressbar .step2.active:before {
-    content: url("../assets/order_progress_3.png");
-}
-
-#progressbar .step3.active:before {
-    content: url("../assets/order_progress_4.png");
+/*Color number of the step and the connector before it*/
+#progressbar li.cancel:before,
+#progressbar li.cancel:after {
+    background-color: #FF5656;
 }
 
 #order-progress-text {

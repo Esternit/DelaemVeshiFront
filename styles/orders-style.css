@@ -126,8 +126,8 @@ body div:first-of-type+.order-container {
 }
 
 #progressbar .step2:before {
-    background: url("../assets/order_progress_2.png") no-repeat 0 0;
-    background-size: 100%;
+    background: url("../assets/order_progress_2.png") no-repeat 4px 2.5px;
+    background-size: 90%;
     background-color: #D9D9D9;
 }
 
@@ -138,8 +138,8 @@ body div:first-of-type+.order-container {
 }
 
 #progressbar .step4:before {
-    background: url("../assets/order_progress_4.png") no-repeat 0 0;
-    background-size: 100%;
+    background: url("../assets/order_progress_4.png") no-repeat 4px 2.5px;
+    background-size: 90%;
     background-color: #D9D9D9;
 }
 
@@ -150,8 +150,8 @@ body div:first-of-type+.order-container {
 }
 
 #progressbar .step2.active:before {
-    background: url("../assets/order_progress_2.png") no-repeat 0 0;
-    background-size: 100%;
+    background: url("../assets/order_progress_2.png") no-repeat 4px 2.5px;
+    background-size: 90%;
     background-color: #22FAE0;
 }
 
@@ -162,8 +162,8 @@ body div:first-of-type+.order-container {
 }
 
 #progressbar .step4.active:before {
-    background: url("../assets/order_progress_4.png") no-repeat 0 0;
-    background-size: 100%;
+    background: url("../assets/order_progress_4.png") no-repeat 4px 2.5px;
+    background-size: 90%;
     background-color: #22FAE0;
 }
 

@@ -188,7 +188,7 @@ body {
 }
 
 li::marker {
-    content: url("./../../assets/list_bullet.svg");
+    content: url("./../assets/list_bullet.svg");
 }
 
 .order-contents-data {

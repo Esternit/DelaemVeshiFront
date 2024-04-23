@@ -20,7 +20,7 @@ body {
     color: #000000;
 }
 
-.order-container:first-of-type {
+body div:first-of-type+.order-container {
     margin-top: 40px;
 }
 

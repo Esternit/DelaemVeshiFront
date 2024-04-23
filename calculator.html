@@ -13,11 +13,11 @@
 </head>
 
 <body>
-	<div style="width: fit-content; height: 30px;">
-		<a href="./index.html" style="height: inherit; text-decoration: none; color: #000000;">
-			<img src="./assets/exit_arrow.png" style="height: inherit; object-fit: contain; margin: 24px 0px 0px 15px;">
-		</a>
-	</div>
+	<div class = "coin-container">
+		<img class="coin1" style="position: absolute; width: 216px; height: 216px;" src="./assets/calc_coin.png">
+		 <img class="coin2" style="position: absolute; width: 216px; height: 216px;" src="./assets/calc_coin.png">
+		<img class="coin3" style="position: absolute; width: 216px; height: 216px;" src="./assets/calc_coin.png">
+</div>
 	<div class="page-heading">Калькулятор</div>
 
 	<div class="input-block-container">
@@ -53,11 +53,7 @@
 	<span class="total-sum">ИТОГО: <span id="total-sum-number">12.678 ₽</span></span>
 	<button id="calculate-button">Заказать</button>
 
-	<div style="position: fixed; z-index: -1; top: 0; left: 0; width: 100vw; height: 100vh;">
-		<img class="coin1" style="position: absolute; width: 216px; height: 216px;" src="./assets/calc_coin.png">
-		<!-- <img class="coin2" style="position: absolute; width: 216px; height: 216px;" src="./assets/calc_coin.png">
-		<img class="coin3" style="position: absolute; width: 216px; height: 216px;" src="./assets/calc_coin.png"> -->
-	</div>
+
 
 	<script src="./scripts/calc-filters.js"></script>
     <script src="./scripts/detect-body-overflow.js"></script>

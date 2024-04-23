@@ -1,13 +1,11 @@
+html, 
 body {
-    position: relative;
-    width: 100vw;
-    max-width: 100vw;
-    height: 100vh;
-    max-height: 100vh;
-
     margin: 0;
     padding: 0;
-
+    max-height: 100%;
+    height: 100%; 
+    width: 100%;
+    max-width: 100%;
     overflow: hidden;
     background-color: #00E8CD;
 }
@@ -129,4 +127,13 @@ select {
     bottom: -20px;
     left: -62px;
     transform: rotate(133.83deg);
+}
+
+.coin-container {
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
 }

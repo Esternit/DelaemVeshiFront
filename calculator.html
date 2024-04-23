@@ -13,7 +13,32 @@
 </head>
 
 <body>
+	<div style="width: fit-content; height: 30px;">
+		<a href="./index.html" style="height: inherit; text-decoration: none; color: #000000;">
+			<img src="./assets/exit_arrow.png" style="height: inherit; object-fit: contain; margin: 24px 0px 0px 15px;">
+		</a>
+	</div>
 	<div class="page-heading">Калькулятор</div>
+
+	<div class="input-block-container">
+		<span class="input-desc">Выберите категорию товара</span>
+		<select name="category" id="item-category">
+			<option disabled selected value hidden></option>
+			<option value="shoes_regular">Обувь обычная</option>
+			<option value="shoes_winter">Обувь зима</option>
+			<option value="caps">Кепки/шапки</option>
+			<option value="socks">Носки</option>
+			<option value="tshirts">Футболки/шорты</option>
+			<option value="shirts">Рубашки</option>
+			<option value="hoodies">Худи/свитшоты/штаны</option>
+			<option value="jackets">Куртки/пуховики</option>
+			<option value="windbreakers">Ветровки</option>
+			<option value="backpacks">Рюкзаки</option>
+			<option value="bags_women">Сумки женские</option>
+			<option value="bags_big">Сумки большие</option>
+			<option value="parfume">Парфюм до 1000 юаней</option>
+		</select>
+	</div>
 
 	<div class="input-block-container">
 		<span class="input-desc">Укажите стоимость в юанях</span>
@@ -26,7 +51,13 @@
 	</div>
 
 	<span class="total-sum">ИТОГО: <span id="total-sum-number">12.678 ₽</span></span>
-	<button id="calculate-button">Рассчитать</button>
+	<button id="calculate-button">Заказать</button>
+
+	<div style="position: fixed; z-index: -1; top: 0; left: 0; width: 100vw; height: 100vh;">
+		<img class="coin1" style="position: absolute; width: 216px; height: 216px;" src="./assets/calc_coin.png">
+		<img class="coin2" style="position: absolute; width: 216px; height: 216px;" src="./assets/calc_coin.png">
+		<img class="coin3" style="position: absolute; width: 216px; height: 216px;" src="./assets/calc_coin.png">
+	</div>
 
 	<script src="./scripts/calc-filters.js"></script>
 </body>

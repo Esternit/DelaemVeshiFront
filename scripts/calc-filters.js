@@ -27,8 +27,3 @@ function setInputFilter(textbox, inputFilter) {
 setInputFilter(document.getElementById("yuan-cost"), function (value) {
     return /^$|^[1-9]\d*(\.\d{0,2})?$/.test(value);
 });
-
-// input filter for bonus currency amount
-setInputFilter(document.getElementById("item-type"), function (value) {
-    return /^$|^\d{0,2}((\.\d?)|( [1-2]\/?3?))? ?( E| EU| U| US)?$/.test(value);
-});

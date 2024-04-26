@@ -3,13 +3,13 @@
     list element id is of format: ${reference-name}
 */
 function changeStatus(cart_button_id) {
-    console.log("cart_button_id", cart_button_id);
     var bullet = document.getElementById(cart_button_id.replace(/-button+$/, ''));
-    console.log(bullet.src);
-    if (bullet.src == "https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.png") {
-        bullet.src = "https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet_checked.png";
+    const bullet_src = bullet.src.slice(bullet.src.lastIndexOf("/")+1);
+
+    if (bullet_src == "list_bullet.png") {
+        bullet.src = "./assets/list_bullet_checked.png";
     } else {
-        bullet.src = "https://raw.githubusercontent.com/Esternit/DelaemVeshiFront/main/assets/list_bullet.png";
+        bullet.src = "./assets/list_bullet.png";
     }
 }
 

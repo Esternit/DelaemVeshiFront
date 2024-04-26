@@ -188,7 +188,17 @@ body {
 }
 
 li::marker {
-    content: url("./../assets/list_bullet.svg");
+    content: '';
+}
+
+ul {
+    list-style-type: none;
+}
+
+.list-bullet {
+    position: relative;
+    right: 20px;
+    top: 30px;
 }
 
 .order-contents-data {

@@ -13,16 +13,16 @@ body {
 }
 
 .page-heading {
-    margin: 79px 0px 12px 15px;
+    margin: 20vw 0px 3vw 4vw;
 
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 12vw;
     color: #FFFFFF;
 }
 
 .input-block-container {
-    margin-top: 24px;
+    margin-top: 6vw;
 }
 
 .input-desc {
@@ -31,15 +31,15 @@ body {
 
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 6vw;
     color: #FFFFFF;
 }
 
 input,
 select {
-    width: 70%;
+    width: 70vw;
     margin: 6px 0px 0px 15px;
-    padding: 12px 0px 12px 24px;
+    padding: 3vw 0px 3vw 6vw;
     background-color: rgba(255, 255, 255, 0.7);
 
     border-style: none;
@@ -54,7 +54,7 @@ select {
 
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 6vw;
     color: rgba(0, 0, 0, 1);
 }
 
@@ -92,17 +92,17 @@ select {
 
 .total-sum {
     display: block;
-    margin: 36px 0px 0px 15px;
+    margin: 9vw 0px 0px 4vw;
 
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 8vw;
     color: #FFFFFF;
 }
 
 #calculate-button {
-    margin: 12px 0px 0px 15px;
-    padding: 8px;
+    margin: 3vw 0px 0px 4vw;
+    padding: 2vw;
     background-color: #000000;
 
     border-radius: 20px;
@@ -110,7 +110,7 @@ select {
 
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 8vw;
     color: #FFFFFF;
 }
 

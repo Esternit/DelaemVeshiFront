@@ -77,6 +77,6 @@ function copyToClipboard() {
 			link: copyText
 		})
 	})
-    navigator.clipboard.writeText(copyText);
+    //navigator.clipboard.writeText(copyText);
 }
 loadProfile();

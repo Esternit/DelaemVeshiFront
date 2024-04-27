@@ -17,48 +17,52 @@
         <a href="./personal_cabinet.html" style="height: inherit; text-decoration: none; color: #000000;">
             <img src="./assets/exit_arrow.png" style="height: inherit; object-fit: contain; margin: 24px 0px 0px 15px;">
         </a>
-        <span class="page-title">Заказы</span>
+    </div>
+    <span class="page-title">Заказы</span>
+
+    <div class="order-container">
+        <a href="./order.html">
+            <div class="order-overview-container">
+                <div class="order-overview-text">
+                    <span id="order-id">#2001</span>
+                    <span id="order-cost">9.567₽</span>
+                    <span id="order-time">19 марта 20:31</span>
+                </div>
+
+                <div class="order-overview-images">
+                    <img class="order-image" src="./assets/shoe.png">
+                    <img class="order-image" src="./assets/shoe2.png">
+                </div>
+
+                <!-- add class 'active' to progress -->
+                <!-- add class 'cancel' to show cancel icon -->
+                <ul id="progressbar" class="text-center">
+                    <li class="active step1"></li>
+                    <li class="active step2"></li>
+                    <li class="step3"></li>
+                    <li class="step4"></li>
+                </ul>
+
+                <span id="order-progress-text">Производим покупку товаров на платформе Poizon</span>
+            </div>
+        </a>
     </div>
 
     <div class="order-container">
-        <div class="order-overview-container">
-            <div class="order-overview-text">
-                <span id="order-id">#2001</span>
-                <span id="order-cost">9.567₽</span>
-                <span id="order-time">19 марта 20:31</span>
+        <a href="./order.html">
+            <div class="order-overview-container">
+                <div class="order-overview-text">
+                    <span id="order-id">#1957</span>
+                    <span id="order-cost">9.567₽</span>
+                    <span id="order-time">5 марта 18:51</span>
+                    <span id="order-delivered">доставлен</span>
+                </div>
+
+                <div class="order-overview-images">
+                    <img class="order-image" src="./assets/shoe.png">
+                    <img class="order-image" src="./assets/shoe2.png">
+                </div>
             </div>
-
-            <div class="order-overview-images">
-                <img class="order-image" src="./assets/shoe.png">
-                <img class="order-image" src="./assets/shoe2.png">
-            </div>
-
-            <!-- add class 'active' to progress -->
-            <!-- add class 'cancel' to show cancel icon -->
-            <ul id="progressbar" class="text-center">
-                <li class="active step1"></li>
-                <li class="active step2"></li>
-                <li class="step3"></li>
-                <li class="step4"></li>
-            </ul>
-
-            <span id="order-progress-text">Производим покупку товаров на платформе Poizon</span>
-        </div>
-    </div>
-
-    <div class="order-container">
-        <div class="order-overview-container">
-            <div class="order-overview-text">
-                <span id="order-id">#1957</span>
-                <span id="order-cost">9.567₽</span>
-                <span id="order-time">5 марта 18:51</span>
-                <span id="order-delivered">доставлен</span>
-            </div>
-
-            <div class="order-overview-images">
-                <img class="order-image" src="./assets/shoe.png">
-                <img class="order-image" src="./assets/shoe2.png">
-            </div>
-        </div>
+        </a>
     </div>
 </body>

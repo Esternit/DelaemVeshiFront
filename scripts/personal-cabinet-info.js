@@ -61,7 +61,7 @@ function loadHTMLProfile(data) {
     document.getElementById("profile-name").innerText = data["tg_name"];
     document.getElementById("bonuses-amount").innerText = data["bonuses"];
     document.getElementById("reward-amount").innerText = `+${data["bonus_adds_owner"]}₽`;
-    document.getElementById("referral-link").innerText = data["ref_link"].substring(0,26) + "...";
+    document.getElementById("referral-link").innerText = data["ref_link"];
     copyText = data["ref_link"];
 }
 

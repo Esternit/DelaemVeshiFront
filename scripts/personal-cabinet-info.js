@@ -66,6 +66,17 @@ function loadHTMLProfile(data) {
 }
 
 function copyToClipboard() {
+	window.Telegram.WebApp.showAlert("Ссылка находится в личных сообщениях с ботом");
+	fetch('https://crmback-production.up.railway.app/sendLink', {  //https://crmback-production.up.railway.app
+		headers: {
+			'Content-type': 'application/json'
+		},
+		method: 'POST',
+		body: JSON.stringify({
+			chat_id: window.Telegram.WebApp.initDataUnsafe.user.id,  //window.Telegram.WebApp.initDataUnsafe.user.id
+			link: copyText
+		})
+	})
     navigator.clipboard.writeText(copyText);
 }
 loadProfile();

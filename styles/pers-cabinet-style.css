@@ -80,7 +80,9 @@ body {
 }
 
 #referral-link {
-    margin-left: 12px;
+    margin-top: 0;
+    font-weight: 400;
+    font-size: 12px;
 }
 
 .referral-link-text-container {

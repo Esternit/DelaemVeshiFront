@@ -22,19 +22,19 @@
 	<div class="profile-picture">
 		<img src="./assets/chat_pfp.png">
 	</div>
-	<span class="profile-name">Анна Гальцева</span>
+	<span class="profile-name" id="profile-name"></span>
 
 	<div class="bonuses-container">
-		<span class="bonuses-text">Бонусы: <span id="bonuses-amount">400</span></span>
+		<span class="bonuses-text">Бонусы: <span id="bonuses-amount"></span></span>
 		<div class="bonuses-currency">₽</div>
 	</div>
 
 	<div class="referral-link-container">
-		<span id="reward-amount">+200₽</span>
+		<span id="reward-amount"></span>
 		<span class="reward-description">за приглашённого друга</span>
 		<div class="referral-link-text-container">
 			<span id="referral-link">t.me...</span>
-			<img class="referral-link-img" src="./assets/link_copy_button.png">
+			<img class="referral-link-img" src="./assets/link_copy_button.png" onclick="copyToClipboard()">
 		</div>
 		<div style="text-align: center;">просто скинь ему ссылку</div>
 	</div>
@@ -48,6 +48,7 @@
 	<div class="page-link-container">
 		<a href="faq.html"><span class="page-link-text" id="link-FAQ">FAQ</span></a>
 	</div>
+	<script src="./scripts/personal-cabinet-info.js"></script>
 </body>
 
 </html>

@@ -38,6 +38,13 @@ function loadHTMLOrders(data) {
     console.log(data);
     data=data["data"];
     var TABLE = document.getElementById("orders-table");
+    TABLE.innerHTML = `<div style="width: fit-content; height: 30px;">
+
+    </div>
+    <span class="page-title">Заказы</span>
+
+
+    <script src="./scripts/orders-info.js"></script>`
     var orders = data["orders"];
     var items = data["items"];
     var lastorders = ``;

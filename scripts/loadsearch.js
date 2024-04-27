@@ -45,6 +45,9 @@ function setsearch() {
     }
 
 }
+function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
 
 function resetsearch() {
     const sh = new URLSearchParams(window.location.search).get('search');
@@ -99,7 +102,7 @@ function loadSearchHTMLTable(data) {
                     <img src="${img}" alt="" class="img">
                 </div>
                 <div class="itemname">${title}</div>
-                <div class="price">${start_price} ₽</div>
+                <div class="price">${numberWithSpaces(start_price)} ₽</div>
             </a>
             `;
             /* ₽ */

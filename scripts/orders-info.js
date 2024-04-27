@@ -2,7 +2,7 @@ var BackButton = window.Telegram.WebApp.BackButton;
 BackButton.show();
 
 BackButton.onClick(function () {
-    window.location.href = 'index.html';
+    window.location.href = 'personal-cabinet.html';
 
     BackButton.hide();
 });

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/myaddress-style.css">
+</head>
+
+<body>
+    <div style="width: fit-content; height: 30px;">
+        <a href="./personal_cabinet.html" style="height: inherit; text-decoration: none; color: #000000;">
+            <img src="./assets/exit_arrow.png" style="height: inherit; object-fit: contain; margin: 24px 0px 0px 15px;">
+        </a>
+    </div>
+    <span class="page-title">Мой адрес</span>
+
+    <span class="page-subtitle">Мой ближайший пункт выдачи заказа (ПВЗ) СДЭК<img width="25px" height="25px"
+            src="./assets/address-icon.png"></span>
+
+    <div class="main-container">
+        <div class="input-desc-container">
+            <img width="36px" height="36px" style="margin-left: 25px;" src="./assets/address-icon1.png">
+            <span class="input-title">Город</span>
+        </div>
+        <input class="addr-input" id="city-inp" type="text" placeholder="Введите свой город...">
+
+        <div class="input-desc-container">
+            <img width="36px" height="36px" style="margin-left: 25px;" src="./assets/address-icon2.png">
+            <span class="input-title">Улица</span>
+        </div>
+        <input class="addr-input" id="city-inp" type="text" placeholder="Введите свою улицу...">
+
+        <div class="input-desc-container">
+            <img width="36px" height="36px" style="margin-left: 25px;" src="./assets/address-icon3.png">
+            <span class="input-title">Дом&nbsp;&nbsp;</span>
+        </div>
+        <input class="addr-input" id="city-inp" type="text" placeholder="Введите номер дома...">
+    </div>
+
+    <button id="save-data-button" type="submit" disabled>Сохранить</button>
+</body>

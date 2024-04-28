@@ -68,11 +68,11 @@
 		<input class="order-data-input" type="text" id="delivery-address" placeholder="Введите новый адрес..." />
 		<ul>
 			<li>
-				<img class="list-bullet" id="same-address" width="15px" height="15px" src="./assets/list_bullet.png" />
+				<img class="list-bullet" id="same-address" width="15px" height="15px" onclick="changeStatus(this.id)" src="./assets/list_bullet.png" />
 				<button class="list-button" id="same-address-button" onclick="changeStatus(this.id)">Адрес тот-же!</button>
 			</li>
 			<li>
-				<img class="list-bullet" id="pickup-moscow" width="15px" height="15px" src="./assets/list_bullet.png" />
+				<img class="list-bullet" id="pickup-moscow" width="15px" height="15px" onclick="changeStatus(this.id)" src="./assets/list_bullet.png" />
 				<button class="list-button" id="pickup-moscow-button" onclick="changeStatus(this.id)">Заберу сам в Москве!</button>
 			</li>
 		</ul>
@@ -83,7 +83,7 @@
 		<input class="order-data-input" type="text" required id="name-surname" placeholder="Введите имя и фамилию..." />
 		<ul>
 			<li>
-				<img class="list-bullet" id="same-name" width="15px" height="15px" src="./assets/list_bullet.png" />
+				<img class="list-bullet" id="same-name" width="15px" height="15px" onclick="changeStatus(this.id)" src="./assets/list_bullet.png" />
 				<button class="list-button" id="same-name-button" onclick="changeStatus(this.id)">ФИО то-же!</button>
 			</li>
 		</ul>
@@ -94,7 +94,7 @@
 		<input class="order-data-input" type="tel" id="phone-number" placeholder="Введите номер телефона..." />
 		<ul>
 			<li>
-				<img class="list-bullet" id="same-number" width="15px" height="15px" src="./assets/list_bullet.png" />
+				<img class="list-bullet" id="same-number" width="15px" height="15px" onclick="changeStatus(this.id)" src="./assets/list_bullet.png" />
 				<button class="list-button" id="same-number-button" onclick="changeStatus(this.id)">Номер тот-же!</button>
 			</li>
 		</ul>

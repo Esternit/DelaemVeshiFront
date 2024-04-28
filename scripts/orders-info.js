@@ -62,6 +62,23 @@ function loadHTMLOrders(data) {
         }
         temphtml += `</div>`;
         let check = true;
+        var status_text = "";
+        if(status == "Новый"){
+            status_text = "Новый заказ. Ожидает оплаты";
+        }
+        else if(status == "Оплачен, выкупается"){
+            status_text = "Производим покупку товаров на платформе Poizon";
+        }
+        else if(status == "Доставляется на склад в Китае"){
+            status_text = "Заказ направляется на наш склад в Китае"
+        }
+        else if(status == "Доставляется в Москву"){
+            status_text = "Заказ направляется из Китая в Москву"
+        }
+        else if(status == "Доставлен"){
+            status_text = "Заказ доставлен";
+        }
+
         if(status == "Доставлен"){
             let datecheck = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Moscow"}));
             let Difference_In_Time =datecheck.getTime() - temp.getTime();
@@ -136,7 +153,7 @@ function loadHTMLOrders(data) {
                 <!-- add class 'cancel' to show cancel icon -->
                 ${statushtml}
 
-                <span id="order-progress-text">${status}</span>
+                <span id="order-progress-text">${status_text}</span>
             </div>
         </a>
         </div>` + firstorders;

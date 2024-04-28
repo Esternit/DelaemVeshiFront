@@ -79,15 +79,7 @@ function loadHTMLOrders(data) {
             status_text = "Заказ доставлен";
         }
 
-        if(status == "Доставлен"){
-            let datecheck = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Moscow"}));
-            let Difference_In_Time =datecheck.getTime() - temp.getTime();
-            let Difference_In_Days =Math.round(Difference_In_Time / (1000 * 3600 * 24));
-            if(parseInt(Difference_In_Days,10) > 3){
-                check = false;
-            }
-            
-        }
+
         let d = date.split(" ");
         let mgy = d[0].split("/");
         let mh = d[1].split(":");
@@ -100,6 +92,15 @@ function loadHTMLOrders(data) {
         let datenum = mgy[2];
         let yearnum = mgy[0];
         var temp = new Date(`${yearnum}-${monthnum}-${datenum}`);
+        if(status == "Доставлен"){
+            let datecheck = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Moscow"}));
+            let Difference_In_Time =datecheck.getTime() - temp.getTime();
+            let Difference_In_Days =Math.round(Difference_In_Time / (1000 * 3600 * 24));
+            if(parseInt(Difference_In_Days,10) > 3){
+                check = false;
+            }
+            
+        }
         monthnum = temp.toLocaleString('default', { month: 'long' });
         if(status != "Отменён" && check){ 
 

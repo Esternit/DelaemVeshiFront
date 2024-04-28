@@ -35,13 +35,13 @@ function activateChangeButton(){
 }
 
 function onLoad() {
-    fetch('http://localhost:5000/getUserAdress', {
+    fetch('https://crmback-production.up.railway.app/getUserAdress', {
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
         body: JSON.stringify({ 
-            user_id: 735028324
+            user_id: window.Telegram.WebApp.initDataUnsafe.user.id
             })
     })
     .then(response => response.json())
@@ -55,11 +55,11 @@ function onLoad() {
 function loadHTMLAdress(data){
     console.log(data);
     data = data['data'][0];
-    document.getElementById("city-inp").value = data['adress'].split("/")[0];
-    document.getElementById("street-inp").value = data['adress'].split("/")[1];
-    document.getElementById("house-inp").value = data['adress'].split("/")[2];
-    if(data['adress'].split("/").length == 3){
 
+    if(data['adress'].split("/").length == 3){
+        document.getElementById("city-inp").value = data['adress'].split("/")[0];
+        document.getElementById("street-inp").value = data['adress'].split("/")[1];
+        document.getElementById("house-inp").value = data['adress'].split("/")[2];
         document.getElementById("save-data-button").innerText = "Изменить";
         current_state = "changeble";
     }

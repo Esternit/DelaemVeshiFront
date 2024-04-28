@@ -1,9 +1,9 @@
-html, 
+html,
 body {
     margin: 0;
     padding: 0;
     max-height: 100%;
-    height: 100%; 
+    height: 100%;
     width: 100%;
     max-width: 100%;
     overflow: hidden;
@@ -99,6 +99,9 @@ select {
 }
 
 #calculate-button {
+    position: relative;
+    z-index: 1;
+
     margin: 1vh 0px 0px 4vw;
     padding: 2vw;
     background-color: #000000;

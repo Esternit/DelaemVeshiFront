@@ -49,13 +49,13 @@ function loadHTMLProfile(data) {
 	</div>
 
 	<div class="page-link-container">
-		<a href="orders.html"><span class="page-link-text" id="link-my-orders">Мои заказы</span></a>
+		<a href="./orders.html"><span class="page-link-text" id="link-my-orders">Мои заказы</span></a>
 	</div>
 	<div class="page-link-container">
-		<a href="address.html"><span class="page-link-text" id="link-address">Адрес</span></a>
+		<a href="./myaddress.html"><span class="page-link-text" id="link-address">Адрес</span></a>
 	</div>
 	<div class="page-link-container">
-		<a href="faq.html"><span class="page-link-text" id="link-FAQ">FAQ</span></a>
+		<a href="./faq.html"><span class="page-link-text" id="link-FAQ">FAQ</span></a>
 	</div>
 	<script src="./scripts/personal-cabinet-info.js"></script>`
     document.getElementById("profile-name").innerText = data["tg_name"];

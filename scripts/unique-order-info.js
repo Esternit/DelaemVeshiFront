@@ -22,7 +22,7 @@ function loader(){
     },
     method: 'POST',
     body: JSON.stringify({ 
-        user_id: window.Telegram.WebApp.initDataUnsafe.user.id,
+        user_id: 735028324,
         order_id: params
     }) //window.Telegram.WebApp.initDataUnsafe.user.id
 })
@@ -45,6 +45,24 @@ function loadHTMLorder(data){
     let mh = d[1].split(":");
     let hours = mh[0];
     let minutes = mh[1];
+
+    var status_text = "";
+    if(status == "Новый"){
+        status_text = "Новый заказ. Ожидает оплаты";
+    }
+    else if(status == "Оплачен, выкупается"){
+        status_text = "Производим покупку товаров на платформе Poizon";
+    }
+    else if(status == "Доставляется на склад в Китае"){
+        status_text = "Заказ направляется на наш склад в Китае"
+    }
+    else if(status == "Доставляется в Москву"){
+        status_text = "Заказ направляется из Китая в Москву"
+    }
+    else if(status == "Доставлен"){
+        status_text = "Заказ доставлен";
+    }
+
 
     let monthnum = mgy[1];
     let datenum = mgy[2];
@@ -117,7 +135,7 @@ function loadHTMLorder(data){
 
             ${statushtml}
 
-            <span id="order-progress-text">${status}</span>
+            <span id="order-progress-text">${status_text}</span>
         </div>
     </div>
 

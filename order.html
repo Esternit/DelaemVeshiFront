@@ -8,83 +8,17 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&family=Inter:wght@100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./styles/order-style.css">
 </head>
 
-<body>
-    <div style="width: fit-content; height: 30px;">
-        <a href="./personal_cabinet.html" style="height: inherit; text-decoration: none; color: #000000;">
-            <img src="./assets/exit_arrow.png" style="height: inherit; object-fit: contain; margin: 24px 0px 0px 15px;">
-        </a>
-    </div>
-
-    <span class="page-title">Заказ #2001</span>
-    <span id="order-time">19 марта 20:31</span>
-
-    <div class="order-container">
-        <div class="order-overview-container">
-
-            <!-- add class 'active' to progress -->
-            <!-- add class 'cancel' to show cancel icon -->
-            <ul id="progressbar" class="text-center">
-                <li class="active step1"></li>
-                <li class="active step2"></li>
-                <li class="step3"></li>
-                <li class="step4"></li>
-            </ul>
-
-            <span id="order-progress-text">Производим покупку товаров на платформе Poizon</span>
-        </div>
-    </div>
-
-    <div class="order-contents">
-        <span class="order-contents-title">Состав</span>
-        <div class="order-contents-data">
-            <div id="order-items">
-                <ul>
-                    <li>
-                        <img class="list-bullet" id="same-number" width="15px" height="15px" src="./assets/list_bullet.png" />
-                        <div class="order-item-container">
-                            <div class="order-item-details-container">
-                                <span class="order-item-title">Yeezy Foam Runner</span>
-                                <span class="order-item-size">23US</span>
-                                <span class="order-item-price">34096 ₽</span>
-                                <div class="status-badge" style="background-color: #C388FF;">
-                                    <span class="status-badge-text">Ожидает выкупа</span>
-                                </div>
-                            </div>
-                            <img class="order-item-picture"
-                                src="https://cdn.poizon.com/pro-img/origin-img/20231226/49d71e54d9e44492a933549a3aa37d9a.jpg">
-                        </div>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <img class="list-bullet" id="same-number" width="15px" height="15px" src="./assets/list_bullet.png" />
-                        <div class="order-item-container">
-                            <div class="order-item-details-container">
-                                <span class="order-item-title">Yeezy Foam Runner</span>
-                                <span class="order-item-size">23US</span>
-                                <span class="order-item-price">34096 ₽</span>
-                                <div class="status-badge" style="background-color: #C388FF;">
-                                    <span class="status-badge-text">Ожидает выкупа</span>
-                                </div>
-                            </div>
-                            <img class="order-item-picture"
-                                src="https://cdn.poizon.com/pro-img/origin-img/20231226/49d71e54d9e44492a933549a3aa37d9a.jpg">
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="order-conclusion">
-        <span class="order-contents-title">Итог:</span>
-        <br>
-        <span class="order-total-sum">19.134₽</span>
-    </div>
+<body id="order-table">
+	<svg viewBox="25 25 50 50">
+		<circle r="20" cy="50" cx="50"></circle>
+	  </svg>
+    <script src="./scripts/unique-order-info.js"></script>
 </body>

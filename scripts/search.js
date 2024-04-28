@@ -3,6 +3,9 @@ let limit = 10;
 let page = 1;
 let doning = 0;
 
+function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
 function searchfunc() {
     if (document.querySelector('#search-input') != null) {
         searchValue = document.querySelector('#search-input').value;
@@ -39,7 +42,7 @@ function loadSearchHTMLTable(data) {
                     <img src="${img}" alt="" class="img">
                 </div>
                 <div class="itemname">${title}</div>
-                <div class="price">${start_price} ₽</div>
+                <div class="price">${numberWithSpaces(start_price)} ₽</div>
             </a>
             `;
             /* detail.html?id=${id}&page=${page}&search=${searchValue} */

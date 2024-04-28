@@ -8,61 +8,16 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/orders-style.css">
 </head>
 
-<body>
-    <div style="width: fit-content; height: 30px;">
-        <a href="./personal_cabinet.html" style="height: inherit; text-decoration: none; color: #000000;">
-            <img src="./assets/exit_arrow.png" style="height: inherit; object-fit: contain; margin: 24px 0px 0px 15px;">
-        </a>
-    </div>
-    <span class="page-title">Заказы</span>
+<body id = "orders-table">
+	<svg viewBox="25 25 50 50">
+		<circle r="20" cy="50" cx="50"></circle>
+	  </svg>
 
-    <div class="order-container">
-        <a href="./order.html">
-            <div class="order-overview-container">
-                <div class="order-overview-text">
-                    <span id="order-id">#2001</span>
-                    <span id="order-cost">9.567₽</span>
-                    <span id="order-time">19 марта 20:31</span>
-                </div>
-
-                <div class="order-overview-images">
-                    <img class="order-image" src="./assets/shoe.png">
-                    <img class="order-image" src="./assets/shoe2.png">
-                </div>
-
-                <!-- add class 'active' to progress -->
-                <!-- add class 'cancel' to show cancel icon -->
-                <ul id="progressbar" class="text-center">
-                    <li class="active step1"></li>
-                    <li class="active step2"></li>
-                    <li class="step3"></li>
-                    <li class="step4"></li>
-                </ul>
-
-                <span id="order-progress-text">Производим покупку товаров на платформе Poizon</span>
-            </div>
-        </a>
-    </div>
-
-    <div class="order-container">
-        <a href="./order.html">
-            <div class="order-overview-container">
-                <div class="order-overview-text">
-                    <span id="order-id">#1957</span>
-                    <span id="order-cost">9.567₽</span>
-                    <span id="order-time">5 марта 18:51</span>
-                    <span id="order-delivered">доставлен</span>
-                </div>
-
-                <div class="order-overview-images">
-                    <img class="order-image" src="./assets/shoe.png">
-                    <img class="order-image" src="./assets/shoe2.png">
-                </div>
-            </div>
-        </a>
-    </div>
+    <script src="./scripts/orders-info.js"></script>
 </body>

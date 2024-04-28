@@ -1,6 +1,13 @@
 var styleElem = document.head.appendChild(document.createElement("style"));
 var flipped = false;
+var BackButton = window.Telegram.WebApp.BackButton;
+BackButton.show();
 
+BackButton.onClick(function () {
+    window.location.href = 'index.html';
+
+    BackButton.hide();
+});
 function flipArrow() {
     if (!flipped) {
         styleElem.innerHTML = ".select-container::after {clip-path: polygon(0% 100%, 50% 0%, 100% 100%);}";

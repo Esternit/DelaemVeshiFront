@@ -15,6 +15,9 @@ BackButton.onClick(function () {
     tgk.MainButton.hide();
 });
 
+function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
 tg.expand();
 tg.MainButton.hide();
 console.log("info");
@@ -50,7 +53,7 @@ function loadSearchHTMLTable(data) {
                     <img src="${img}" alt="" class="img">
                 </div>
                 <div class="itemname">${title}</div>
-                <div class="price">${start_price} ₽</div>
+                <div class="price">${numberWithSpaces(start_price)} ₽</div>
             </a>
             `;
             /* ₽ */
@@ -153,7 +156,7 @@ function loadHTMLTable(data) {
                     <img src="${img}" alt="" class="img">
                 </div>
                 <div class="itemname">${title}</div>
-                <div class="price">${start_price} ₽</div>
+                <div class="price">${numberWithSpaces(start_price)} ₽</div>
             </a>
             `;
 

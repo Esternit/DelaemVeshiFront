@@ -7,48 +7,18 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Inter:wght@100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./styles/pers-cabinet-style.css">
 	<title>Personal cabinet</title>
 </head>
 
-<body>
-	<div style=" width: fit-content; height: 30px;">
-		<a href="./index.html" style="height: inherit; text-decoration: none; color: #000000;">
-			<img class="goback-arrow" src="./assets/exit_arrow.png"
-				style="height: inherit; object-fit: contain; margin: 24px 0px 0px 15px;">
-		</a>
-	</div>
-
-	<div class="profile-picture">
-		<img src="./assets/chat_pfp.png">
-	</div>
-	<span class="profile-name">Анна Гальцева</span>
-
-	<div class="bonuses-container">
-		<span class="bonuses-text">Бонусы: <span id="bonuses-amount">400</span></span>
-		<div class="bonuses-currency">₽</div>
-	</div>
-
-	<div class="referral-link-container">
-		<span id="reward-amount">+200₽</span>
-		<span class="reward-description">за приглашённого друга</span>
-		<div class="referral-link-text-container">
-			<span id="referral-link">t.me...</span>
-			<img class="referral-link-img" src="./assets/link_copy_button.png">
-		</div>
-		<div style="text-align: center;">просто скинь ему ссылку</div>
-	</div>
-
-	<div class="page-link-container">
-		<a href="./orders.html"><span class="page-link-text" id="link-my-orders">Мои заказы</span></a>
-	</div>
-	<div class="page-link-container">
-		<a href="./myaddress.html"><span class="page-link-text" id="link-address">Адрес</span></a>
-	</div>
-	<div class="page-link-container">
-		<a href="./#EXTERNAL_LINK"><span class="page-link-text" id="link-FAQ">FAQ</span></a>
-	</div>
+<body id="full-body">
+	<svg viewBox="25 25 50 50">
+		<circle r="20" cy="50" cx="50"></circle>
+	  </svg>
+	<script src="./scripts/personal-cabinet-info.js"></script>
 </body>
 
 </html>

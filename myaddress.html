@@ -17,37 +17,8 @@
     <link rel="stylesheet" href="./styles/myaddress-style.css">
 </head>
 
-<body>
-    <div style="width: fit-content; height: 30px;">
-        <a href="./personal_cabinet.html" style="height: inherit; text-decoration: none; color: #000000;">
-            <img src="./assets/exit_arrow.png" style="height: inherit; object-fit: contain; margin: 24px 0px 0px 15px;">
-        </a>
-    </div>
-    <span class="page-title">Мой адрес</span>
-
-    <span class="page-subtitle">Мой ближайший пункт выдачи заказа (ПВЗ) СДЭК<img width="25px" height="25px"
-            src="./assets/address-icon.png"></span>
-
-    <div class="main-container">
-        <div class="input-desc-container">
-            <img width="36px" height="36px" style="margin-left: 25px;" src="./assets/address-icon1.png">
-            <span class="input-title">Город</span>
-        </div>
-        <input class="addr-input" id="city-inp" type="text" placeholder="Введите свой город..."  oninput="changeButton()">
-
-        <div class="input-desc-container">
-            <img width="36px" height="36px" style="margin-left: 25px;" src="./assets/address-icon2.png">
-            <span class="input-title">Улица</span>
-        </div>
-        <input class="addr-input" id="street-inp" type="text" placeholder="Введите свою улицу..."  oninput="changeButton()">
-
-        <div class="input-desc-container">
-            <img width="36px" height="36px" style="margin-left: 25px;" src="./assets/address-icon3.png">
-            <span class="input-title">Дом&nbsp;&nbsp;</span>
-        </div>
-        <input class="addr-input" id="house-inp" type="text" placeholder="Введите номер дома..."  oninput="changeButton()">
-    </div>
-
-    <button id="save-data-button" type="submit" style="background-color: #D9D9D9;" disabled onclick="activateChangeButton()">Сохранить</button>
-    <script src="./scripts/adress-changer.js"></script>
+<body id="myaddress-body">
+    <svg viewBox="25 25 50 50">
+        <circle r="20" cy="50" cx="50"></circle>
+    </svg>
 </body>

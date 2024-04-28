@@ -30,20 +30,21 @@
             <img width="36px" height="36px" style="margin-left: 25px;" src="./assets/address-icon1.png">
             <span class="input-title">Город</span>
         </div>
-        <input class="addr-input" id="city-inp" type="text" placeholder="Введите свой город...">
+        <input class="addr-input" id="city-inp" type="text" placeholder="Введите свой город..."  oninput="changeButton()">
 
         <div class="input-desc-container">
             <img width="36px" height="36px" style="margin-left: 25px;" src="./assets/address-icon2.png">
             <span class="input-title">Улица</span>
         </div>
-        <input class="addr-input" id="city-inp" type="text" placeholder="Введите свою улицу...">
+        <input class="addr-input" id="street-inp" type="text" placeholder="Введите свою улицу..."  oninput="changeButton()">
 
         <div class="input-desc-container">
             <img width="36px" height="36px" style="margin-left: 25px;" src="./assets/address-icon3.png">
             <span class="input-title">Дом&nbsp;&nbsp;</span>
         </div>
-        <input class="addr-input" id="city-inp" type="text" placeholder="Введите номер дома...">
+        <input class="addr-input" id="house-inp" type="text" placeholder="Введите номер дома..."  oninput="changeButton()">
     </div>
 
-    <button id="save-data-button" type="submit" disabled>Сохранить</button>
+    <button id="save-data-button" type="submit" style="background-color: #D9D9D9;" disabled onclick="activateChangeButton()">Сохранить</button>
+    <script src="./scripts/adress-changer.js"></script>
 </body>

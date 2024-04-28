@@ -103,7 +103,7 @@ body {
 #save-data-button {
     display: block;
     width: calc(100% - 44px);
-    background-color: #D9D9D9;
+   
 
     /*
     color when active
@@ -122,4 +122,9 @@ body {
     font-weight: 700;
     font-size: 40px;
     color: #FFFFFF;
+    transition: 0.4s;
+}
+
+#save-data-button:enabled:active {
+    transform: scale(0.9);
 }

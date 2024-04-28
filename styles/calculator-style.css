@@ -11,7 +11,7 @@ body {
 }
 
 .page-heading {
-    margin: 20vw 0px 3vw 4vw;
+    margin: 1.4em 0px 0.2em 4vw;
 
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -20,11 +20,11 @@ body {
 }
 
 .input-block-container {
-    margin-top: 6vw;
+    margin-top: 2vh;
 }
 
 .input-desc {
-    margin-left: 15px;
+    margin-left: 4vw;
     text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 
     font-family: 'Inter', sans-serif;
@@ -36,8 +36,8 @@ body {
 input,
 select {
     width: 70vw;
-    margin: 6px 0px 0px 15px;
-    padding: 3vw 0px 3vw 6vw;
+    margin: 0.5vh 0px 0px 4vw;
+    padding: 1.2vh 0px 1.2vh 6vw;
     background-color: rgba(255, 255, 255, 0.7);
 
     border-style: none;
@@ -90,7 +90,7 @@ select {
 
 .total-sum {
     display: block;
-    margin: 9vw 0px 0px 4vw;
+    margin: 3vh 0px 0px 4vw;
 
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -99,7 +99,7 @@ select {
 }
 
 #calculate-button {
-    margin: 3vw 0px 0px 4vw;
+    margin: 1vh 0px 0px 4vw;
     padding: 2vw;
     background-color: #000000;
 

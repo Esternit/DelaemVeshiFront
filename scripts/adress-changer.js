@@ -1,5 +1,15 @@
 var current_state = "unsaved";
 
+var BackButton = window.Telegram.WebApp.BackButton;
+BackButton.show();
+
+BackButton.onClick(function () {
+    window.location.href = 'personal_cabinet.html';
+
+    BackButton.hide();
+});
+
+
 function changeButton(){
     if(current_state == "unsaved"){
         current_state = "ready to save";

@@ -59,9 +59,9 @@ body {
 }
 
 .addr-input {
-    width: calc(100% - 40px);
+    width: calc(100% - 30px);
     margin: 10px 20px 10px 10px;
-    padding: 5px 0px 5px 10px;
+    padding: 8px 0px 8px 10px;
 
     border-radius: 15px;
     border-style: none;

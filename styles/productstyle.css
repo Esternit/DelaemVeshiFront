@@ -38,6 +38,10 @@ body {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+#cart-container {
+    transition: opacity 0.5s;
+}
+
 .item-price {
     padding-top: 6px;
     margin: 18px 18px 8px 18px;
@@ -52,6 +56,7 @@ body {
     margin: 0px 23px;
     border-width: 1px;
     border-style: solid none none none;
+    border-color: #D1D1D1;
 }
 
 .item-info-title {
@@ -233,12 +238,56 @@ button:focus {
     }
 }
 
-#myPopUp {
-    display: none;
+#cart-popup {
+    display: block;
+    width: 100vw;
     position: absolute;
-    transform: translateX(-50%);
-    background-color: #FFF;
-    border: 1px solid #DEDEDE;
-    border-radius: 3px;
-    z-index: 99;
+    z-index: 5;
+
+    border-style: none;
+    border-radius: 0px 0px 10px 10px;
+
+    background-color: #14EDD3;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    transform: translateY(-100%);
+    transition: transform 2s;
+
+    text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 20px;
+	color: #000000;
+}
+
+.pre-search-link-cont {
+    width: 100%;
+	display: flex;
+
+	flex-direction: row;
+	justify-content: flex-end;
+
+	margin: 6px 6px 0px 6px;
+}
+
+#cart-item-amount-badge {
+	position: relative;
+	top: -60px;
+	right: -40px;
+
+	height: 22px;
+	width: fit-content;
+	aspect-ratio: 1 / 1;
+
+	border-radius: 50%;
+	background-color: #C6C6C6;
+
+	text-align: center;
+	font-family: 'Inter', sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	color: #000000;
+}
+
+.header-logo-image {
+	height: 60px;
 }

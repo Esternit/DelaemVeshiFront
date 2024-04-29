@@ -15,54 +15,72 @@
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;800&display=swap');
-    </style>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js""></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
 
     <link rel=" stylesheet" href="./styles/productstyle.css">
     <title>Product details</title>
 </head>
 
 <body>
-    <div class=" item-info-container" id="item-picture-container">
-        <div id="usercard"><div class="loader"></div></div>
+    <div id="myPopUp">
+        TEST
+    </div>
+
+    <div id="item-picture-container">
+        <div id="usercard">
+            <div class="loader"></div>
+        </div>
         <p id="naming"></p>
     </div>
 
     <div class="pricing-container">
-        <div class="item-price" id="price"></div>
-        <p class="item-info-title" id="size-eu">Размер, EU</p>
-        <div class="sizes" id="sizing"></div>
-    </div>
-    <div id="myPopUp">
-        TEST
-    </div>
-    <div class="item-info-container">
-        <p class="item-info-title">Что входит в стоимость товара?</p>
-        <p class="item-info">В стоимость товара входит доставка до Москвы и его полное страхование на случай утери или повреждений при перевозке. Доставка в регион (при необходимости) оплачивается получателем по прибытию товара в Москву. Больше ничего доплачивать не нужно  </p>
+        <div class="sizes" id="sizing_____">
+            <div class="size"><span class="size-sizing">EU 35.5</span><br><span class="size-price">11597 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 36</span><br><span class="size-price">11740 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 36.5</span><br><span class="size-price">12460 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 37.5</span><br><span class="size-price">12460 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 38</span><br><span class="size-price">13466 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 38.5</span><br><span class="size-price">14185 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 39</span><br><span class="size-price">15911 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 40</span><br><span class="size-price">20082 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 40.5</span><br><span class="size-price">17062 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 41</span><br><span class="size-price">16630 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 42</span><br><span class="size-price">19363 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 42.5</span><br><span class="size-price">18500 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 44.5</span><br><span class="size-price">18500 ₽</span></div>
+        </div>
+        <div class="sizes" id="sizing_____">
+            <div class="size"><span class="size-sizing">EU 35.5</span><br><span class="size-price">11597 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 36</span><br><span class="size-price">11740 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 36.5</span><br><span class="size-price">12460 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 37.5</span><br><span class="size-price">12460 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 38</span><br><span class="size-price">13466 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 38.5</span><br><span class="size-price">14185 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 39</span><br><span class="size-price">15911 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 40</span><br><span class="size-price">20082 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 40.5</span><br><span class="size-price">17062 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 41</span><br><span class="size-price">16630 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 42</span><br><span class="size-price">19363 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 42.5</span><br><span class="size-price">18500 ₽</span></div>
+            <div class="size"><span class="size-sizing">EU 44.5</span><br><span class="size-price">18500 ₽</span></div>
+        </div>
     </div>
 
-    <div class="item-info-container">
-        <p class="item-info-title">Сроки доставки</p>
-        <p class="item-info">Доставим до Москвы за 12-20 дней. А если не успеем, оформим за наш счет доставку по Москве или в регион
-        </p>
-    </div>
-    
-    <div class="item-info-container">
-        <p class="item-info-title">Оригинальность</p>
-        <p class="item-info">Мы гарантируем, что вы получите оригинальный товар и при наличии сомнений поможем вам выявить его подлинность с помощью независимых экспертов. Если вдруг по какой-либо причине подлинность не подтвердиться, вернем средства в полном размере
-        </p>
+    <button class="poizon-item-link" id="add-to-cart" type="button" onclick="">В корзину</button>
 
-        <p class="item-info">Описание, наименование и товарный знак размещены в информационных целях из открытых источников зарубежной онлайн—платформы
-        </p>
+    <div class="item-info-container">
+        <p class="item-info-title">Доставка</p>
+        <p class="item-info">С момента отправки вашего заказа из Китая, приблизительные сроки доставки - 3 недели. (*Товар может приехать
+            как быстрее, так и в редких случаях чуть задержаться, в зависимости от быстроты прохождения таможни и погодных условий)</p>
     </div>
-
-    <button class="poizon-item-link" id="poizon-button" type="button" onclick = "poizonOpener()">Перейти в Poizon</button>
 
     <script src="scripts/tg-connect.js"></script>
-    </body>
+</body>
 
 </html>

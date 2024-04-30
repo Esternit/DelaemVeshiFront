@@ -18,7 +18,14 @@ function addItemToCart(id) {
 }
 
 jQuery(document).ready(function () {
-    jQuery('.size').click(function () {
+    $("#sizing").delegate(".size", "click", function (event) {
+        console.log("before toggle");
+        jQuery('.size').removeClass('active');
+        jQuery(this).toggleClass('active');
+    });
+
+    $("#sizing2").delegate(".size", "click", function (event) {
+        console.log("before toggle");
         jQuery('.size').removeClass('active');
         jQuery(this).toggleClass('active');
     });
@@ -31,4 +38,4 @@ fetch('https://crmback-production.up.railway.app/addToCart', {  //https://crmbac
     },
     method: 'POST',
     body: item
-})
+});

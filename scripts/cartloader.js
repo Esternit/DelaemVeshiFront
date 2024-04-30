@@ -7,6 +7,7 @@ var activate_button = true;
 var take_MSK = false;
 var standart_adress = "";
 var empty = false;
+var name_holder = {};
 var BackButton = window.Telegram.WebApp.BackButton;
 
 BackButton.show();
@@ -97,11 +98,12 @@ function loadHTMLCart(data) {
                 <div class="cart-item-counter">
                     <span class="counter-button" id="decrease-items" onclick = "deleteitem(${id},${product_id},${size_name},${total_price})">-</span>
                     <span class="counter-number" id="item-counter${product_id }${size_name}">${info[product_id + size_name]}</span>
-                    <span class="counter-button" id="increase-items" onclick="adder('${img}',${total_price},'${product_name}','${size_name}',${product_id},'${product_article}')">+</span>
+                    <span class="counter-button" id="increase-items" onclick="adder('${img}',${total_price},'${size_name}',${product_id},'${product_article}')">+</span>
                 </div>
             </div>
         </div>
     </div>`
+    name_holder[product_id] = product_name;
         full_price += total_price;
         console.log(info)
     });
@@ -233,9 +235,9 @@ function redirecter(){
     window.location.href="index.html";
 }
 
-function adder(img, total_price, product_name, size_name, product_id, product_article){
+function adder(img, total_price,  size_name, product_id, product_article){
     item = JSON.stringify({
-        title: product_name,
+        title: name_holder[product_id],
         pricing: total_price,
         size_name: size_name,
         id: product_id,

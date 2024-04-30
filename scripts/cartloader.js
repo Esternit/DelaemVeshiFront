@@ -187,6 +187,9 @@ function changeBonus() {
     }
 }
 function proceedPayment() {
+    document.getElementById("cart").innerHTML = `<svg viewBox="25 25 50 50">
+        <circle r="20" cy="50" cx="50"></circle>
+    </svg>`
     fetch('https://crmback-production.up.railway.app/createOrder', { //https://crmback-production.up.railway.app
         headers: {
             'Content-type': 'application/json'
@@ -194,6 +197,7 @@ function proceedPayment() {
         method: 'POST',
         body: JSON.stringify({ id: window.Telegram.WebApp.initDataUnsafe.user.id, bonus_used: bonus, adress: document.getElementById("delivery-address").value, phone: document.getElementById("phone-number").value, name: document.getElementById("name-surname").value }) //window.Telegram.WebApp.initDataUnsafe.user.id
     })
+    setTimeout(redirecter, 5000);
 }
 loadCart();
 
@@ -222,4 +226,8 @@ function checkChange(){
         }
         
     }
+}
+
+function redirecter(){
+    window.location.href="index.html";
 }

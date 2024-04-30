@@ -97,7 +97,7 @@ function loadHTMLCart(data) {
                 <div class="cart-item-counter">
                     <span class="counter-button" id="decrease-items" onclick = "deleteitem(${id},${product_id},${size_name},${total_price})">-</span>
                     <span class="counter-number" id="item-counter${product_id }${size_name}">${info[product_id + size_name]}</span>
-                    <span class="counter-button" id="increase-items">+</span>
+                    <span class="counter-button" id="increase-items" onclick="adder('${img}',${total_price},'${product_name}','${size_name}',${product_id},'${product_article}')">+</span>
                 </div>
             </div>
         </div>
@@ -231,4 +231,25 @@ function checkChange(){
 
 function redirecter(){
     window.location.href="index.html";
+}
+
+function adder(img, total_price, product_name, size_name, product_id, product_article){
+    item = JSON.stringify({
+        title: product_name,
+        pricing: total_price,
+        size_name: size_name,
+        id: product_id,
+        img: img,
+        article: product_article,
+        user_id: window.Telegram.WebApp.initDataUnsafe.user.id,
+        store: "DelaemVeshi"
+    });
+    document.getElementById("item-counter" + pid+sizen).textContent = document.getElementById("item-counter" + pid+sizen).textContent + 1;
+    fetch('https://crmback-production.up.railway.app/addToCart', {
+        headers: {
+            'Content-type': 'application/json'
+        },
+        method: 'POST',
+        body: item
+    })
 }

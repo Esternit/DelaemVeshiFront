@@ -4,14 +4,22 @@ function addItemToCart(id) {
 
     var cart = document.getElementById("cart-container");
     cart.style.opacity = "0";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    setTimeout(function() {
+    setTimeout(function () {
         cart.style.visibility = "hidden";
     }, 500);
 
-    setTimeout(function() {
+    setTimeout(function () {
         popup.style.transform = "translateY(-100%)";
         cart.style.visibility = "visible";
         cart.style.opacity = "1";
     }, 15000);
 }
+
+jQuery(document).ready(function () {
+    jQuery('.size').click(function () {
+        jQuery('.size').removeClass('active');
+        jQuery(this).toggleClass('active');
+    });
+});

@@ -11,6 +11,13 @@ function changeStatus(cart_button_id) {
     } else {
         bullet.src = "./assets/list_bullet.png";
     }
+    take_MSK = !take_MSK;
+    if(take_MSK){
+        document.getElementById("delivery-address").value = "Заберу в Москве";
+    }
+    else{
+        document.getElementById("delivery-address").value = standart_adress;
+    }
 }
 
 function setInputFilter(textbox, inputFilter) {

@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="./styles/cart-style.css">
 </head>
 
-<body>
+<body id="cart">
 	<div style=" width: fit-content; height: 30px;">
 
 	</div>
@@ -26,52 +26,15 @@
 	<div class="page-block">
 		<span class="block-title">Состав</span>
 		<div id="cart-item-container">
-			<div class="cart-item">
-				<div class="cart-item-image">
-					<img id="cart-item-img-src" src="./assets/jordan_logo.png">
-				</div>
-				<div class="cart-item-description">
-					<span class="cart-item-name">Nike AirMax 23</span>
-					<span class="cart-item-size">45EU</span>
-					<div class="cart-item-subcont">
-						<span class="cart-item-price">9.567₽</span>
-						<div class="cart-item-counter">
-							<span class="counter-button" id="decrease-items">-</span>
-							<span class="counter-number" id="item-counter">0</span>
-							<span class="counter-button" id="increase-items">+</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="cart-item">
-				<div class="cart-item-image">
-					<img id="cart-item-img-src" src="./assets/jordan_logo.png">
-				</div>
-				<div class="cart-item-description">
-					<span class="cart-item-name">Nike AirMax 23</span>
-					<span class="cart-item-size">45EU</span>
-					<div class="cart-item-subcont">
-						<span class="cart-item-price">9.567₽</span>
-						<div class="cart-item-counter">
-							<span class="counter-button" id="decrease-items">-</span>
-							<span class="counter-number" id="item-counter">0</span>
-							<span class="counter-button" id="increase-items">+</span>
-						</div>
-					</div>
-				</div>
-			</div>
+
 		</div>
 	</div>
 
 	<div class="page-block">
 		<span class="block-title">Адрес<span style="color: #FF7C03;">*</span></span>
-		<input class="order-data-input" type="text" id="delivery-address" placeholder="Введите новый адрес..." />
+		<input class="order-data-input" type="text" id="delivery-address" placeholder="Введите новый адрес..." onchange="checkChange()"/>
 		<ul>
-			<li>
-				<img class="list-bullet" id="same-address" width="15px" height="15px" onclick="changeStatus(this.id)"
-					src="./assets/list_bullet.png" />
-				<button class="list-button" id="same-address-button" onclick="changeStatus(this.id)">Адрес тот-же!</button>
-			</li>
+
 			<li>
 				<img class="list-bullet" id="pickup-moscow" width="15px" height="15px" onclick="changeStatus(this.id)"
 					src="./assets/list_bullet.png" />
@@ -82,31 +45,23 @@
 
 	<div class="page-block">
 		<span class="block-title">Ваши ФИО<span style="color: #FF7C03;">*</span></span>
-		<input class="order-data-input" type="text" required id="name-surname" placeholder="Введите имя и фамилию..." />
+		<input class="order-data-input" type="text" required id="name-surname" placeholder="Введите имя и фамилию..." onchange="checkChange()"/>
 		<ul>
-			<li>
-				<img class="list-bullet" id="same-name" width="15px" height="15px" onclick="changeStatus(this.id)"
-					src="./assets/list_bullet.png" />
-				<button class="list-button" id="same-name-button" onclick="changeStatus(this.id)">ФИО то-же!</button>
-			</li>
+
 		</ul>
 	</div>
 
 	<div class="page-block">
 		<span class="block-title">Ваш номер<span style="color: #FF7C03;">*</span></span>
-		<input class="order-data-input" type="tel" id="phone-number" placeholder="Введите номер телефона..." />
+		<input class="order-data-input" type="tel" id="phone-number" placeholder="Введите номер телефона..." onchange="checkChange()"/>
 		<ul>
-			<li>
-				<img class="list-bullet" id="same-number" width="15px" height="15px" onclick="changeStatus(this.id)"
-					src="./assets/list_bullet.png" />
-				<button class="list-button" id="same-number-button" onclick="changeStatus(this.id)">Номер тот-же!</button>
-			</li>
+
 		</ul>
 	</div>
 
-	<div class="other-charges">
+	<div class="other-charges" id = "bonuses-data">
 		<span style="display: inline-flex;align-items: center;">Потратить</span>
-		<input class="charge-amount" placeholder="200" type="tel" id="spend-bonus"></input>
+		<input class="charge-amount" type="tel" id="spend-bonus"></input>
 		<div class="bonuses-currency">₽</div>
 		<label class="charge-switch">
 			<input type="checkbox">
@@ -114,12 +69,12 @@
 		</label>
 	</div>
 
-	<div class="page-block">
+	<div class="page-block" id = "full-price">
 		<span class="block-title" style="display: inline-block; width: 100%;">Итог:</span>
-		<span id="total-price">19.134₽</span>
+		<span id="total-price"></span>
 	</div>
 
-	<button id="pay-button">Оформить</button>
+	<button id="pay-button" disabled onclick="proceedPayment()">Оформить</button>
 
 	<script src="./scripts/cartloader.js"></script>
 	<script src="./scripts/cart-bullets.js"></script>

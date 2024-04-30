@@ -14,4 +14,13 @@ function addItemToCart(id) {
         cart.style.visibility = "visible";
         cart.style.opacity = "1";
     }, 15000);
+
+    console.log("called");
+    fetch('http://localhost:5000/addToCart', {  //https://crmback-production.up.railway.app
+        headers: {
+            'Content-type': 'application/json'
+        },
+        method: 'POST',
+        body: item
+    })
 }

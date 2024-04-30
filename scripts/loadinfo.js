@@ -2,6 +2,10 @@ let tg = window.Telegram.WebApp;
 
 tg.expand();
 
+function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 
@@ -54,17 +58,18 @@ function loadHTMLTable(data) {
         <div class="carousel-control-next" href="#itemCarousel" role="button" data-slide="next"></div>
     </div>
     `;
-    // const ROOT_SIZIING = document.getElementById('sizing');
+    const ROOT_SIZIING = document.getElementById('sizing');
+    const ROOT_SIZIING2 = document.getElementById('sizing2');
     const ROOT_PRODUCTS = document.getElementById('usercard');
+    let countsizes=0;
 
     innerData.forEach(({ name_size, price }) => {
+        countsizes++;
         let inner = document.createElement('div');
         inner.className = 'size';
-        inner.innerHTML = ` ${name_size}<br />${price} ₽`;
+        inner.innerHTML = ` <span class="size-sizing">EU ${name_size}</span><br><span class="size-price">${numberWithSpaces(price)} ₽</span>`;
         inner.addEventListener("click", function () {
             // replacing price
-            const PRICE = document.getElementById('price');
-            PRICE.innerText = price + " ₽";
 
             // showing purchase button
             item = JSON.stringify({
@@ -75,16 +80,16 @@ function loadHTMLTable(data) {
                 img: outData[0]["img"],
                 article: outData[0]["article"],
                 user_id: window.Telegram.WebApp.initDataUnsafe.user.id,
-                user_name: window.Telegram.WebApp.initDataUnsafe.user.username,
-                user_first: window.Telegram.WebApp.initDataUnsafe.user.first_name,
                 store: "DelaemVeshi"
             });
             console.log(item);
-            tg.MainButton.setText("Добавить товар в корзину");
-            tg.MainButton.show();
         })
-
-        // ROOT_SIZIING.appendChild(inner);
+        if(countsizes > 8){
+            ROOT_SIZIING2.appendChild(inner);
+        }
+        else{
+            ROOT_SIZIING.appendChild(inner);
+        }
     });
 
 
@@ -125,7 +130,6 @@ function moveSlideByTouch(event) {
     $(".carousel").one('touchmove', function (event) {
         const xMove = event.originalEvent.touches[0].pageX;
         const sensitivityInPx = 5;
-        console.log("here111");
 
         if (Math.floor(xClick - xMove) > sensitivityInPx) {
             $(".carousel").find(".carousel-control-next").click();
@@ -139,18 +143,7 @@ function moveSlideByTouch(event) {
     });
 }
 
-Telegram.WebApp.onEvent("mainButtonClicked", function () {
-    console.log(item);
-    fetch('https://crmback-production.up.railway.app/addToCart', {
-        headers: {
-            'Content-type': 'application/json'
-        },
-        method: 'POST',
-        body: item
-    })
 
-    tg.MainButton.hide();
-});
 
 function test() {
     console.log(item);
@@ -214,4 +207,9 @@ function testfunc() {
 
     BackButton.hide();
     tg.MainButton.hide();
+}
+
+
+function openCart(){
+    window.location.href = "cart.html";
 }

@@ -96,7 +96,7 @@ function loadHTMLCart(data) {
             <div class="cart-item-subcont">
                 <span class="cart-item-price">${numberWithSpaces(total_price)} ₽</span>
                 <div class="cart-item-counter">
-                    <span class="counter-button" id="decrease-items" onclick = "deleteitem(${id},${product_id},${size_name},${total_price})">-</span>
+                    <span class="counter-button" id="decrease-items" onclick = "deleteitem(${id},${product_id},'${size_name}',${total_price})">-</span>
                     <span class="counter-number" id="item-counter${product_id }${size_name}">${info[product_id + size_name]}</span>
                     <span class="counter-button" id="increase-items" onclick="adder('${img}',${total_price},'${size_name}',${product_id},'${product_article}')">+</span>
                 </div>
@@ -246,7 +246,7 @@ function adder(img, total_price,  size_name, product_id, product_article){
         user_id: window.Telegram.WebApp.initDataUnsafe.user.id,
         store: "DelaemVeshi"
     });
-    document.getElementById("item-counter" + product_id+size_name).textContent = document.getElementById("item-counter" + product_id+size_name).textContent + 1;
+    document.getElementById("item-counter" + product_id+size_name).textContent = parseInt(document.getElementById("item-counter" + product_id+size_name).textContent,10) + 1;
     fetch('https://crmback-production.up.railway.app/addToCart', {
         headers: {
             'Content-type': 'application/json'

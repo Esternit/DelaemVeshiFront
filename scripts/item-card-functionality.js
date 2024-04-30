@@ -16,7 +16,7 @@ function addItemToCart(id) {
     }, 15000);
 
     console.log("called");
-    fetch('http://localhost:5000/addToCart', {  //https://crmback-production.up.railway.app
+    fetch('https://crmback-production.up.railway.app/addToCart', {  //https://crmback-production.up.railway.app
         headers: {
             'Content-type': 'application/json'
         },

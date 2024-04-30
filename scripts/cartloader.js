@@ -246,7 +246,7 @@ function adder(img, total_price,  size_name, product_id, product_article){
         user_id: window.Telegram.WebApp.initDataUnsafe.user.id,
         store: "DelaemVeshi"
     });
-    document.getElementById("item-counter" + product_id+size_name).textContent = document.getElementById("item-counter" + pid+sizen).textContent + 1;
+    document.getElementById("item-counter" + product_id+size_name).textContent = document.getElementById("item-counter" + product_id+size_name).textContent + 1;
     fetch('https://crmback-production.up.railway.app/addToCart', {
         headers: {
             'Content-type': 'application/json'

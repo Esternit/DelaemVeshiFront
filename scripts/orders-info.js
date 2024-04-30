@@ -27,7 +27,7 @@ function loadOrders() {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ user_id: 735028324 }) //window.Telegram.WebApp.initDataUnsafe.user.id
+        body: JSON.stringify({ user_id: window.Telegram.WebApp.initDataUnsafe.user.id }) //window.Telegram.WebApp.initDataUnsafe.user.id
     })
         .then(response => response.json())
         .then(data => loadHTMLOrders(data));

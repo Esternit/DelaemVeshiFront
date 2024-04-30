@@ -22,7 +22,7 @@ function loader(){
     },
     method: 'POST',
     body: JSON.stringify({ 
-        user_id: 735028324,
+        user_id: window.Telegram.WebApp.initDataUnsafe.user.id ,
         order_id: params
     }) //window.Telegram.WebApp.initDataUnsafe.user.id
 })

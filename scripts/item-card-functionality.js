@@ -23,3 +23,12 @@ jQuery(document).ready(function () {
         jQuery(this).toggleClass('active');
     });
 });
+
+console.log("called");
+fetch('https://crmback-production.up.railway.app/addToCart', {  //https://crmback-production.up.railway.app
+    headers: {
+        'Content-type': 'application/json'
+    },
+    method: 'POST',
+    body: item
+})

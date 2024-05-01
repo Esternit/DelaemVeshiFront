@@ -39,7 +39,7 @@ function loadCart() {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ id: window.Telegram.WebApp.initDataUnsafe.user.id }) //window.Telegram.WebApp.initDataUnsafe.user.id
+        body: JSON.stringify({ id: window.Telegram.WebApp.initDataUnsafe.user.id}) //window.Telegram.WebApp.initDataUnsafe.user.id
     })
         .then(response => response.json())
         .then(data => loadHTMLCart(data));
@@ -142,6 +142,7 @@ function deleteitem(id, pid,sizen,price) {
         TABLE.removeChild(document.getElementById(""+pid+sizen));
     }
     document.getElementById("total-price").textContent = `${numberWithSpaces(full_pricing - price)} ₽`;
+    full_pricing = full_pricing - price;
     fetch('https://crmback-production.up.railway.app/deleteItem', {
         headers: {
             'Content-type': 'application/json'
@@ -236,6 +237,8 @@ function redirecter(){
 }
 
 function adder(img, total_price,  size_name, product_id, product_article){
+    document.getElementById("total-price").textContent = `${numberWithSpaces(full_pricing - total_price)} ₽`;
+    full_pricing = full_pricing + total_price;
     item = JSON.stringify({
         title: name_holder[product_id],
         pricing: total_price,

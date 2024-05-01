@@ -20,8 +20,16 @@ BackButton.onClick(function () {
     const Id = new URLSearchParams(window.location.search).get('id');
     const paging = new URLSearchParams(window.location.search).get('page');
     const sh = new URLSearchParams(window.location.search).get('search');
+    let minprice = new URLSearchParams(window.location.search).get('minprice');
+    let maxprice = new URLSearchParams(window.location.search).get('maxprice');
+    let selectedBrand = new URLSearchParams(window.location.search).get('brand');
+    let selectedActivity = new URLSearchParams(window.location.search).get('activity');
+    let selectedSize = new URLSearchParams(window.location.search).get('size');
     if (sh != null) {
         window.location.href = 'search.html?page=' + paging + "&spuds=" + Id + "&search=" + sh;
+    }    
+    else if(minprice != null && maxprice != null && selectedBrand != null && selectedActivity != null && selectedSize != null){
+        window.location.href =`filters_result.html?minprice=${minprice}&maxprice=${maxprice}&brand=${selectedBrand}&activity=${selectedActivity}&size=${selectedSize}&page=${paging}&spuds=${Id}`
     }
     else {
         doning = 1;
@@ -158,8 +166,16 @@ function test() {
     const Id = new URLSearchParams(window.location.search).get('id');
     const paging = new URLSearchParams(window.location.search).get('page');
     const sh = new URLSearchParams(window.location.search).get('search');
+    let minprice = new URLSearchParams(window.location.search).get('minprice');
+    let maxprice = new URLSearchParams(window.location.search).get('maxprice');
+    let selectedBrand = new URLSearchParams(window.location.search).get('brand');
+    let selectedActivity = new URLSearchParams(window.location.search).get('activity');
+    let selectedSize = new URLSearchParams(window.location.search).get('size');
     if (sh != null) {
         window.location.href = 'search.html?page=' + paging + "&spuds=" + Id + "&search=" + sh;
+    }
+    else if(minprice != null && maxprice != null && selectedBrand != null && selectedActivity != null && selectedSize != null){
+        window.location.href =`filters_result.html?minprice=${minprice}&maxprice=${maxprice}&brand=${selectedBrand}&activity=${selectedActivity}&size=${selectedSize}&page=${paging}&spuds=${Id}`
     }
     else {
         doning = 1;

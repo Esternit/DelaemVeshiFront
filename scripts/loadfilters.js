@@ -55,7 +55,6 @@ function loadFilters(){
     selectedSize = new URLSearchParams(window.location.search).get('size');
     page = new URLSearchParams(window.location.search).get('page');
     
-
     if(page != 1){
         needscroll = true;
         fetch('https://crmback-production.up.railway.app/loadFilters', {  //https://crmback-production.up.railway.app
@@ -78,7 +77,6 @@ function loadFilters(){
         })
     }
     else{
-
         fetch('https://crmback-production.up.railway.app/loadFilters', {  //https://crmback-production.up.railway.app
         headers: {
             'Content-type': 'application/json'

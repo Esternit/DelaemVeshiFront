@@ -14,6 +14,7 @@ BackButton.onClick(function () {
     BackButton.hide();
 });
 function flipArrow() {
+    console.log(flipped);
     if (!flipped) {
         styleElem.innerHTML = ".select-container::after {clip-path: polygon(0% 100%, 50% 0%, 100% 100%);}";
         flipped = true;

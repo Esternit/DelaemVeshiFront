@@ -78,6 +78,7 @@ function loadFilters(){
         })
     }
     else{
+
         fetch('https://crmback-production.up.railway.app/loadFilters', {  //https://crmback-production.up.railway.app
         headers: {
             'Content-type': 'application/json'

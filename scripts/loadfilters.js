@@ -26,7 +26,7 @@ function afterLoad(){
     selectedBrand = new URLSearchParams(window.location.search).get('brand');
     selectedActivity = new URLSearchParams(window.location.search).get('activity');
     selectedSize = new URLSearchParams(window.location.search).get('size');
-    page = new URLSearchParams(window.location.search).get('page');
+    
     fetch('https://crmback-production.up.railway.app/loadFilters', {  //https://crmback-production.up.railway.app
     headers: {
         'Content-type': 'application/json'

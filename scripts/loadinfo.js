@@ -55,6 +55,46 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadHTMLTable(data) {
+    document.getElementById('full-body').innerHTML = ` <div id="cart-popup">
+    <span>Добавлено в корзину</span>
+    <br>
+    <span style="padding: 0px 1.4em; background-color: #FFFFFF; border-radius: 5px;" onclick = "openCart()">Оформить заказ</span>
+</div>
+
+<div id="item-picture-container">
+    <!--<button onclick="test()">pick</button> -->
+    <div class="pre-search-link-cont" id="cart-container">
+        <a href="./cart.html">
+            <img class="header-logo-image" src="./assets/cart_image.png">
+            <div id="cart-item-amount-badge">0</div>
+        </a>
+    </div>
+
+    <div id="usercard">
+        <div class="loader"></div>
+    </div>
+    <p id="naming"></p>
+</div>
+
+<div class="pricing-container">
+    <div class="sizes" id="sizing">
+
+    </div>
+    <div class="sizes" id="sizing2">
+
+    </div>
+</div>
+
+<button class="poizon-item-link" id="add-to-cart" type="button" onclick="addItemToCart(this.id)">В корзину</button>
+
+<div class="item-info-container">
+    <p class="item-info-title">Доставка</p>
+    <p class="item-info">С момента отправки вашего заказа из Китая, приблизительные сроки доставки - 3 недели. (*Товар может приехать
+        как быстрее, так и в редких случаях чуть задержаться, в зависимости от быстроты прохождения таможни и погодных условий)</p>
+</div>
+
+<script src="scripts/tg-connect.js"></script>
+<script src="scripts/item-card-functionality.js"></script>`;
     const outData = data['base'];
     const innerData = data['sizes']
     let html = `

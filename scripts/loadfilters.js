@@ -8,6 +8,7 @@ var maxprice;
 var selectedBrand;
 var selectedActivity;
 var selectedSize;
+var BackButton = window.Telegram.WebApp.BackButton;
 
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");

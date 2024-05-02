@@ -3,7 +3,7 @@ var flipped = false;
 var BackButton = window.Telegram.WebApp.BackButton;
 var selectedBrand = "Adidas";
 var selectedActivity = "running";
-var selectedSize = "35";
+var selectedSize = "";
 var minprice = 0;
 var maxprice = 0;
 BackButton.show();

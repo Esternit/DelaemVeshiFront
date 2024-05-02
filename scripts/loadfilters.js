@@ -12,7 +12,13 @@ var selectedSize;
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
+BackButton.show();
 
+BackButton.onClick(function () {
+    window.location.href = 'filters.html';
+
+    BackButton.hide();
+});
 function afterLoad(){
     minprice = new URLSearchParams(window.location.search).get('minprice');
     maxprice = new URLSearchParams(window.location.search).get('maxprice');
@@ -20,7 +26,7 @@ function afterLoad(){
     selectedActivity = new URLSearchParams(window.location.search).get('activity');
     selectedSize = new URLSearchParams(window.location.search).get('size');
     page = new URLSearchParams(window.location.search).get('page');
-    fetch('https://rmstoreapi-production.up.railway.app/loadFilters', {  //https://rmstoreapi-production.up.railway.app
+    fetch('https://crmback-production.up.railway.app/loadFilters', {  //https://crmback-production.up.railway.app
     headers: {
         'Content-type': 'application/json'
     },
@@ -40,15 +46,17 @@ function afterLoad(){
     })
 }
 function loadFilters(){
+
     minprice = new URLSearchParams(window.location.search).get('minprice');
     maxprice = new URLSearchParams(window.location.search).get('maxprice');
     selectedBrand = new URLSearchParams(window.location.search).get('brand');
     selectedActivity = new URLSearchParams(window.location.search).get('activity');
     selectedSize = new URLSearchParams(window.location.search).get('size');
     page = new URLSearchParams(window.location.search).get('page');
+
     if(page != 1){
         needscroll = true;
-        fetch('https://rmstoreapi-production.up.railway.app/loadFilters', {  //https://rmstoreapi-production.up.railway.app
+        fetch('https://crmback-production.up.railway.app/loadFilters', {  //https://crmback-production.up.railway.app
         headers: {
             'Content-type': 'application/json'
         },
@@ -68,7 +76,7 @@ function loadFilters(){
         })
     }
     else{
-        fetch('https://rmstoreapi-production.up.railway.app/loadFilters', {  //https://rmstoreapi-production.up.railway.app
+        fetch('https://crmback-production.up.railway.app/loadFilters', {  //https://crmback-production.up.railway.app
         headers: {
             'Content-type': 'application/json'
         },
@@ -94,6 +102,7 @@ loadFilters();
 
 function loadHTMLTable(data) {
     const ROOT_PRODUCTS = document.getElementById('listing');
+    console.log(data);
     if (data.length > 0) {
         console.log(data.length);
         let catalog = '';

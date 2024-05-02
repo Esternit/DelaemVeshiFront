@@ -30,7 +30,7 @@ function selectSize(name_size) {
 }
 
 function changeStatus(filter_id) {
-    let filter = document.getElementById(selectedBrand);
+    let filter = document.getElementById(selectedActivity);
     var bgColor = getStyle(filter, 'backgroundColor');
 
     filter.style.backgroundColor = "#D9D9D9";
@@ -50,7 +50,7 @@ function changeStatus(filter_id) {
 }
 
 function changeStatusBrand(filter_id) {
-    let filter = document.getElementById(selectedActivity);
+    let filter = document.getElementById(selectedBrand);
     var bgColor = getStyle(filter, 'backgroundColor');
 
     filter.style.backgroundColor = "#D9D9D9";
@@ -98,7 +98,7 @@ function changePricing(type){
 }
 
 function loadSizes() {
-    fetch('https://rmstoreapi-production.up.railway.app/getAvailableSizes', {  //https://rmstoreapi-production.up.railway.app
+    fetch('https://crmback-production.up.railway.app/getAvailableSizes', {  //https://crmback-production.up.railway.app
         headers: {
             'Content-type': 'application/json'
         },
@@ -157,22 +157,5 @@ loadSizes();
 function saveFilters(){
     console.log(minprice, maxprice, selectedBrand, selectedActivity, selectedSize);
     window.location.href=`filters_result.html?page=1&minprice=${minprice}&maxprice=${maxprice}&brand=${selectedBrand}&activity=${selectedActivity}&size=${selectedSize}`
-    fetch('https://rmstoreapi-production.up.railway.app/loadFilters', {  //https://rmstoreapi-production.up.railway.app
-        headers: {
-            'Content-type': 'application/json'
-        },
-        method: 'POST',
-        body: JSON.stringify({minPrice: minprice, 
-            maxPrice: maxprice,
-            brand: selectedBrand, 
-            category: selectedActivity, 
-            size: selectedSize,
-            limit: 10,
-            page: 1
-        })
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
+
 }

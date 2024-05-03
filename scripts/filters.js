@@ -1,11 +1,13 @@
 var styleElem = document.head.appendChild(document.createElement("style"));
 var flipped = false;
 var BackButton = window.Telegram.WebApp.BackButton;
-var selectedBrand = "Adidas";
-var selectedActivity = "running";
+var selectedBrand = [];
+var selectedActivity = [];
 var selectedSize = "";
 var minprice = 0;
 var maxprice = 0;
+var tempBrands = [];
+var tempActivity = ["footwear/sport/running", "footwear/sport/basketball", "footwear/sport/soccer" ,"footwear/sport/training", "footwear/sport/golf", "footwear/sport/tennis"];
 BackButton.show();
 
 BackButton.onClick(function () {
@@ -31,11 +33,11 @@ function selectSize(name_size) {
 }
 
 function changeStatus(filter_id) {
-    let filter = document.getElementById(selectedActivity);
-    var bgColor = getStyle(filter, 'backgroundColor');
+    // let filter = document.getElementById(selectedActivity);
+    // var bgColor = getStyle(filter, 'backgroundColor');
 
-    filter.style.backgroundColor = "#D9D9D9";
-    filter.style.color = "#000000";
+    // filter.style.backgroundColor = "#D9D9D9";
+    // filter.style.color = "#000000";
 
     filter = document.getElementById(filter_id);
     var bgColor = getStyle(filter, 'backgroundColor');
@@ -43,19 +45,21 @@ function changeStatus(filter_id) {
     if (bgColor == "rgb(217, 217, 217)") {
         filter.style.backgroundColor = "#00E8CD";
         filter.style.color = "#FFFFFF";
+        selectedActivity.push(filter_id);
     } else {
         filter.style.backgroundColor = "#D9D9D9";
         filter.style.color = "#000000";
+        selectedActivity.splice(selectedActivity.indexOf(filter_id), 1);
     }
-    selectedActivity = filter_id;
+    // selectedActivity = filter_id;
 }
 
 function changeStatusBrand(filter_id) {
-    let filter = document.getElementById(selectedBrand);
-    var bgColor = getStyle(filter, 'backgroundColor');
+    // let filter = document.getElementById(selectedBrand);
+    // var bgColor = getStyle(filter, 'backgroundColor');
 
-    filter.style.backgroundColor = "#D9D9D9";
-    filter.style.color = "#000000";
+    // filter.style.backgroundColor = "#D9D9D9";
+    // filter.style.color = "#000000";
 
     filter = document.getElementById(filter_id);
     var bgColor = getStyle(filter, 'backgroundColor');
@@ -63,11 +67,14 @@ function changeStatusBrand(filter_id) {
     if (bgColor == "rgb(217, 217, 217)") {
         filter.style.backgroundColor = "#00E8CD";
         filter.style.color = "#FFFFFF";
+        selectedBrand.push(filter_id);
     } else {
         filter.style.backgroundColor = "#D9D9D9";
         filter.style.color = "#000000";
+        selectedBrand.splice(selectedBrand.indexOf(filter_id), 1)
     }
-    selectedBrand = filter_id;
+    // selectedBrand = filter_id;
+    console.log(selectedBrand.join([separator = ',']));
 }
 
 function getStyle(el, styleProp) {
@@ -150,13 +157,21 @@ function loadHTMLSizes(data) {
         let word = brands[i]["brand"];
         word = word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
         brandsTable.innerHTML += `<span id = "${word}" class="single-filter" onclick="changeStatusBrand('${word}')">${word}</span>`;
+        tempBrands.push(word);
     }
+    console.log(tempBrands);
 }
 
 loadSizes();
 
 function saveFilters(){
-    console.log(minprice, maxprice, selectedBrand, selectedActivity, selectedSize);
-    window.location.href=`filters_result.html?page=1&minprice=${minprice}&maxprice=${maxprice}&brand=${selectedBrand}&activity=${selectedActivity}&size=${selectedSize}`
+    console.log(minprice, maxprice, selectedBrand, selectedActivity, selectedSize,);
+    if(selectedBrand.length == 0){
+        selectedBrand = tempBrands;
+    }
+    if(selectedActivity.length == 0){
+        selectedActivity = tempActivity;
+    }
+    window.location.href=`filters_result.html?page=1&minprice=${minprice}&maxprice=${maxprice}&brand=${selectedBrand.join([separator = ','])}&activity=${selectedActivity.join([separator = ','])}&size=${selectedSize}`
 
 }

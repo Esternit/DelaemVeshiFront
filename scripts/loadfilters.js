@@ -10,6 +10,7 @@ var selectedActivity;
 var selectedSize;
 var BackButton = window.Telegram.WebApp.BackButton;
 
+
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
@@ -27,6 +28,12 @@ function afterLoad(){
     selectedActivity = new URLSearchParams(window.location.search).get('activity');
     selectedSize = new URLSearchParams(window.location.search).get('size');
 
+    if(selectedBrand.indexOf(',') != -1){
+        selectedBrand=selectedBrand.split(',');
+    }
+    else{
+        selectedBrand = [selectedBrand];
+    }
     fetch('https://crmback-production.up.railway.app/loadFilters', {  //https://crmback-production.up.railway.app
     headers: {
         'Content-type': 'application/json'
@@ -55,6 +62,19 @@ function loadFilters(){
     selectedSize = new URLSearchParams(window.location.search).get('size');
     page = new URLSearchParams(window.location.search).get('page');
     
+    if(selectedBrand.indexOf(',') != -1){
+        selectedBrand=selectedBrand.split(',');
+    }
+    else{
+        selectedBrand = [selectedBrand];
+    }
+    if(selectedActivity.indexOf(',') != -1){
+        selectedActivity=selectedActivity.split(',');
+    }
+    else{
+        selectedActivity = [selectedActivity];
+    }
+    console.log(minprice, maxprice, selectedBrand, selectedActivity, selectedSize);
     if(page != 1){
         needscroll = true;
         fetch('https://crmback-production.up.railway.app/loadFilters', {  //https://crmback-production.up.railway.app

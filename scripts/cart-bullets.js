@@ -14,9 +14,11 @@ function changeStatus(cart_button_id) {
     take_MSK = !take_MSK;
     if(take_MSK){
         document.getElementById("delivery-address").value = "Заберу в Москве";
+        document.getElementById("delivery-address").readOnly = true;
     }
     else{
         document.getElementById("delivery-address").value = standart_adress;
+        document.getElementById("delivery-address").readOnly = false;
     }
 }
 

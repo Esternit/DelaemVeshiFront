@@ -217,6 +217,7 @@ function addItemToCart(id) {
         cart.style.visibility = "visible";
         cart.style.opacity = "1";
     }, 15000);
+    loadHeader();
 }
 
 // function test() {

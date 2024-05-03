@@ -34,6 +34,13 @@ function afterLoad(){
     else{
         selectedBrand = [selectedBrand];
     }
+    if(selectedActivity.indexOf(',') != -1){
+        selectedActivity=selectedActivity.split(',');
+    }
+    else{
+        selectedActivity = [selectedActivity];
+    }
+    console.log(minprice, maxprice, selectedBrand, selectedActivity, selectedSize, page);
     fetch('https://crmback-production.up.railway.app/loadFilters', {  //https://crmback-production.up.railway.app
     headers: {
         'Content-type': 'application/json'

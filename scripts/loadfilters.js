@@ -1,5 +1,5 @@
 var page = 1;
-var limit = 16;
+var limit = 14;
 const loading = document.querySelector('.loader');
 var doneloading = true;
 var needscroll = false;

@@ -7,7 +7,7 @@ var selectedSize = "";
 var minprice = 0;
 var maxprice = 0;
 var tempBrands = [];
-var tempActivity = ["footwear/sport/running", "footwear/sport/basketball", "footwear/sport/soccer" ,"footwear/sport/training", "footwear/sport/golf", "footwear/sport/tennis"];
+var tempActivity = ["running", "basketball", "soccer" ,"training", "golf", "tennis"];
 BackButton.show();
 
 BackButton.onClick(function () {

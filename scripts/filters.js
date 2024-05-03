@@ -121,10 +121,17 @@ function loadSizes() {
 function loadHTMLSizes(data) {
     data = data["data"];
     var brands = data["brands"];
+    var types = data["types"];
     data = data["sizes"];
+    
 
     brands = brands.sort((a, b) => {
         if (a.brand.toUpperCase() < b.brand.toUpperCase()) {
+          return -1;
+        }
+      });
+    types=types.sort((a, b) => {
+        if (a.lastcategory.toUpperCase() < b.lastcategory.toUpperCase()) {
           return -1;
         }
       });
@@ -134,6 +141,7 @@ function loadHTMLSizes(data) {
           return -1;
         }
       });
+      console.log(brands,types);
     const TABLE = document.getElementById("size-block-content");
     TABLE.innerHTML = ``;
     var countrow = 1;
@@ -156,10 +164,40 @@ function loadHTMLSizes(data) {
     for(let i = 0; i < 8; i++) {
         let word = brands[i]["brand"];
         word = word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
-        brandsTable.innerHTML += `<span id = "${word}" class="single-filter" onclick="changeStatusBrand('${word}')">${word}</span>`;
-        tempBrands.push(word);
+        brandsTable.innerHTML += `<span id = "${brands[i]["brand"]}" class="single-filter" onclick="changeStatusBrand('${brands[i]["brand"]}')">${word}</span>`;
+        tempBrands.push(brands[i]["brand"]);
     }
-    console.log(tempBrands);
+    const typeTable = document.getElementById("type-container");
+    typeTable.innerHTML = ``;
+    for(let i = 0; i < types.length; i++) {
+        let word = "None";
+        if(types[i]["lastcategory"] == "running"){
+            word = "Бег";
+        }
+        else if(types[i]["lastcategory"] == "basketball"){
+            word = "Бакстебол";
+        }
+        else if(types[i]["lastcategory"] == "soccer"){
+            word = "Футбол";
+        }
+        else if(types[i]["lastcategory"] == "training"){
+            word = "Тренировки";
+        }
+        else if(types[i]["lastcategory"] == "golf"){
+            word = "Гольф";
+        }
+        else if(types[i]["lastcategory"] == "tennis"){
+            word = "Теннис";
+        }
+    
+        if(word != "None"){
+            word = word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
+            typeTable.innerHTML += `<span id="${types[i]["lastcategory"]}" class="single-filter" onclick="changeStatus('${types[i]["lastcategory"]}')">${word}</span>`;
+            tempActivity.push(types[i]["lastcategory"]);
+        }
+
+    }
+    console.log(tempBrands, tempActivity);
 }
 
 loadSizes();

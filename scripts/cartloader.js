@@ -95,7 +95,7 @@ function loadHTMLCart(data) {
             <span class="cart-item-size">${size_name} EU</span>
             <div class="cart-item-subcont">
                 <span class="cart-item-price">${numberWithSpaces(total_price)} ₽</span>
-                <div class="cart-item-counter">
+                <div class="cart-item-counter" id="counter${product_id + size_name}">
                     <span class="counter-button" id="decrease-items" onclick = "deleteitem(${id},${product_id},'${size_name}',${total_price})">-</span>
                     <span class="counter-number" id="item-counter${product_id }${size_name}">${info[product_id + size_name]}</span>
                     <span class="counter-button" id="increase-items" onclick="adder('${img}',${total_price},'${size_name}',${product_id},'${product_article}')">+</span>
@@ -133,6 +133,13 @@ function loadHTMLCart(data) {
 
 
 function deleteitem(id, pid,sizen,price) {
+    fetch('https://crmback-production.up.railway.app/deleteItem', { //https://crmback-production.up.railway.app
+        headers: {
+            'Content-type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({ product_id: pid, user_id: window.Telegram.WebApp.initDataUnsafe.user.id, size_name: sizen })
+    })
     console.log(document.getElementById("item-counter" + pid+sizen).textContent);
     if(document.getElementById("item-counter" + pid+sizen).textContent > 1){
         document.getElementById("item-counter" + pid+sizen).textContent = document.getElementById("item-counter" + pid+sizen).textContent - 1;
@@ -143,14 +150,10 @@ function deleteitem(id, pid,sizen,price) {
     }
     document.getElementById("total-price").textContent = `${numberWithSpaces(full_pricing - price)} ₽`;
     full_pricing = full_pricing - price;
-    fetch('https://crmback-production.up.railway.app/deleteItem', {
-        headers: {
-            'Content-type': 'application/json'
-        },
-        method: 'POST',
-        body: JSON.stringify({ item_id: id, user_id: window.Telegram.WebApp.initDataUnsafe.user.id })
-    })
-
+    var items = localStorage.getItem('items');
+    localStorage.removeItem("items");
+    items = parseInt(items);
+    localStorage.setItem('items', items - 1);
 }
 
 function calculatePrice(bon) {
@@ -237,7 +240,11 @@ function redirecter(){
 }
 
 function adder(img, total_price,  size_name, product_id, product_article){
-    document.getElementById("total-price").textContent = `${numberWithSpaces(full_pricing - total_price)} ₽`;
+    var items = localStorage.getItem('items');
+    localStorage.removeItem("items");
+    items = parseInt(items);
+    localStorage.setItem('items', items + 1);
+    document.getElementById("total-price").textContent = `${numberWithSpaces(full_pricing + total_price)} ₽`;
     full_pricing = full_pricing + total_price;
     item = JSON.stringify({
         title: name_holder[product_id],

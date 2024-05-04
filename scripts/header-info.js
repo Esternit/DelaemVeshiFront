@@ -29,7 +29,10 @@ function loadHeader(){
 loadHeader();
 function loadHeaderHTML(data){
     console.log(data);
-    document.getElementById("personal-balance-badge").innerText = `+${data["bonus"][0]["bonus_adds_owner"]}₽`;
+    if(document.getElementById("personal-balance-badge")){
+        document.getElementById("personal-balance-badge").innerText = `+${data["bonus"][0]["bonus_adds_owner"]}₽`;
+    }
+    
     document.getElementById("cart-item-amount-badge").innerText = `${data["base"][0]["COUNT(*)"]}`;
     localStorage.setItem('bonus', data["bonus"][0]["bonus_adds_owner"]);
     localStorage.setItem('items', data["base"][0]["COUNT(*)"]);

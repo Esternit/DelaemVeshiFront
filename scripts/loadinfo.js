@@ -20,8 +20,16 @@ BackButton.onClick(function () {
     const Id = new URLSearchParams(window.location.search).get('id');
     const paging = new URLSearchParams(window.location.search).get('page');
     const sh = new URLSearchParams(window.location.search).get('search');
+    let minprice = new URLSearchParams(window.location.search).get('minprice');
+    let maxprice = new URLSearchParams(window.location.search).get('maxprice');
+    let selectedBrand = new URLSearchParams(window.location.search).get('brand');
+    let selectedActivity = new URLSearchParams(window.location.search).get('activity');
+    let selectedSize = new URLSearchParams(window.location.search).get('size');
     if (sh != null) {
         window.location.href = 'search.html?page=' + paging + "&spuds=" + Id + "&search=" + sh;
+    }    
+    else if(minprice != null && maxprice != null && selectedBrand != null && selectedActivity != null && selectedSize != null){
+        window.location.href =`filters_result.html?minprice=${minprice}&maxprice=${maxprice}&brand=${selectedBrand}&activity=${selectedActivity}&size=${selectedSize}&page=${paging}&spuds=${Id}`
     }
     else {
         doning = 1;
@@ -47,6 +55,46 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadHTMLTable(data) {
+    document.getElementById('full-body').innerHTML = ` <div id="cart-popup">
+    <span>Добавлено в корзину</span>
+    <br>
+    <span style="padding: 0px 1.4em; background-color: #FFFFFF; border-radius: 5px;" onclick = "openCart()">Оформить заказ</span>
+</div>
+
+<div id="item-picture-container">
+    <!--<button onclick="test()">pick</button> -->
+    <div class="pre-search-link-cont" id="cart-container">
+        <a href="./cart.html">
+            <img class="header-logo-image" src="./assets/cart_image.png">
+            <div id="cart-item-amount-badge">0</div>
+        </a>
+    </div>
+
+    <div id="usercard">
+        <div class="loader"></div>
+    </div>
+    <p id="naming"></p>
+</div>
+
+<div class="pricing-container">
+    <div class="sizes" id="sizing">
+
+    </div>
+    <div class="sizes" id="sizing2">
+
+    </div>
+</div>
+
+<button class="poizon-item-link" id="add-to-cart" type="button" onclick="addItemToCart(this.id)">В корзину</button>
+
+<div class="item-info-container">
+    <p class="item-info-title">Доставка</p>
+    <p class="item-info">С момента отправки вашего заказа из Китая, приблизительные сроки доставки - 3 недели. (*Товар может приехать
+        как быстрее, так и в редких случаях чуть задержаться, в зависимости от быстроты прохождения таможни и погодных условий)</p>
+</div>
+
+<script src="scripts/tg-connect.js"></script>
+<script src="scripts/item-card-functionality.js"></script>`;
     const outData = data['base'];
     const innerData = data['sizes']
     let html = `
@@ -79,7 +127,7 @@ function loadHTMLTable(data) {
                 id: outData[0]["spuId"],
                 img: outData[0]["img"],
                 article: outData[0]["article"],
-                user_id: window.Telegram.WebApp.initDataUnsafe.user.id,
+                user_id: window.Telegram.WebApp.initDataUnsafe.user.id, //window.Telegram.WebApp.initDataUnsafe.user.id
                 store: "DelaemVeshi"
             });
             console.log(item);
@@ -98,6 +146,7 @@ function loadHTMLTable(data) {
     ROOT_NAME.innerText = outData[0]["title"];
 
     enableCarouselSwiping();
+    loadHeader();
 }
 
 function fillCarousel(data) {
@@ -144,33 +193,61 @@ function moveSlideByTouch(event) {
 }
 
 
+function addItemToCart(id) {
+    fetch('https://crmback-production.up.railway.app/addToCart', {  //https://crmback-production.up.railway.app
+    headers: {
+        'Content-type': 'application/json'
+    },
+    method: 'POST',
+    body: item
+})
+    var popup = document.getElementById("cart-popup");
+    popup.style.transform = "translateY(0%)";
 
-function test() {
-    console.log(item);
-    fetch('https://crmback-production.up.railway.app/addToCart', {
-        headers: {
-            'Content-type': 'application/json'
-        },
-        method: 'POST',
-        body: item
-    })
+    var cart = document.getElementById("cart-container");
+    cart.style.opacity = "0";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    const Id = new URLSearchParams(window.location.search).get('id');
-    const paging = new URLSearchParams(window.location.search).get('page');
-    const sh = new URLSearchParams(window.location.search).get('search');
-    if (sh != null) {
-        window.location.href = 'search.html?page=' + paging + "&spuds=" + Id + "&search=" + sh;
-    }
-    else {
-        doning = 1;
-        window.location.href = 'index.html?page=' + paging + "&spuds=" + Id;
-    }
+    setTimeout(function () {
+        cart.style.visibility = "hidden";
+    }, 500);
 
-    BackButton.hide();
-    tg.MainButton.hide();
-
-
+    setTimeout(function () {
+        popup.style.transform = "translateY(-100%)";
+        cart.style.visibility = "visible";
+        cart.style.opacity = "1";
+    }, 15000);
+    loadHeader();
 }
+
+// function test() {
+//     console.log(item);
+
+
+//     const Id = new URLSearchParams(window.location.search).get('id');
+//     const paging = new URLSearchParams(window.location.search).get('page');
+//     const sh = new URLSearchParams(window.location.search).get('search');
+//     let minprice = new URLSearchParams(window.location.search).get('minprice');
+//     let maxprice = new URLSearchParams(window.location.search).get('maxprice');
+//     let selectedBrand = new URLSearchParams(window.location.search).get('brand');
+//     let selectedActivity = new URLSearchParams(window.location.search).get('activity');
+//     let selectedSize = new URLSearchParams(window.location.search).get('size');
+//     if (sh != null) {
+//         window.location.href = 'search.html?page=' + paging + "&spuds=" + Id + "&search=" + sh;
+//     }
+//     else if(minprice != null && maxprice != null && selectedBrand != null && selectedActivity != null && selectedSize != null){
+//         window.location.href =`filters_result.html?minprice=${minprice}&maxprice=${maxprice}&brand=${selectedBrand}&activity=${selectedActivity}&size=${selectedSize}&page=${paging}&spuds=${Id}`
+//     }
+//     else {
+//         doning = 1;
+//         window.location.href = 'index.html?page=' + paging + "&spuds=" + Id;
+//     }
+
+//     BackButton.hide();
+//     tg.MainButton.hide();
+
+
+// }
 
 function backfunc() {
     const Id = new URLSearchParams(window.location.search).get('id');
@@ -212,4 +289,26 @@ function testfunc() {
 
 function openCart(){
     window.location.href = "cart.html";
+}
+
+
+function loadHeader(){
+
+    fetch('https://crmback-production.up.railway.app/getUserBaseInfo', {
+        headers: {
+            'Content-type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({ user_id: window.Telegram.WebApp.initDataUnsafe.user.id  })
+    })
+        .then(response => response.json())
+        .then(data => {
+            loadHeaderHTML(data['data']);
+        });
+}
+//setTimeout(loadHeader,2200);
+function loadHeaderHTML(data){
+    console.log(data);
+    //document.getElementById("personal-balance-badge").innerText = `+${data["bonus"][0]["bonus_adds_owner"]}₽`;
+    document.getElementById("cart-item-amount-badge").innerText = `${data["base"][0]["COUNT(*)"]}`;
 }

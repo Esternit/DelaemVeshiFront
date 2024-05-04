@@ -27,7 +27,7 @@ function loadOrders() {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ user_id: window.Telegram.WebApp.initDataUnsafe.user.id }) //window.Telegram.WebApp.initDataUnsafe.user.id
+        body: JSON.stringify({ user_id: 735028324 }) //window.Telegram.WebApp.initDataUnsafe.user.id
     })
         .then(response => response.json())
         .then(data => loadHTMLOrders(data));
@@ -88,10 +88,23 @@ function loadHTMLOrders(data) {
         if(parseInt(minutes,10) < 10){
             minutes = '0' + minutes;
         }
+        if(parseInt(hours,10) < 10){
+            hours = '0' + hours;
+        }
+
         let monthnum = mgy[1];
         let datenum = mgy[2];
         let yearnum = mgy[0];
-        var temp = new Date(`${yearnum}-${monthnum}-${datenum}`);
+        if(parseInt(monthnum,10) < 10){
+            monthnum = '0' + monthnum;
+        }
+        if(parseInt(datenum,10) < 10){
+            datenum = '0' + datenum;
+        }
+        const {Temporal} = temporal;
+        const dateString = `${yearnum}-${monthnum}-${datenum} 00:00:00`;
+        const instant = Temporal.Instant.from(dateString.replace(" ", "T") + "Z");
+        var temp = new Date(instant.epochMilliseconds);
         if(status == "Доставлен"){
             let datecheck = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Moscow"}));
             let Difference_In_Time =datecheck.getTime() - temp.getTime();

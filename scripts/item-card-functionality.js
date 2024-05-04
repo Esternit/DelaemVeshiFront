@@ -8,17 +8,29 @@
 
 //     setTimeout(function () {
 //         cart.style.visibility = "hidden";
-//     }, 500);
+//     }.bind(this), 500);
 
 //     setTimeout(function () {
 //         popup.style.transform = "translateY(-100%)";
 //         cart.style.visibility = "visible";
 //         cart.style.opacity = "1";
-//     }, 15000);
+//     }.bind(this), 15000);
 // }
 
+Function.prototype.bind = function(parent) {
+    var f = this;
+    var args = [];
 
-// Perenes v loadinfo.js
+    for (var a = 1; a < arguments.length; a++) {
+        args[args.length] = arguments[a];
+    }
+
+    var temp = function() {
+        return f.apply(parent, args);
+    }
+
+    return(temp);
+}
 
 jQuery(document).ready(function () {
     $("#sizing").delegate(".size", "click", function (event) {

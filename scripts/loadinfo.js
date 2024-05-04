@@ -222,6 +222,15 @@ function addItemToCart(id) {
         cart.style.visibility = "visible";
         cart.style.opacity = "1";
     }, 15000);
+    setTimeout(function () {
+        cart.style.visibility = "hidden";
+    }.bind(this), 500);
+
+    setTimeout(function () {
+        popup.style.transform = "translateY(-100%)";
+        cart.style.visibility = "visible";
+        cart.style.opacity = "1";
+    }.bind(this), 15000);
     
 }
 

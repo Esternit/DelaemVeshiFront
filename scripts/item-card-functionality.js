@@ -18,6 +18,7 @@ function addItemToCart(id) {
 }
 
 jQuery(document).ready(function () {
+    alert("jquery loaded");
     $("#sizing").delegate(".size", "click", function (event) {
         console.log("before toggle");
         jQuery('.size').removeClass('active');

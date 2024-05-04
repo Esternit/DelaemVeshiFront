@@ -16,6 +16,7 @@ function loadHeader(){
             });
     }
     else{
+        console.log("speed variant");
         if(document.getElementById("personal-balance-badge")){
             document.getElementById("personal-balance-badge").innerText = `+${bonus}₽`;
         }

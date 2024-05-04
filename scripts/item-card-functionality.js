@@ -1,21 +1,21 @@
-function addItemToCart(id) {
-    var popup = document.getElementById("cart-popup");
-    popup.style.transform = "translateY(0%)";
+// function addItemToCart(id) {
+//     var popup = document.getElementById("cart-popup");
+//     popup.style.transform = "translateY(0%)";
 
-    var cart = document.getElementById("cart-container");
-    cart.style.opacity = "0";
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+//     var cart = document.getElementById("cart-container");
+//     cart.style.opacity = "0";
+//     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    setTimeout(function () {
-        cart.style.visibility = "hidden";
-    }.bind(this), 500);
+//     setTimeout(function () {
+//         cart.style.visibility = "hidden";
+//     }.bind(this), 500);
 
-    setTimeout(function () {
-        popup.style.transform = "translateY(-100%)";
-        cart.style.visibility = "visible";
-        cart.style.opacity = "1";
-    }.bind(this), 15000);
-}
+//     setTimeout(function () {
+//         popup.style.transform = "translateY(-100%)";
+//         cart.style.visibility = "visible";
+//         cart.style.opacity = "1";
+//     }.bind(this), 15000);
+// }
 
 Function.prototype.bind = function(parent) {
     var f = this;

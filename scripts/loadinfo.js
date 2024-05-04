@@ -194,6 +194,11 @@ function moveSlideByTouch(event) {
 
 
 function addItemToCart(id) {
+    var items = localStorage.getItem('items');
+    localStorage.removeItem("items");
+    items = parseInt(items);
+    localStorage.setItem('items', items + 1);
+    document.getElementById("cart-item-amount-badge").innerText = `${localStorage.getItem('items')}`;
     fetch('https://crmback-production.up.railway.app/addToCart', {  //https://crmback-production.up.railway.app
     headers: {
         'Content-type': 'application/json'
@@ -217,7 +222,16 @@ function addItemToCart(id) {
         cart.style.visibility = "visible";
         cart.style.opacity = "1";
     }, 15000);
-    loadHeader();
+    setTimeout(function () {
+        cart.style.visibility = "hidden";
+    }.bind(this), 500);
+
+    setTimeout(function () {
+        popup.style.transform = "translateY(-100%)";
+        cart.style.visibility = "visible";
+        cart.style.opacity = "1";
+    }.bind(this), 15000);
+    
 }
 
 // function test() {

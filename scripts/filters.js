@@ -6,7 +6,7 @@ var selectedActivity = [];
 var selectedSize = "";
 var minprice = 0;
 var maxprice = 0;
-var tempBrands = [];
+var tempBrands = ['adidas', 'adidas originals', 'Asics', 'Converse', 'Jordan', 'New Balance', 'Nike', 'OLD ORDER'];
 var tempActivity = ["running", "basketball", "soccer" ,"training", "golf", "tennis"];
 BackButton.show();
 
@@ -159,44 +159,44 @@ function loadHTMLSizes(data) {
 
     });
 
-    const brandsTable = document.getElementById("brand-container");
-    brandsTable.innerHTML = ``;
-    for(let i = 0; i < 8; i++) {
-        let word = brands[i]["brand"];
-        word = word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
-        brandsTable.innerHTML += `<span id = "${brands[i]["brand"]}" class="single-filter" onclick="changeStatusBrand('${brands[i]["brand"]}')">${word}</span>`;
-        tempBrands.push(brands[i]["brand"]);
-    }
-    const typeTable = document.getElementById("type-container");
-    typeTable.innerHTML = ``;
-    for(let i = 0; i < types.length; i++) {
-        let word = "None";
-        if(types[i]["lastcategory"] == "running"){
-            word = "Бег";
-        }
-        else if(types[i]["lastcategory"] == "basketball"){
-            word = "Бакстебол";
-        }
-        else if(types[i]["lastcategory"] == "soccer"){
-            word = "Футбол";
-        }
-        else if(types[i]["lastcategory"] == "training"){
-            word = "Тренировки";
-        }
-        else if(types[i]["lastcategory"] == "golf"){
-            word = "Гольф";
-        }
-        else if(types[i]["lastcategory"] == "tennis"){
-            word = "Теннис";
-        }
+    // const brandsTable = document.getElementById("brand-container");
+    // brandsTable.innerHTML = ``;
+    // for(let i = 0; i < 8; i++) {
+    //     // let word = brands[i]["brand"];
+    //     // word = word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
+    //     // brandsTable.innerHTML += `<span id = "${brands[i]["brand"]}" class="single-filter" onclick="changeStatusBrand('${brands[i]["brand"]}')">${word}</span>`;
+    //     tempBrands.push(brands[i]["brand"]);
+    // }
+    // const typeTable = document.getElementById("type-container");
+    // typeTable.innerHTML = ``;
+    // for(let i = 0; i < types.length; i++) {
+    //     let word = "None";
+    //     if(types[i]["lastcategory"] == "running"){
+    //         word = "Бег";
+    //     }
+    //     else if(types[i]["lastcategory"] == "basketball"){
+    //         word = "Бакстебол";
+    //     }
+    //     else if(types[i]["lastcategory"] == "soccer"){
+    //         word = "Футбол";
+    //     }
+    //     else if(types[i]["lastcategory"] == "training"){
+    //         word = "Тренировки";
+    //     }
+    //     else if(types[i]["lastcategory"] == "golf"){
+    //         word = "Гольф";
+    //     }
+    //     else if(types[i]["lastcategory"] == "tennis"){
+    //         word = "Теннис";
+    //     }
     
-        if(word != "None"){
-            word = word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
-            typeTable.innerHTML += `<span id="${types[i]["lastcategory"]}" class="single-filter" onclick="changeStatus('${types[i]["lastcategory"]}')">${word}</span>`;
-            tempActivity.push(types[i]["lastcategory"]);
-        }
+    //     if(word != "None"){
+    //         // word = word.charAt(0).toUpperCase() + word.substring(1).toLowerCase();
+    //         // typeTable.innerHTML += `<span id="${types[i]["lastcategory"]}" class="single-filter" onclick="changeStatus('${types[i]["lastcategory"]}')">${word}</span>`;
+    //         // tempActivity.push(types[i]["lastcategory"]);
+    //     }
 
-    }
+    // }
     console.log(tempBrands, tempActivity);
 }
 

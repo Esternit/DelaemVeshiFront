@@ -47,10 +47,3 @@ jQuery(document).ready(function () {
 });
 
 console.log("called");
-fetch('https://crmback-production.up.railway.app/addToCart', {  //https://crmback-production.up.railway.app
-    headers: {
-        'Content-type': 'application/json'
-    },
-    method: 'POST',
-    body: item
-});

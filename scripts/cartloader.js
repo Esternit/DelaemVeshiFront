@@ -123,7 +123,7 @@ function loadHTMLCart(data) {
         //TABLE.innerHTML += `<div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button" id = "proceed" onclick = "proceedPayment()">Перейти к оплате (${full_price} руб)</button></div>`;
     }
     else {
-        TABLE.innerHTML = `<h4>Пока здесь ничего нет...</h4>`
+        TABLE.innerHTML = `<span style="display: block; margin-top: 4rem; text-align: center; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px;">Пока здесь ничего нет...</span>`
     }
 
     if(activate_button){

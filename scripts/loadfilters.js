@@ -159,6 +159,11 @@ function loadHTMLTable(data) {
             ROOT_PRODUCTS.innerHTML += html;
         }
     }
+    else if(data.length == 0 && page == 1){
+        ROOT_PRODUCTS.innerHTML = `<span
+        style="display: block; margin-top: 4rem; text-align: center; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 20px;">
+        Пока такого товара нет</span>`
+    }
     if(needscroll){
         const spuds = new URLSearchParams(window.location.search).get('spuds');
 

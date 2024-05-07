@@ -34,18 +34,32 @@ BackButton.onClick(function () {
 });
 
 function loadCart() {
-    fetch('https://crmback-production.up.railway.app/getCart', { //https://crmback-production.up.railway.app
+    var itemsinfo = JSON.parse(localStorage.getItem('itemsinfo'));
+    for(let i = 0; i < itemsinfo.length; i++){
+        itemsinfo[i] = JSON.parse(itemsinfo[i]);
+    }
+    var adressinfo = JSON.parse(localStorage.getItem('adress'));
+    console.log(itemsinfo,adressinfo);
+    if(!itemsinfo){
+        console.log("speed load");
+        loadHTMLCart(itemsinfo.concat(adressinfo));
+    }
+    else{
+        fetch('https://crmback-production.up.railway.app/getCart', { //https://crmback-production.up.railway.app
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ id: window.Telegram.WebApp.initDataUnsafe.user.id}) //window.Telegram.WebApp.initDataUnsafe.user.id
+        body: JSON.stringify({ id: 735028324}) //window.Telegram.WebApp.initDataUnsafe.user.id
     })
         .then(response => response.json())
         .then(data => loadHTMLCart(data));
+    }
+
 }
 
 function loadHTMLCart(data) {
+    console.log(data);
     let user = data[data.length - 1];
     data = data.slice(0, data.length - 1);
     console.log(user);
@@ -77,6 +91,7 @@ function loadHTMLCart(data) {
     }
     
     data.forEach(({ id, img, total_price, product_name, size_name, product_id, product_article }) => {
+        console.log(id, img, total_price, product_name, size_name, product_id, product_article);
         if(info[product_id + size_name]){
             info[product_id + size_name] = info[product_id + size_name] + 1;
             var element = document.getElementById(product_id + size_name);
@@ -131,14 +146,25 @@ function loadHTMLCart(data) {
     }
 }
 
-
+function deleteFormLocalItems(pid,sizen){
+    var items = JSON.parse(localStorage.getItem('itemsinfo'));
+    for (let i = 0; i < items.length; i++) {
+        items[i] = JSON.parse(items[i]);
+        if (items[i].id == pid && items[i].size_name == sizen) {
+            items.splice(i, 1);
+            break;
+        }
+    }
+    localStorage.setItem('itemsinfo', JSON.stringify(items));
+    console.log(localStorage.getItem('itemsinfo'));
+}
 function deleteitem(id, pid,sizen,price) {
     fetch('https://crmback-production.up.railway.app/deleteItem', { //https://crmback-production.up.railway.app
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ product_id: pid, user_id: window.Telegram.WebApp.initDataUnsafe.user.id, size_name: sizen })
+        body: JSON.stringify({ product_id: pid, user_id: 735028324, size_name: sizen })
     })
     console.log(document.getElementById("item-counter" + pid+sizen).textContent);
     if(document.getElementById("item-counter" + pid+sizen).textContent > 1){
@@ -154,6 +180,7 @@ function deleteitem(id, pid,sizen,price) {
     localStorage.removeItem("items");
     items = parseInt(items);
     localStorage.setItem('items', items - 1);
+    deleteFormLocalItems(pid,sizen);
 }
 
 function calculatePrice(bon) {
@@ -257,12 +284,21 @@ function adder(img, total_price,  size_name, product_id, product_article){
         title: name_holder[product_id],
         pricing: total_price,
         size_name: size_name,
+        total_price: total_price,
+        product_name: name_holder[product_id],
+        product_id: product_id,
+        product_article: product_article,
         id: product_id,
         img: img,
         article: product_article,
-        user_id: window.Telegram.WebApp.initDataUnsafe.user.id,
+        user_id: 735028324,
         store: "DelaemVeshi"
     });
+    var itemsinfo = JSON.parse(localStorage.getItem('itemsinfo'));
+    console.log("adder", typeof itemsinfo);
+    itemsinfo.push(item);
+    localStorage.setItem('itemsinfo', JSON.stringify(itemsinfo));
+    console.log(JSON.parse(localStorage.getItem('itemsinfo')))
     document.getElementById("item-counter" + product_id+size_name).textContent = parseInt(document.getElementById("item-counter" + product_id+size_name).textContent,10) + 1;
     fetch('https://crmback-production.up.railway.app/addToCart', {
         headers: {

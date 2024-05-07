@@ -123,11 +123,15 @@ function loadHTMLTable(data) {
             item = JSON.stringify({
                 title: outData[0]["title"],
                 pricing: price,
+                total_price: price,
+                product_name: outData[0]["title"],
+                product_id: outData[0]["spuId"],
+                product_article: outData[0]["article"],
                 size_name: name_size,
                 id: outData[0]["spuId"],
                 img: outData[0]["img"],
                 article: outData[0]["article"],
-                user_id: window.Telegram.WebApp.initDataUnsafe.user.id, //window.Telegram.WebApp.initDataUnsafe.user.id
+                user_id: 735028324, //window.Telegram.WebApp.initDataUnsafe.user.id
                 store: "DelaemVeshi"
             });
             console.log(item);
@@ -206,6 +210,22 @@ function addItemToCart(id) {
     method: 'POST',
     body: item
 })
+    var itemsinfo = JSON.parse(localStorage.getItem('itemsinfo'));
+    
+    console.log("first",itemsinfo);
+    if(!itemsinfo){
+        itemsinfo = [item];
+        localStorage.removeItem("itemsinfo");
+        localStorage.setItem('itemsinfo', JSON.stringify(itemsinfo));
+    }
+    else{
+        
+        itemsinfo.push(item);
+        localStorage.setItem('itemsinfo', JSON.stringify(itemsinfo));
+    }
+
+    console.log(localStorage.getItem('itemsinfo'));
+    
     var popup = document.getElementById("cart-popup");
     popup.style.transform = "translateY(0%)";
 

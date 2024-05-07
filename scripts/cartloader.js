@@ -193,6 +193,7 @@ function changeBonus() {
     }
 }
 function proceedPayment() {
+    localStorage.setItem('items', 0);
     fetch('https://crmback-production.up.railway.app/createOrder', { //https://crmback-production.up.railway.app
         headers: {
             'Content-type': 'application/json'

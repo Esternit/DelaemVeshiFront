@@ -53,7 +53,7 @@ function checkHeader(){
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ user_id: 735028324 })
+        body: JSON.stringify({ user_id: window.Telegram.WebApp.initDataUnsafe.user.id })
     })
         .then(response => response.json())
         .then(data => {
@@ -64,12 +64,12 @@ function checkHeader(){
 }
 
 function checkAdress(){
-    fetch('http://localhost:5000/getUserForCartById', {
+    fetch('https://crmback-production.up.railway.app/getUserForCartById', {
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ user_id: 735028324 })
+        body: JSON.stringify({ user_id: window.Telegram.WebApp.initDataUnsafe.user.id })
     })
         .then(response => response.json())
         .then(data => {
@@ -87,16 +87,16 @@ function checkDATAadress(data){
 }
 
 function checkItems(){
-    fetch('http://localhost:5000/checkItems', {
+    fetch('https://crmback-production.up.railway.app/checkItems', {
         headers: {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ user_id: 735028324 })
+        body: JSON.stringify({ user_id: window.Telegram.WebApp.initDataUnsafe.user.id })
     })
         .then(response => response.json())
         .then(data => {
-            checkDATAitems(data[0]);
+            checkDATAitems(data);
         });  
 }
 
@@ -106,7 +106,7 @@ function checkDATAitems(data){
     console.log(data, current_data);
     if(data.length != current_data.length ||  current_data == null){
         localStorage.setItem('itemsinfo', JSON.stringify(data));
-        console.log("test failed", data, current_data);
+        console.log("test failed items-info", data, current_data);
     }
 }
 

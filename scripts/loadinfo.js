@@ -131,7 +131,7 @@ function loadHTMLTable(data) {
                 id: outData[0]["spuId"],
                 img: outData[0]["img"],
                 article: outData[0]["article"],
-                user_id: 735028324, //window.Telegram.WebApp.initDataUnsafe.user.id
+                user_id: window.Telegram.WebApp.initDataUnsafe.user.id, //window.Telegram.WebApp.initDataUnsafe.user.id
                 store: "DelaemVeshi"
             });
             console.log(item);

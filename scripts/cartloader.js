@@ -39,8 +39,7 @@ function loadCart() {
         itemsinfo[i] = JSON.parse(itemsinfo[i]);
     }
     var adressinfo = JSON.parse(localStorage.getItem('adress'));
-    console.log(itemsinfo,adressinfo);
-    if(!itemsinfo){
+    if(itemsinfo){
         console.log("speed load");
         loadHTMLCart(itemsinfo.concat(adressinfo));
     }
@@ -50,7 +49,7 @@ function loadCart() {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ id: 735028324}) //window.Telegram.WebApp.initDataUnsafe.user.id
+        body: JSON.stringify({ id: window.Telegram.WebApp.initDataUnsafe.user.id}) //window.Telegram.WebApp.initDataUnsafe.user.id
     })
         .then(response => response.json())
         .then(data => loadHTMLCart(data));
@@ -59,10 +58,8 @@ function loadCart() {
 }
 
 function loadHTMLCart(data) {
-    console.log(data);
     let user = data[data.length - 1];
     data = data.slice(0, data.length - 1);
-    console.log(user);
     let full_price = 0;
     let info = {};
     const TABLE = document.getElementById("cart-item-container");
@@ -91,7 +88,6 @@ function loadHTMLCart(data) {
     }
     
     data.forEach(({ id, img, total_price, product_name, size_name, product_id, product_article }) => {
-        console.log(id, img, total_price, product_name, size_name, product_id, product_article);
         if(info[product_id + size_name]){
             info[product_id + size_name] = info[product_id + size_name] + 1;
             var element = document.getElementById(product_id + size_name);
@@ -120,7 +116,6 @@ function loadHTMLCart(data) {
     </div>`
     name_holder[product_id] = product_name;
         full_price += total_price;
-        console.log(info)
     });
     if (data.length > 0) {
         first_price = full_price;
@@ -164,7 +159,7 @@ function deleteitem(id, pid,sizen,price) {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ product_id: pid, user_id: 735028324, size_name: sizen })
+        body: JSON.stringify({ product_id: pid, user_id: window.Telegram.WebApp.initDataUnsafe.user.id, size_name: sizen })
     })
     console.log(document.getElementById("item-counter" + pid+sizen).textContent);
     if(document.getElementById("item-counter" + pid+sizen).textContent > 1){
@@ -291,11 +286,12 @@ function adder(img, total_price,  size_name, product_id, product_article){
         id: product_id,
         img: img,
         article: product_article,
-        user_id: 735028324,
+        user_id: window.Telegram.WebApp.initDataUnsafe.user.id,
         store: "DelaemVeshi"
     });
     var itemsinfo = JSON.parse(localStorage.getItem('itemsinfo'));
-    console.log("adder", typeof itemsinfo);
+    // itemsinfo = [itemsinfo];
+    console.log("adder", itemsinfo, typeof itemsinfo, itemsinfo.length);
     itemsinfo.push(item);
     localStorage.setItem('itemsinfo', JSON.stringify(itemsinfo));
     console.log(JSON.parse(localStorage.getItem('itemsinfo')))

@@ -154,6 +154,7 @@ function deleteFormLocalItems(pid,sizen){
     console.log(localStorage.getItem('itemsinfo'));
 }
 function deleteitem(id, pid,sizen,price) {
+    first_price = first_price - price;
     fetch('https://crmback-production.up.railway.app/deleteItem', { //https://crmback-production.up.railway.app
         headers: {
             'Content-type': 'application/json'
@@ -269,6 +270,7 @@ function redirecter(){
 }
 
 function adder(img, total_price,  size_name, product_id, product_article){
+    first_price = first_price + total_price;
     var items = localStorage.getItem('items');
     localStorage.removeItem("items");
     items = parseInt(items);

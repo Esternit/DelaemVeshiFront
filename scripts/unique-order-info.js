@@ -67,7 +67,17 @@ function loadHTMLorder(data){
     let monthnum = mgy[1];
     let datenum = mgy[2];
     let yearnum = mgy[0];
-    var temp = new Date(`${yearnum}-${monthnum}-${datenum}`);
+    if(parseInt(monthnum,10) < 10){
+        monthnum = '0' + monthnum;
+    }
+    if(parseInt(datenum,10) < 10){
+        datenum = '0' + datenum;
+    }
+    const {Temporal} = temporal;
+    const dateString = `${yearnum}-${monthnum}-${datenum} 00:00:00`;
+    const instant = Temporal.Instant.from(dateString.replace(" ", "T") + "Z");
+    var temp = new Date(instant.epochMilliseconds);
+    // var temp = new Date(`${yearnum}-${monthnum}-${datenum}`);
     monthnum = temp.toLocaleString('default', { month: 'long' });
 
     if(status == "Новый"){

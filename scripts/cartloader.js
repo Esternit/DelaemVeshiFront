@@ -233,7 +233,7 @@ function proceedPayment() {
     document.getElementById("cart").innerHTML = `<svg viewBox="25 25 50 50">
     <circle r="20" cy="50" cx="50"></circle>
 </svg>`
-    //setTimeout(redirecter, 5000);
+    setTimeout(redirecter, 5000);
 }
 loadCart();
 

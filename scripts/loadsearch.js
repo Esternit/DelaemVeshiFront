@@ -124,7 +124,11 @@ function loadSearchHTMLTable(data) {
         done = 0;
         if (needscroll == 1) {
             let y = document.getElementById(spuds).getBoundingClientRect().top;
-            window.scrollTo(0, y);
+            window.scrollTo({
+                left: 0,
+                top: y,
+                behavior: 'smooth'
+            });
         }
 
     }

@@ -37,7 +37,10 @@ function loadCart() {
     var itemsinfo = JSON.parse(localStorage.getItem('itemsinfo'));
     console.log(itemsinfo, "-item output");
     for(let i = 0; i < itemsinfo.length; i++){
-        itemsinfo[i] = JSON.parse(itemsinfo[i]);
+        if(typeof itemsinfo[i] == "string"){
+            itemsinfo[i] = JSON.parse(itemsinfo[i]);
+        }
+        
     }
     var adressinfo = JSON.parse(localStorage.getItem('adress'));
     if(itemsinfo){

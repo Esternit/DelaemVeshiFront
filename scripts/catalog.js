@@ -184,7 +184,11 @@ function loadHTMLTable(data) {
     if (doning == 0) {
         if (spuds != null) {
             let y = document.getElementById(spuds).getBoundingClientRect().top;
-            window.scrollTo(0, y);
+            window.scrollTo({
+                left: 0,
+                top: y,
+                behavior: 'smooth'
+            });
         }
 
         doning = 1;

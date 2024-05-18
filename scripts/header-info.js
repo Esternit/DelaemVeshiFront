@@ -103,8 +103,9 @@ function checkItems(){
 function checkDATAitems(data){
     
     var current_data = JSON.parse(localStorage.getItem('itemsinfo'));
+    var items = localStorage.getItem('items');
     console.log(data, current_data);
-    if(data.length != current_data.length ||  current_data == null){
+    if(data.length != current_data.length ||  current_data == null || current_data.length != items){
         localStorage.setItem('itemsinfo', JSON.stringify(data));
         console.log("test failed items-info", data, current_data);
     }

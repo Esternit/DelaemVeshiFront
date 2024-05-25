@@ -42,12 +42,12 @@ function changeStatus(filter_id) {
     filter = document.getElementById(filter_id);
     var bgColor = getStyle(filter, 'backgroundColor');
 
-    if (bgColor == "rgb(217, 217, 217)") {
+    if (bgColor == "rgb(239, 239, 239)") {
         filter.style.backgroundColor = "#00E8CD";
         filter.style.color = "#FFFFFF";
         selectedActivity.push(filter_id);
     } else {
-        filter.style.backgroundColor = "#D9D9D9";
+        filter.style.backgroundColor = "#EFEFEF";
         filter.style.color = "#000000";
         selectedActivity.splice(selectedActivity.indexOf(filter_id), 1);
     }

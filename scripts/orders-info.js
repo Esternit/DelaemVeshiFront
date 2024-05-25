@@ -143,6 +143,14 @@ function loadHTMLOrders(data) {
                 <li class="step4"></li>
             </ul>`
             }
+            else if(status == "Доставляется в Москву"){
+                statushtml = `<ul id="progressbar" class="text-center">
+                <li class="active step1"></li>
+                <li class="active step2"></li>
+                <li class="active step3"></li>
+                <li class="step4"></li>
+            </ul>`
+            }
             else if(status == "Доставлен"){
                 statushtml = `<ul id="progressbar" class="text-center">
                 <li class="active step1"></li>

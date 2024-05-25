@@ -32,9 +32,13 @@
 
 	<div class="page-block">
 		<span class="block-title">Адрес<span style="color: #FF7C03;">*</span></span>
-		<input class="order-data-input" type="text" id="delivery-address" placeholder="Введите новый адрес..." onchange="checkChange()"/>
+		<input class="order-data-input" type="text" id="delivery-address" placeholder="Введите новый адрес..." onchange="checkChange()" />
 		<ul>
-
+			<li>
+				<img class="list-bullet" id="same-address" width="15px" height="15px" onclick="changeStatus(this.id)"
+					src="./assets/list_bullet.png" />
+				<button class="list-button" id="same-address-button" onclick="changeStatus(this.id)">Адрес тот-же!</button>
+			</li>
 			<li>
 				<img class="list-bullet" id="pickup-moscow" width="15px" height="15px" onclick="changeStatus(this.id)"
 					src="./assets/list_bullet.png" />
@@ -45,21 +49,30 @@
 
 	<div class="page-block">
 		<span class="block-title">Ваши ФИО<span style="color: #FF7C03;">*</span></span>
-		<input class="order-data-input" type="text" required id="name-surname" placeholder="Введите имя и фамилию..." onchange="checkChange()"/>
+		<input class="order-data-input" type="text" required id="name-surname" placeholder="Введите имя и фамилию..."
+			onchange="checkChange()" />
 		<ul>
-
+			<li>
+				<img class="list-bullet" id="same-name" width="15px" height="15px" onclick="changeStatus(this.id)"
+					src="./assets/list_bullet.png" />
+				<button class="list-button" id="same-name-button" onclick="changeStatus(this.id)">ФИО то-же!</button>
+			</li>
 		</ul>
 	</div>
 
 	<div class="page-block">
 		<span class="block-title">Ваш номер<span style="color: #FF7C03;">*</span></span>
-		<input class="order-data-input" type="tel" id="phone-number" placeholder="Введите номер телефона..." onchange="checkChange()"/>
+		<input class="order-data-input" type="tel" id="phone-number" placeholder="Введите номер телефона..." onchange="checkChange()" />
 		<ul>
-
+			<li>
+				<img class="list-bullet" id="same-number" width="15px" height="15px" onclick="changeStatus(this.id)"
+					src="./assets/list_bullet.png" />
+				<button class="list-button" id="same-number-button" onclick="changeStatus(this.id)">Номер тот-же!</button>
+			</li>
 		</ul>
 	</div>
 
-	<div class="other-charges" id = "bonuses-data">
+	<div class="other-charges" id="bonuses-data">
 		<span style="display: inline-flex;align-items: center;">Потратить</span>
 		<input class="charge-amount" type="tel" id="spend-bonus"></input>
 		<div class="bonuses-currency">₽</div>
@@ -69,13 +82,13 @@
 		</label>
 	</div>
 
-	<div class="page-block" id = "full-price">
+	<div class="page-block" id="full-price">
 		<span class="block-title" style="display: inline-block; width: 100%;">Итог:</span>
 		<span id="total-price"></span>
 	</div>
 
 	<button id="pay-button" disabled onclick="proceedPayment()">Оформить</button>
-	<script src = "./scripts/header-info.js"></script>
+	<script src="./scripts/header-info.js"></script>
 	<script src="./scripts/cartloader.js"></script>
 	<script src="./scripts/cart-bullets.js"></script>
 </body>

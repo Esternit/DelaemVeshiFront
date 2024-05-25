@@ -36,7 +36,7 @@ button {
 
     font-family: 'Rubik Mono One', sans-serif;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 24px;
     color: #000000;
 }
 
@@ -222,7 +222,7 @@ ul {
 .list-bullet {
     position: relative;
     right: 20px;
-    top: 10px;
+    top: 5px;
 }
 
 .list-button {
@@ -232,8 +232,8 @@ ul {
 
     text-align: left;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 24px;
+    font-weight: 500;
+    font-size: 18px;
     color: #000000;
 }
 
@@ -246,7 +246,7 @@ ul {
 
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 18px;
     color: #000000;
 }
 

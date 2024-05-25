@@ -30,6 +30,8 @@ body {
 }
 
 .bonuses-container {
+    margin-top: 1em;
+
     font-family: "Saira Semi Condensed", sans-serif;
     text-align: center;
     font-size: 24px;

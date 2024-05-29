@@ -286,10 +286,8 @@ a:active {
 	grid-template-columns: 50% 40%;
 	grid-template-rows: 1fr 1fr;
 
-	margin-bottom: 4px;
 	width: 100%;
 
-	align-items: end;
 	justify-items: center;
 	justify-content: space-evenly;
 }
@@ -344,6 +342,7 @@ a:active {
 	grid-row: 2 / 2;
 	width: 100%;
 	height: min-content;
+	align-self: end;
 }
 
 .title-text-container {

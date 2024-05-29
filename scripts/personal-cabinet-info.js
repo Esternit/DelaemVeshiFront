@@ -55,6 +55,9 @@ function loadHTMLProfile(data) {
 		<a href="./myaddress.html"><span class="page-link-text" id="link-address">Адрес</span></a>
 	</div>
 	<div class="page-link-container">
+		<a href="./bonuses.html"><span class="page-link-text" id="link-FAQ">Бонусы</span></a>
+	</div>
+	<div class="page-link-container">
 		<a href="./faq.html"><span class="page-link-text" id="link-FAQ">FAQ</span></a>
 	</div>
 	<script src="./scripts/personal-cabinet-info.js"></script>`

@@ -7,15 +7,15 @@ body {
     width: 100%;
     max-width: 100%;
     overflow: hidden;
-    background-color: #00E8CD;
+    background-color: #00CEDB;
 }
 
 .page-heading {
-    margin: 1.4em 0px 0.2em 4vw;
+    margin: 1.4em 0px 4vh 4vw;
 
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 12vw;
+    font-size: 8vw;
     color: #FFFFFF;
 }
 
@@ -29,14 +29,14 @@ body {
 
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 6vw;
+    font-size: 5vw;
     color: #FFFFFF;
 }
 
 input,
 select {
     width: 70vw;
-    margin: 0.5vh 0px 0px 4vw;
+    margin: 1.5vh 0px 0px 4vw;
     padding: 1.2vh 0px 1.2vh 6vw;
     background-color: rgba(255, 255, 255, 0.7);
 
@@ -88,22 +88,44 @@ select {
     color: #000000;
 }
 
+.info-text {
+    display: block;
+    margin: 2.5vh 0px 0px 4vw;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 5vw;
+    color: #FFFFFF;
+}
+
 .total-sum {
     display: block;
     margin: 3vh 0px 0px 4vw;
 
     font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 5vw;
+    color: #FFFFFF;
+}
+
+#total-sum-number {
+    display: block;
+
+    font-family: 'Inter', sans-serif;
+    text-align: center;
     font-weight: 700;
     font-size: 8vw;
-    color: #FFFFFF;
+    color: #000000;
 }
 
 #calculate-button {
     position: relative;
     z-index: 1;
 
-    margin: 1vh 0px 0px 4vw;
-    padding: 2vw;
+    width: 92vw;
+    margin: 1vh 4vw 0px 4vw;
+    padding: 1vh 0;
     background-color: #000000;
 
     border-radius: 20px;

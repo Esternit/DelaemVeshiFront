@@ -144,7 +144,7 @@ function finishcalculation(){
     var price = document.getElementById("yuan-cost").value;
     var category = document.getElementById("item-category").options[document.getElementById("item-category").selectedIndex].text
     if(price != "" && category != "" && delchn != 0 && delmos != 0 && ins != 0 && comm != 0){ 
-        fetch('https:://crmback-production.up.railway.app/sendMessage', {
+        fetch('https://crmback-production.up.railway.app/sendMessage', {
             headers: {
                 'Content-type': 'application/json'
             },

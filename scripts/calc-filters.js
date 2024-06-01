@@ -156,7 +156,8 @@ function finishcalculation(){
              needtosend: true
              })
         })
-        window.Telegram.WebApp.close();
+        .then(response => window.Telegram.WebApp.close())
+        
     }
 
 }

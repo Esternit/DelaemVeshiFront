@@ -156,8 +156,14 @@ function finishcalculation(){
              needtosend: true
              })
         })
-        .then(response => window.Telegram.WebApp.close())
+        .then(response => response.json())
+        .then(data => closing(data));
         
     }
 
+}
+
+function closing(data){
+    console.log(data);
+    window.Telegram.WebApp.close();
 }

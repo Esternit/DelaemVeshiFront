@@ -43,7 +43,6 @@ function loadHTMLProfile(data) {
 		<span class="reward-description">за приглашённого друга</span>
 		<div class="referral-link-text-container">
 			<span id="referral-link">t.me...</span>
-			<img class="referral-link-img" src="./assets/link_copy_button.png" onclick="copyToClipboard()">
 		</div>
 		<div style="text-align: center;">просто скинь ему ссылку</div>
 	</div>

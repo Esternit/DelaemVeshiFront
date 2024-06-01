@@ -82,9 +82,9 @@ body {
 }
 
 #referral-link {
-    margin-top: 0;
+    margin: auto;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 0.7em;
 }
 
 .referral-link-text-container {
@@ -92,16 +92,6 @@ body {
     padding: 5px 0px;
     border-radius: 15px;
     background-color: #FFFFFF;
-}
-
-.referral-link-img {
-    vertical-align: center;
-    height: 1em;
-    width: 1em;
-
-    margin-top: 3px;
-    margin-right: 12px;
-    float: right;
 }
 
 .page-link-container {

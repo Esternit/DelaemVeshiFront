@@ -152,7 +152,7 @@ function finishcalculation(){
             body: JSON.stringify({ 
                 sender: "admin",
              userId: window.Telegram.WebApp.initDataUnsafe.user.id, //window.Telegram.WebApp.initDataUnsafe.user.id
-             message: " Ваш рассчёт создан и был отправлен. Ожидайте ответа. %0A Категория товара: " + category + "%0 AЦена в юанях: " + price + "¥ %0A Финальная сумма рассчёта: " + numberWithSpaces((price * exchange + delchn + delmos + ins + comm).toFixed(0)) + " ₽",
+             message: " Ваш рассчёт создан и был отправлен. Ожидайте ответа. %0A Категория товара: " + category + " %0A Цена в юанях: " + price + "¥ %0A Финальная сумма рассчёта: " + numberWithSpaces((price * exchange + delchn + delmos + ins + comm).toFixed(0)) + " ₽",
              needtosend: true
              })
         })

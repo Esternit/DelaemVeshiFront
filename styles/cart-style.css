@@ -69,7 +69,7 @@ button {
 
 .cart-item-name {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 24px;
     color: #000000;
 }
@@ -272,7 +272,7 @@ ul {
     padding: 8px 4px 0px 4px;
 
     height: inherit;
-    line-height: inherit;
+    line-height: 20px;
     aspect-ratio: 1 / 1;
     background-color: #00E8CD;
     border-radius: 50%;

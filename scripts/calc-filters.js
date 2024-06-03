@@ -43,7 +43,7 @@ setInputFilter(document.getElementById("yuan-cost"), function (value) {
 });
 
 function recalc() {
-    alert("recalc")
+   
     var category = document.getElementById("item-category").options[document.getElementById("item-category").selectedIndex].text
     var price = document.getElementById("yuan-cost").value;
 
@@ -134,6 +134,7 @@ function recalc() {
 		Комиссия за услуги: ${comm}₽<br>`
         document.getElementById("total-sum-number").innerHTML = numberWithSpaces((price * exchange + delchn + delmos + ins + comm).toFixed(0)) + " ₽";
     }
+    document.activeElement.blur();
     console.log(category, price);
 } 
 

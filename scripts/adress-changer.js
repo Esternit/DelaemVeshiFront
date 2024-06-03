@@ -77,23 +77,24 @@ function loadHTMLAdress(data){
             <img width="36px" height="36px" style="margin-left: 25px;" src="./assets/address-icon1.png">
             <span class="input-title">Город</span>
         </div>
-        <input class="addr-input" id="city-inp" type="text" placeholder="Введите свой город..."  oninput="changeButton()">
+        <input class="addr-input" id="city-inp" onchange = "blurred()" oninput="changeButton()">
 
         <div class="input-desc-container">
             <img width="36px" height="36px" style="margin-left: 25px;" src="./assets/address-icon2.png">
             <span class="input-title">Улица</span>
         </div>
-        <input class="addr-input" id="street-inp" type="text" placeholder="Введите свою улицу..."  oninput="changeButton()">
+        <input class="addr-input" id="street-inp" onchange = "blurred()"   oninput="changeButton()">
 
         <div class="input-desc-container">
             <img width="36px" height="36px" style="margin-left: 25px;" src="./assets/address-icon3.png">
             <span class="input-title">Дом&nbsp;&nbsp;</span>
         </div>
-        <input class="addr-input" id="house-inp" type="text" placeholder="Введите номер дома..."  oninput="changeButton()">
+        <input class="addr-input" id="house-inp" onchange = "blurred()"   oninput="changeButton()">
     </div>
 
     <button id="save-data-button" type="submit" style="background-color: #D9D9D9;" disabled onclick="activateChangeButton()">Сохранить</button>
-    <script src="./scripts/adress-changer.js"></script>`
+    <script src="./scripts/adress-changer.js"></script>
+    <script src = './scripts/bughandler.js'></script>`
     if(data['adress'].split("/").length == 3){
         document.getElementById("city-inp").value = data['adress'].split("/")[0];
         document.getElementById("street-inp").value = data['adress'].split("/")[1];

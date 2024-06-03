@@ -8,7 +8,7 @@ BackButton.onClick(function () {
 });
 
 function loadBonusInfo() {
-    fetch('https://rmstoreapi-production.up.railway.app/getBonusInfo', {
+    fetch('https://crmback-production.up.railway.app/getBonusInfo', {
         headers: {
             'Content-type': 'application/json'
         },

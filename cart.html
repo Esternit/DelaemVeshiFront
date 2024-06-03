@@ -32,7 +32,7 @@
 
 	<div class="page-block">
 		<span class="block-title">Адрес<span style="color: #FF7C03;">*</span></span>
-		<input class="order-data-input" type="text" id="delivery-address" placeholder="Введите новый адрес..." onchange="checkChange()" />
+		<input class="order-data-input" id="delivery-address"  onchange="checkChange()" />
 		<ul>
 			<li>
 				<img class="list-bullet" id="same-address" width="15px" height="15px" onclick="changeStatus(this.id)"
@@ -49,7 +49,7 @@
 
 	<div class="page-block">
 		<span class="block-title">Ваши ФИО<span style="color: #FF7C03;">*</span></span>
-		<input class="order-data-input" type="text" required id="name-surname" placeholder="Введите имя и фамилию..."
+		<input class="order-data-input"  required id="name-surname"
 			onchange="checkChange()" />
 		<ul>
 			<li>
@@ -62,7 +62,7 @@
 
 	<div class="page-block">
 		<span class="block-title">Ваш номер<span style="color: #FF7C03;">*</span></span>
-		<input class="order-data-input" type="tel" id="phone-number" placeholder="Введите номер телефона..." onchange="checkChange()" />
+		<input class="order-data-input" onchange = "blurred()" id="phone-number" onchange="checkChange()" />
 		<ul>
 			<li>
 				<img class="list-bullet" id="same-number" width="15px" height="15px" onclick="changeStatus(this.id)"
@@ -74,7 +74,7 @@
 
 	<div class="other-charges" id="bonuses-data">
 		<span style="display: inline-flex;align-items: center;">Потратить</span>
-		<input class="charge-amount" type="tel" id="spend-bonus"></input>
+		<input class="charge-amount" onchange = "blurred()"  id="spend-bonus"></input>
 		<div class="bonuses-currency">₽</div>
 		<label class="charge-switch">
 			<input type="checkbox">
@@ -88,6 +88,7 @@
 	</div>
 
 	<button id="pay-button" disabled onclick="proceedPayment()">Оформить</button>
+	<script src = './scripts/bughandler.js'></script>
 	<script src="./scripts/header-info.js"></script>
 	<script src="./scripts/cartloader.js"></script>
 	<script src="./scripts/cart-bullets.js"></script>

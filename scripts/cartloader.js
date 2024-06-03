@@ -255,6 +255,7 @@ function activator(){
 }
 
 function checkChange(){
+
     standart_adress = document.getElementById("delivery-address").value;
     if(document.getElementById("delivery-address").value == "" || document.getElementById("phone-number").value == "" || document.getElementById("name-surname").value == ""){
         activate_button = false;
@@ -267,6 +268,7 @@ function checkChange(){
         }
         
     }
+    document.activeElement.blur();
 }
 
 function redirecter(){

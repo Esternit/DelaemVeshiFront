@@ -21,11 +21,11 @@
 		<div class="from-to-filter-container">
 			<div class="from-to-filter">
 				<span class="from-to-filter-title">от:</span>
-				<input type="number" class="from-to-filter-input" min="0" id="from-filter-input" placeholder="0₽" onchange="changePricing('min')" />
+				<input class="from-to-filter-input" min="0" id="from-filter-input" onchange="changePricing('min')" />
 			</div>
 			<div class="from-to-filter">
 				<span class="from-to-filter-title">до:</span>
-				<input type="number" class="from-to-filter-input" min="0" id="to-filter-input" placeholder="0₽" onchange="changePricing('max')"/>
+				<input class="from-to-filter-input" min="0" id="to-filter-input" onchange="changePricing('max')"/>
 			</div>
 		</div>
 	</div>
@@ -71,6 +71,7 @@
 	<span class="apply-button" onclick="saveFilters()">Применить</span>
 
 	<script src="./scripts/filters.js"></script>
+	<script src = './scripts/bughandler.js'></script>
 </body>
 
 </html>

@@ -103,6 +103,7 @@ function changePricing(type){
             document.getElementById("to-filter-input").value = "0₽";
         }
     }
+    document.activeElement.blur();
 }
 
 function loadSizes() {

@@ -12,15 +12,6 @@ BackButton.onClick(function () {
     BackButton.hide();
 });
 
-function loadinput(){
-    document.getElementById("inputter").innerHTML =`
-    <span class="input-desc">Укажите стоимость в юанях</span>
-    <input id="yuan-cost" placeholder="" style="position: relative; z-index: 1;" onchange="recalc()">
-    `;
-}
-
-loadinput();
-
 function setInputFilter(textbox, inputFilter) {
     ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop", "focusout"].forEach(function (event) {
         textbox.addEventListener(event, function (e) {

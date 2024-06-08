@@ -313,3 +313,13 @@ window.addEventListener('scroll', () => {
 //     document.getElementById("personal-balance-badge").innerText = `+${data["bonus"][0]["bonus_adds_owner"]}₽`;
 //     document.getElementById("cart-item-amount-badge").innerText = `${data["base"][0]["COUNT(*)"]}`;
 // }
+
+function openBanner(name){
+    var tempBrands = ['adidas', 'adidas originals', 'Asics', 'Converse', 'Jordan', 'New Balance', 'Nike', 'OLD ORDER', 'PUMA', "李宁", "安踏", "REPRESENT", "Stussy", "KANGOL", "Champion", "Mitchell & Ness"];
+    var size = '';
+    var minprice = 0;
+    var maxprice = 0;
+    var actity = name;
+    console.log(tempBrands, actity, size, minprice, maxprice);
+    window.location.href=`banner_res.html?page=1&minprice=${minprice}&maxprice=${maxprice}&brand=${tempBrands.join([separator = ','])}&activity=${actity}&size=${size}`
+}

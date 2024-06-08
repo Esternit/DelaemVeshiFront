@@ -17,7 +17,7 @@ function numberWithSpaces(x) {
 BackButton.show();
 
 BackButton.onClick(function () {
-    window.location.href = 'filters.html';
+    window.location.href = 'index.html';
 
     BackButton.hide();
 });

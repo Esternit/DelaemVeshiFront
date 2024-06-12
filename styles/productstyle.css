@@ -86,7 +86,7 @@ body {
 .sizes {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: calc(76px);
+    grid-template-columns: repeat(auto-fit, 76px);
 
     overflow-x: scroll;
     scroll-snap-type: x proximity;

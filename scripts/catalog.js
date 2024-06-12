@@ -33,7 +33,7 @@ function resetsearch() {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ limiter: limit, paging: page, store: "RM" })
+        body: JSON.stringify({ limiter: limit, paging: page, store: "DVeshi" })
     })
         .then(response => response.json())
         .then(data => loadSearchHTMLTable(data['data']));
@@ -117,7 +117,7 @@ function loader() {
                     'Content-type': 'application/json'
                 },
                 method: 'POST',
-                body: JSON.stringify({ limiter: limit, paging: page, store: "RM" })
+                body: JSON.stringify({ limiter: limit, paging: page, store: "DVeshi" })
             })
                 .then(response => response.json())
                 .then(data => loadHTMLTable(data['data']));
@@ -131,7 +131,7 @@ function loader() {
                     'Content-type': 'application/json'
                 },
                 method: 'POST',
-                body: JSON.stringify({ limiter: limit, paging: cookieValue, store: "RM" })
+                body: JSON.stringify({ limiter: limit, paging: cookieValue, store: "DVeshi" })
             })
                 .then(response => response.json())
                 .then(data => loadHTMLTable(data['data']));

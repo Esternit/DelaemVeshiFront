@@ -5,7 +5,9 @@ tg.expand();
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
-
+function containsNumber(str) {
+    return str.match(/\d+/) !== null;
+  }
 tg.MainButton.textColor = '#FFFFFF';
 tg.MainButton.color = '#2cab37';
 
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ productId: Id, store: "RM" })
+        body: JSON.stringify({ productId: Id, store: "DVesshi" })
     })
         .then(response => response.json())
         .then(data => loadHTMLTable(data['data']));
@@ -115,7 +117,13 @@ function loadHTMLTable(data) {
         countsizes++;
         let inner = document.createElement('div');
         inner.className = 'size';
-        inner.innerHTML = ` <span class="size-sizing">EU ${name_size}</span><br><span class="size-price">${numberWithSpaces(price)} ₽</span>`;
+        if(containsNumber(name_size)){
+            inner.innerHTML = ` <span class="size-sizing">EU ${name_size}</span><br><span class="size-price">${numberWithSpaces(price)} ₽</span>`;
+        }
+        else{
+            inner.innerHTML = ` <span class="size-sizing">${name_size}</span><br><span class="size-price">${numberWithSpaces(price)} ₽</span>`;
+        }
+        // inner.innerHTML = ` <span class="size-sizing">EU ${name_size}</span><br><span class="size-price">${numberWithSpaces(price)} ₽</span>`;
         inner.addEventListener("click", function () {
             // replacing price
 

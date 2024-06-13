@@ -17,6 +17,13 @@
 <body>
 	<div class="page-heading">Калькулятор</div>
 
+
+
+	<div class="input-block-container" id="inputter">
+		<span class="input-desc">Укажите стоимость в юанях</span>
+		<input id="yuan-cost" placeholder="" style="position: relative; z-index: 1;" onchange="recalc()">
+	</div>
+
 	<div class="input-block-container">
 		<span class="input-desc">Выберите категорию товара</span>
 		<select name="category" id="item-category" style="position: relative; z-index: 1;" onchange="recalc()">
@@ -35,11 +42,6 @@
 			<option value="bags_big">Сумки большие</option>
 			<option value="parfume">Парфюм до 1000 юаней</option>
 		</select>
-	</div>
-
-	<div class="input-block-container" id="inputter">
-		<span class="input-desc">Укажите стоимость в юанях</span>
-		<input id="yuan-cost" placeholder="" style="position: relative; z-index: 1;" onchange="recalc()">
 	</div>
 
 	<span class="info-text" id = "result">

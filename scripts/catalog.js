@@ -89,6 +89,7 @@ function loadSearchHTMLTable(data) {
 function searchfunc() {
     if (document.querySelector('#search-input') != null) {
         searchValue = document.querySelector('#search-input').value;
+        document.activeElement.blur();
         window.location.href = "search.html?search=" + searchValue
     }
 

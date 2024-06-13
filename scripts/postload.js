@@ -18,7 +18,7 @@ function loadsearch() {
     let searcher = document.getElementById("searcher");
     let test = document.createElement("div");
     test.className = "product-search";
-    test.innerHTML += `<input placeholder="" id="search-input" class = "wideinputbox"  />`;
+    test.innerHTML += `<input placeholder="" id="search-input" class = "wideinputbox"  onchange="searchfunc()"/>`;
     test.innerHTML += `<div class="search-btn" onclick="searchfunc()"><img class="icon-search" src="./assets/search_logo.png"></div>`
 
     searcher.appendChild(test);

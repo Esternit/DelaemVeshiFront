@@ -243,12 +243,6 @@ document.addEventListener('touchstart', function (e) {
     }
 }, false);
 
-function openRM() {
-
-    tg.openTelegramLink("https://t.me/hypekickspoizon");
-    /* tg.openLink("https://rmpoizon.store"); */
-    console.log("opened");
-}
 
 
 

@@ -1,5 +1,6 @@
 var BackButton = window.Telegram.WebApp.BackButton;
 var copyText;
+let tg = window.Telegram.WebApp;
 BackButton.show();
 
 BackButton.onClick(function () {
@@ -69,7 +70,7 @@ function loadHTMLProfile(data) {
 
 
 function openTGLink(link) {
-    tg.openTelegramLink(link);
+    tg.openLink(link);
 }
 function copyToClipboard() {
 	window.Telegram.WebApp.showAlert("Ссылка находится в личных сообщениях с ботом");

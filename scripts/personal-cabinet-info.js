@@ -57,7 +57,7 @@ function loadHTMLProfile(data) {
 		<a href="./bonuses.html"><span class="page-link-text" id="link-FAQ">Бонусы</span></a>
 	</div>
 	<div class="page-link-container">
-		<a href="./faq.html"><span class="page-link-text" id="link-FAQ">FAQ</span></a>
+		<a href="#" onclick="openTGLink('https://teletype.in/@delaemveshi_support/edf-7hSZb2x')"><span class="page-link-text" id="link-FAQ">FAQ</span></a>
 	</div>
 	<script src="./scripts/personal-cabinet-info.js"></script>`
     document.getElementById("profile-name").innerText = data["tg_name"];
@@ -67,6 +67,10 @@ function loadHTMLProfile(data) {
     copyText = data["ref_link"];
 }
 
+
+function openTGLink(link) {
+    tg.openTelegramLink(link);
+}
 function copyToClipboard() {
 	window.Telegram.WebApp.showAlert("Ссылка находится в личных сообщениях с ботом");
 	fetch('https://crmback-production.up.railway.app/sendLink', {  //https://crmback-production.up.railway.app

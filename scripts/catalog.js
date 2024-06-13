@@ -250,11 +250,7 @@ function openRM() {
     console.log("opened");
 }
 
-function openManager() {
 
-    tg.openTelegramLink("https://t.me/HKpozion");
-    console.log("opened");
-}
 
 function openTeletype(line) {
     tg.openLink(line);
